@@ -36,3 +36,6 @@ porymap.project.cfg
 *.sna
 *.diff
 *.sym
+agbcc/
+Makefile
+Makefile
