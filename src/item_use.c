@@ -1009,7 +1009,8 @@ void ItemUseInBattle_PokeBall(u8 taskId)
         else
             DisplayItemMessageInBattlePyramid(taskId, sText_CantThrowPokeBall_SemiInvulnerable, Task_CloseBattlePyramidBagMessage);
         break;
-
+    #endif
+    }
     if (IsPlayerPartyAndPokemonStorageFull() == FALSE) // have room for mon?
     {
         switch (CanThrowBall())
