@@ -93,78 +93,79 @@
     #define ITEM_GALARICA_CUFF       10063
     #define ITEM_GALARICA_WREATH     10064
     #define ITEM_CHIPPED_POT         10065
+    #define ITEM_LINKING_CORD        10066
 
     //EVO_ITEM_HOLD
-    #define ITEM_RAZOR_FANG          10066
-    #define ITEM_RAZOR_CLAW          10067
-    #define ITEM_OVAL_STONE          10068
+    #define ITEM_RAZOR_FANG          10067
+    #define ITEM_RAZOR_CLAW          10068
+    #define ITEM_OVAL_STONE          10069
 
     //FORM_ITEM_HOLD
-    #define ITEM_GRISEOUS_ORB        10069
-    #define ITEM_DRACO_PLATE         10070
-    #define ITEM_DREAD_PLATE         10071
-    #define ITEM_EARTH_PLATE         10072
-    #define ITEM_FIST_PLATE          10073
-    #define ITEM_FLAME_PLATE         10074
-    #define ITEM_ICICLE_PLATE        10075
-    #define ITEM_INSECT_PLATE        10076
-    #define ITEM_IRON_PLATE          10077
-    #define ITEM_MEADOW_PLATE        10078
-    #define ITEM_MIND_PLATE          10079
-    #define ITEM_PIXIE_PLATE         10080
-    #define ITEM_SKY_PLATE           10081
-    #define ITEM_SPLASH_PLATE        10082
-    #define ITEM_SPOOKY_PLATE        10083
-    #define ITEM_STONE_PLATE         10084
-    #define ITEM_TOXIC_PLATE         10085
-    #define ITEM_ZAP_PLATE           10086
-    #define ITEM_FIGHTINIUM_Z        10087
-    #define ITEM_FLYINIUM_Z          10088
-    #define ITEM_POISONIUM_Z         10089
-    #define ITEM_GROUNDIUM_Z         10090
-    #define ITEM_ROCKIUM_Z           10091
-    #define ITEM_BUGINIUM_Z          10092
-    #define ITEM_GHOSTIUM_Z          10093
-    #define ITEM_STEELIUM_Z          10094
-    #define ITEM_FIRIUM_Z            10095
-    #define ITEM_WATERIUM_Z          10096
-    #define ITEM_GRASSIUM_Z          10097
-    #define ITEM_ELECTRIUM_Z         10098
-    #define ITEM_PSYCHIUM_Z          10099
-    #define ITEM_ICIUM_Z             10100
-    #define ITEM_DRAGONIUM_Z         10101
-    #define ITEM_DARKINIUM_Z         10102
-    #define ITEM_FAIRIUM_Z           10103
-    #define ITEM_DOUSE_DRIVE         10104
-    #define ITEM_SHOCK_DRIVE         10105
-    #define ITEM_BURN_DRIVE          10106
-    #define ITEM_CHILL_DRIVE         10107
-    #define ITEM_BUG_MEMORY          10108
-    #define ITEM_DARK_MEMORY         10109
-    #define ITEM_DRAGON_MEMORY       10110
-    #define ITEM_ELECTRIC_MEMORY     10111
-    #define ITEM_FAIRY_MEMORY        10112
-    #define ITEM_FIGHTING_MEMORY     10113
-    #define ITEM_FIRE_MEMORY         10114
-    #define ITEM_FLYING_MEMORY       10115
-    #define ITEM_GHOST_MEMORY        10116
-    #define ITEM_GRASS_MEMORY        10117
-    #define ITEM_GROUND_MEMORY       10118
-    #define ITEM_ICE_MEMORY          10119
-    #define ITEM_POISON_MEMORY       10120
-    #define ITEM_PSYCHIC_MEMORY      10121
-    #define ITEM_ROCK_MEMORY         10122
-    #define ITEM_STEEL_MEMORY        10123
-    #define ITEM_WATER_MEMORY        10124
+    #define ITEM_GRISEOUS_ORB        10070
+    #define ITEM_DRACO_PLATE         10071
+    #define ITEM_DREAD_PLATE         10072
+    #define ITEM_EARTH_PLATE         10073
+    #define ITEM_FIST_PLATE          10074
+    #define ITEM_FLAME_PLATE         10075
+    #define ITEM_ICICLE_PLATE        10076
+    #define ITEM_INSECT_PLATE        10077
+    #define ITEM_IRON_PLATE          10078
+    #define ITEM_MEADOW_PLATE        10079
+    #define ITEM_MIND_PLATE          10080
+    #define ITEM_PIXIE_PLATE         10081
+    #define ITEM_SKY_PLATE           10082
+    #define ITEM_SPLASH_PLATE        10083
+    #define ITEM_SPOOKY_PLATE        10084
+    #define ITEM_STONE_PLATE         10085
+    #define ITEM_TOXIC_PLATE         10086
+    #define ITEM_ZAP_PLATE           10087
+    #define ITEM_FIGHTINIUM_Z        10088
+    #define ITEM_FLYINIUM_Z          10089
+    #define ITEM_POISONIUM_Z         10090
+    #define ITEM_GROUNDIUM_Z         10091
+    #define ITEM_ROCKIUM_Z           10092
+    #define ITEM_BUGINIUM_Z          10093
+    #define ITEM_GHOSTIUM_Z          10094
+    #define ITEM_STEELIUM_Z          10095
+    #define ITEM_FIRIUM_Z            10096
+    #define ITEM_WATERIUM_Z          10097
+    #define ITEM_GRASSIUM_Z          10098
+    #define ITEM_ELECTRIUM_Z         10099
+    #define ITEM_PSYCHIUM_Z          10100
+    #define ITEM_ICIUM_Z             10101
+    #define ITEM_DRAGONIUM_Z         10102
+    #define ITEM_DARKINIUM_Z         10103
+    #define ITEM_FAIRIUM_Z           10104
+    #define ITEM_DOUSE_DRIVE         10105
+    #define ITEM_SHOCK_DRIVE         10106
+    #define ITEM_BURN_DRIVE          10107
+    #define ITEM_CHILL_DRIVE         10108
+    #define ITEM_BUG_MEMORY          10109
+    #define ITEM_DARK_MEMORY         10110
+    #define ITEM_DRAGON_MEMORY       10111
+    #define ITEM_ELECTRIC_MEMORY     10112
+    #define ITEM_FAIRY_MEMORY        10113
+    #define ITEM_FIGHTING_MEMORY     10114
+    #define ITEM_FIRE_MEMORY         10115
+    #define ITEM_FLYING_MEMORY       10116
+    #define ITEM_GHOST_MEMORY        10117
+    #define ITEM_GRASS_MEMORY        10118
+    #define ITEM_GROUND_MEMORY       10119
+    #define ITEM_ICE_MEMORY          10120
+    #define ITEM_POISON_MEMORY       10121
+    #define ITEM_PSYCHIC_MEMORY      10122
+    #define ITEM_ROCK_MEMORY         10123
+    #define ITEM_STEEL_MEMORY        10124
+    #define ITEM_WATER_MEMORY        10125
 
     //FORM_ITEM_USE
-    #define ITEM_GRACIDEA            10125
-    // #define ITEM_REVEAL_GLASS        10126
-    // #define ITEM_PRISON_BOTTLE       10127
-    #define ITEM_RED_NECTAR          10128
-    #define ITEM_YELLOW_NECTAR       10129
-    #define ITEM_PINK_NECTAR         10130
-    #define ITEM_PURPLE_NECTAR       10131
+    #define ITEM_GRACIDEA            10126
+    // #define ITEM_REVEAL_GLASS        10127
+    // #define ITEM_PRISON_BOTTLE       10128
+    #define ITEM_RED_NECTAR          10129
+    #define ITEM_YELLOW_NECTAR       10130
+    #define ITEM_PINK_NECTAR         10131
+    #define ITEM_PURPLE_NECTAR       10132
 #endif // ITEM_EXPANSION
 
 #ifndef BATTLE_ENGINE
