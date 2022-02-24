@@ -265,6 +265,7 @@ struct LevelUpMove
 struct Evolution
 {
     u16 method;
+    //u16 param2;
     u16 param;
     u16 targetSpecies;
 };
