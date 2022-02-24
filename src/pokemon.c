@@ -6548,6 +6548,16 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, u
                 if (GetMonGender(mon) == MON_MALE && gEvolutionTable[species][i].param == evolutionItem)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
+            case EVO_ITEM_HOLD_ITEM:
+                if (heldItem == gEvolutionTable[species][i].param)
+                {
+                    if (gEvolutionTable[species][i].param == evolutionItem)
+                    heldItem = 0;
+                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    break;
+                }
+                break;
             }
         }
         break;

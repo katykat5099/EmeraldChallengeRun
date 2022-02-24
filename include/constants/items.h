@@ -605,7 +605,7 @@
 #define ITEM_BLUNDER_POLICY 511
 #define ITEM_ROOM_SERVICE 512
 #define ITEM_UTILITY_UMBRELLA 513
-#define ITEM_LINKING_CORD 514
+#define ITEM_LINKING_CORD 514//Put in the evo items section eventually
 
 // Berries
 #define ITEM_CHERI_BERRY 515
