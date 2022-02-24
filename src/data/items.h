@@ -2679,68 +2679,79 @@ const struct Item gItems[] =
 
     [ITEM_SWEET_APPLE] = // Todo
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Sweet Apple"),
+        .itemId = ITEM_SWEET_APPLE,
         .price = 0,
-        .description = sDummyDesc,
+        .description = sSweetAppleDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_TART_APPLE] = // Todo
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Tart Apple"),
+        .itemId = ITEM_TART_APPLE,
         .price = 0,
-        .description = sDummyDesc,
+        .description = sTartAppleDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_CRACKED_POT] = // Todo
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Cracked Pot"),
+        .itemId = ITEM_CRACKED_POT,
+        .price = 3000,
+        .description = sCrackedPotDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_CHIPPED_POT] = // Todo
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Chipped Pot"),
+        .itemId = ITEM_CHIPPED_POT,
+        .price = 3000,
+        .description = sChippedPotDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_GALARICA_CUFF] = // Todo
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Galarica Cuff"),
+        .itemId = ITEM_GALARICA_CUFF,
         .price = 0,
-        .description = sDummyDesc,
+        .description = sGalaricaCuffDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_GALARICA_WREATH] = // Todo
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Galar Wreath"),
+        .itemId = ITEM_GALARICA_WREATH,
         .price = 0,
-        .description = sDummyDesc,
+        .description = sGalaricaWreathDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+    },
+
+    [ITEM_LINKING_CORD] =
+    {
+        .name = _("Linking Cord"),
+        .itemId = ITEM_LINKING_CORD,
+        .price = 3000,
+        .description = sLinkingCordDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_DRAGON_SCALE] =

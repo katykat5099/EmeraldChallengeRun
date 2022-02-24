@@ -969,22 +969,39 @@ static const u8 sDawnStoneDesc[] = _(
     "evolve.");
 
 static const u8 sSweetAppleDesc[] = _( // Todo
-    "?????");
+    "Makes certain\n"
+    "species of Pokémon\n"
+    "evolve.");
 
 static const u8 sTartAppleDesc[] = _( // Todo
-    "?????");
+    "Makes certain\n"
+    "species of Pokémon\n"
+    "evolve.");
 
 static const u8 sCrackedPotDesc[] = _( // Todo
-    "?????");
+    "Makes certain\n"
+    "species of Pokémon\n"
+    "evolve.");
 
 static const u8 sChippedPotDesc[] = _( // Todo
-    "?????");
+    "Makes certain\n"
+    "species of Pokémon\n"
+    "evolve.");
 
 static const u8 sGalaricaCuffDesc[] = _( // Todo
-    "?????");
+    "Makes certain\n"
+    "species of Pokémon\n"
+    "evolve.");
 
 static const u8 sGalaricaWreathDesc[] = _( // Todo
-    "?????");
+    "Makes certain\n"
+    "species of Pokémon\n"
+    "evolve.");
+
+static const u8 sLinkingCordDesc[] = _(
+    "Makes certain\n"
+    "species of Pokémon\n"
+    "evolve.");
 
 static const u8 sDragonScaleDesc[] = _(
     "A strange scale\n"
