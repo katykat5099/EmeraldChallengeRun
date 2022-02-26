@@ -3726,12 +3726,12 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_ROCKRUFF] =
     {
-        .size = MON_COORDS_SIZE(64, 56),
+        .size = MON_COORDS_SIZE(61, 43),
         .y_offset = 7,
     },
     [SPECIES_LYCANROC] =
     {
-        .size = MON_COORDS_SIZE(64, 56),
+        .size = MON_COORDS_SIZE(63, 47),
         .y_offset = 7,
     },
     [SPECIES_WISHIWASHI] =
