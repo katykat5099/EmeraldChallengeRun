@@ -206,6 +206,10 @@ RustboroCity_EventScript_GymSign::
 	msgbox RustboroCity_Text_GymSign, MSGBOX_SIGN
 	end
 
+RustboroCity_EventScript_RustyRelicShopSign::
+	msgbox RustboroCity_Text_RustyRelicShopSign, MSGBOX_SIGN
+	end
+
 @ Unused
 RustboroCity_EventScript_DevonCorpBranchOfficeSign::
 	msgbox RustboroCity_Text_DevonCorpBranchOfficeSign, MSGBOX_SIGN
@@ -502,11 +506,25 @@ RustboroCity_EventScript_HelpGetGoodsTrigger3::
 	goto RustboroCity_EventScript_EmployeeAskToGetGoods
 	end
 
+RustboroCity_EventScript_HelpGetGoodsTrigger4::
+	lockall
+	setvar VAR_TEMP_1, 4
+	goto RustboroCity_EventScript_EmployeeAskToGetGoods
+	end
+
+RustboroCity_EventScript_HelpGetGoodsTrigger5::
+	lockall
+	setvar VAR_TEMP_1, 5
+	goto RustboroCity_EventScript_EmployeeAskToGetGoods
+	end
+
 RustboroCity_EventScript_EmployeeAskToGetGoods::
 	call_if_eq VAR_TEMP_1, 0, RustboroCity_EventScript_EmployeeFacePlayerUp1
 	call_if_eq VAR_TEMP_1, 1, RustboroCity_EventScript_EmployeeFacePlayerLeft1
 	call_if_eq VAR_TEMP_1, 2, RustboroCity_EventScript_EmployeeFacePlayerDown1
 	call_if_eq VAR_TEMP_1, 3, RustboroCity_EventScript_EmployeeApproachPlayerDown1
+	call_if_eq VAR_TEMP_1, 4, RustboroCity_EventScript_EmployeeApproachPlayerUp1
+	call_if_eq VAR_TEMP_1, 5, RustboroCity_EventScript_EmployeeApproachPlayerUp2
 	setflag FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN
 	setvar VAR_RUSTBORO_CITY_STATE, 3
 	copyobjectxytoperm LOCALID_DEVON_EMPLOYEE
@@ -569,6 +587,15 @@ RustboroCity_Movement_EmployeeApproachPlayerDown:
 	walk_down
 	step_end
 
+RustboroCity_Movement_EmployeeApproachPlayerUp:
+	walk_up
+	step_end
+
+RustboroCity_Movement_EmployeeApproachPlayerUp2:
+	walk_up
+	walk_up
+	step_end
+
 RustboroCity_EventScript_ReturnGoodsTrigger0::
 	lockall
 	setvar VAR_TEMP_1, 0
@@ -593,12 +620,32 @@ RustboroCity_EventScript_ReturnGoodsTrigger3::
 	goto RustboroCity_EventScript_ReturnGoods
 	end
 
+RustboroCity_EventScript_ReturnGoodsTrigger4::
+	lockall
+	setvar VAR_TEMP_1, 4
+	goto RustboroCity_EventScript_ReturnGoods
+	end
+
+RustboroCity_EventScript_ReturnGoodsTrigger5::
+	lockall
+	setvar VAR_TEMP_1, 5
+	goto RustboroCity_EventScript_ReturnGoods
+	end
+
+RustboroCity_EventScript_ReturnGoodsTrigger6::
+	lockall
+	setvar VAR_TEMP_1, 6
+	goto RustboroCity_EventScript_ReturnGoods
+	end
+
 RustboroCity_EventScript_ReturnGoods::
 	call_if_eq VAR_TEMP_1, 0, RustboroCity_EventScript_EmployeeFacePlayerUp2
 	call_if_eq VAR_TEMP_1, 1, RustboroCity_EventScript_EmployeeFacePlayerLeft2
 	call_if_eq VAR_TEMP_1, 2, RustboroCity_EventScript_EmployeeFacePlayerDown2
 	call_if_eq VAR_TEMP_1, 3, RustboroCity_EventScript_EmployeeApproachPlayerDown2
 	call_if_eq VAR_TEMP_1, 4, RustboroCity_EventScript_EmployeeFacePlayerRight
+	call_if_eq VAR_TEMP_1, 5, RustboroCity_EventScript_EmployeeApproachPlayerUp1
+	call_if_eq VAR_TEMP_1, 6, RustboroCity_EventScript_EmployeeApproachPlayerUp2
 	msgbox RustboroCity_Text_YouGotItThankYou, MSGBOX_DEFAULT
 	giveitem ITEM_GREAT_BALL
 	call_if_eq VAR_RESULT, FALSE, RustboroCity_EventScript_BagFull
@@ -674,6 +721,34 @@ RustboroCity_EventScript_EmployeeFacePlayerRight::
 	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_Delay48
+	waitmovement 0
+	return
+
+RustboroCity_EventScript_EmployeeApproachPlayerUp1::
+	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_Movement_EmployeeApproachPlayerUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	return
+
+RustboroCity_EventScript_EmployeeApproachPlayerUp2::
+	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_DEVON_EMPLOYEE, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_Movement_EmployeeApproachPlayerUp2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
@@ -1243,6 +1318,11 @@ RustboroCity_Text_GymSign:
 	.string "RUSTBORO CITY POKéMON GYM\n"
 	.string "LEADER: ROXANNE\p"
 	.string "“The ROCK-loving honors student!”$"
+
+RustboroCity_Text_RustyRelicShopSign:
+	.string "Welcome to RUSTY RELIC'S\n"
+	.string "Get your Relics here!\p"
+	.string "The're real, I swear!$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign:
 	.string "DEVON CORP. BRANCH OFFICE\p"

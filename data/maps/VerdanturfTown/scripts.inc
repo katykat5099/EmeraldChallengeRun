@@ -47,6 +47,21 @@ VerdanturfTown_EventScript_BoyTunnelOpen::
 	release
 	end
 
+VerdanturfTown_EventScript_Girl::
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_GRACIDEA, VerdanturfTown_EventScript_GiveGracidea
+	msgbox VerdanturfTown_Text_FlowersArePretty, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_EventScript_GiveGracidea::
+	msgbox VerdanturfTown_Text_GiveGracidea, MSGBOX_DEFAULT
+	giveitem ITEM_GRACIDEA
+	setflag FLAG_RECEIVED_GRACIDEA
+	release
+	end
+
 VerdanturfTown_EventScript_TownSign::
 	msgbox VerdanturfTown_Text_TownSign, MSGBOX_SIGN
 	end
@@ -106,6 +121,17 @@ VerdanturfTown_Text_EasyToGetToRustboroNow:
 	.string "is now a tunnel to the other side.\p"
 	.string "It's great--it's easy to go shop for\n"
 	.string "new DEVON products in RUSTBORO now.$"
+
+VerdanturfTown_Text_FlowersArePretty:
+    .string "Flowers are so pretty.\n"
+    .string "Do you not agree?$"
+
+VerdanturfTown_Text_GiveGracidea:
+    .string "Do you like flowers too?\p"
+    .string "I recently visited the Sinnoh\n"
+    .string "region and I found this very\p"
+    .string "pretty flower. But, I am feeling\n"
+    .string "nice today, so you can have it!$"
 
 VerdanturfTown_Text_TownSign:
 	.string "VERDANTURF TOWN\p"
