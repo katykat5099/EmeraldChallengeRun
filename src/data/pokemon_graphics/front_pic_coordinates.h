@@ -3662,12 +3662,12 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_PIKIPEK] =
     {
         .size = MON_COORDS_SIZE(29, 40),
-        .y_offset = 12,
+        .y_offset = 10,
     },
     [SPECIES_TRUMBEAK] =
     {
         .size = MON_COORDS_SIZE(44, 53),
-        .y_offset = 7,
+        .y_offset = 4,
     },
     [SPECIES_TOUCANNON] =
     {
@@ -5781,13 +5781,13 @@ const struct MonCoords gMonFrontPicCoords[] =
     // Lycanroc
     [SPECIES_LYCANROC_MIDNIGHT] =
     {
-        .size = MON_COORDS_SIZE(56, 64),
-        .y_offset = 1,
+        .size = MON_COORDS_SIZE(56, 61),
+        .y_offset = 0,
     },
     [SPECIES_LYCANROC_DUSK] =
     {
-        .size = MON_COORDS_SIZE(64, 64),
-        .y_offset = 3,
+        .size = MON_COORDS_SIZE(57, 58),
+        .y_offset = 6,
     },
     // Wishiwashi
     [SPECIES_WISHIWASHI_SCHOOL] =
