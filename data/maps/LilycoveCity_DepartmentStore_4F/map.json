@@ -45,9 +45,9 @@
       "x": 13,
       "y": 4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_DepartmentStore_4F_EventScript_Youngster",
@@ -91,6 +91,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_DepartmentStore_4F_EventScript_ClerkMiddle",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 12,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_Youngster",
+      "flag": "FLAG_HIDE_YOUNGSTER2"
     }
   ],
   "warp_events": [
@@ -117,7 +130,87 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreMiddle3"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreRight3"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreLeft1"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreMiddle1"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreMiddle2"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreRight1"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreRight2"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreLeft2"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreLeft3"
+    }
   ],
   "bg_events": [
 
