@@ -2,8 +2,13 @@
 .set LOCALID_YOUNGSTER2, 7
 
 LilycoveCity_DepartmentStore_4F_MapScripts::
+    map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_DepartmentStore_4F_OnTransition
 	.byte 0
 
+LilycoveCity_DepartmentStore_4F_OnTransition::
+    removeobject LOCALID_YOUNGSTER2
+    setflag FLAG_HIDE_YOUNGSTER2
+    end
 LilycoveCity_DepartmentStore_4F_EventScript_Gentleman::
 	msgbox LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM, MSGBOX_NPC
 	end
@@ -18,50 +23,59 @@ LilycoveCity_DepartmentStore_4F_EventScript_Youngster::
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreMiddle1::
     goto_if_unset FLAG_YOUNGSTER_DEPARTMENT_STORE, LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerMiddle1
+    release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreMiddle2::
     goto_if_unset FLAG_YOUNGSTER_DEPARTMENT_STORE, LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerMiddle2
+    release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreMiddle3::
     goto_if_unset FLAG_YOUNGSTER_DEPARTMENT_STORE, LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerMiddle3
+    release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreLeft1::
     goto_if_unset FLAG_YOUNGSTER_DEPARTMENT_STORE, LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft1
+    release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreLeft2::
     goto_if_unset FLAG_YOUNGSTER_DEPARTMENT_STORE, LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft2
+    release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreLeft3::
     goto_if_unset FLAG_YOUNGSTER_DEPARTMENT_STORE, LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft3
+    release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreRight1::
     goto_if_unset FLAG_YOUNGSTER_DEPARTMENT_STORE, LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight1
+    release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreRight2::
     goto_if_unset FLAG_YOUNGSTER_DEPARTMENT_STORE, LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight2
+    release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterNewEvolutionStoreRight3::
     goto_if_unset FLAG_YOUNGSTER_DEPARTMENT_STORE, LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight3
+    release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerMiddle1::
     lockall
-    faceplayer
+    playse SE_PIN
     applymovement LOCALID_YOUNGSTER, Common_Movement_ExclamationMark
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+    waitmovement 0
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer0, MSGBOX_DEFAULT
     closemessage
-    applymovement LOCALID_YOUNGSTER, LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachMiddle1
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer1, MSGBOX_DEFAULT
     closemessage
@@ -70,18 +84,21 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerMiddle1::
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer2, MSGBOX_DEFAULT
     closemessage
+    setflag FLAG_YOUNGSTER_DEPARTMENT_STORE
     release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerMiddle2::
     lockall
-    faceplayer
+    playse SE_PIN
     applymovement LOCALID_YOUNGSTER, Common_Movement_ExclamationMark
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+    waitmovement 0
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer0, MSGBOX_DEFAULT
     closemessage
     applymovement LOCALID_YOUNGSTER, LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachMiddle2
+    waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer1, MSGBOX_DEFAULT
@@ -91,18 +108,21 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerMiddle2::
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer2, MSGBOX_DEFAULT
     closemessage
+    setflag FLAG_YOUNGSTER_DEPARTMENT_STORE
     release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerMiddle3::
     lockall
-    faceplayer
+    playse SE_PIN
     applymovement LOCALID_YOUNGSTER, Common_Movement_ExclamationMark
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+    waitmovement 0
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer0, MSGBOX_DEFAULT
     closemessage
     applymovement LOCALID_YOUNGSTER, LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachMiddle3
+    waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer1, MSGBOX_DEFAULT
@@ -112,19 +132,25 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerMiddle3::
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer2, MSGBOX_DEFAULT
     closemessage
+    setflag FLAG_YOUNGSTER_DEPARTMENT_STORE
     release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight1::
     lockall
+    playse SE_PIN
     applymovement LOCALID_YOUNGSTER, Common_Movement_ExclamationMark
-    applymovement LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceFasterRight
+    waitmovement 0
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
     waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer0, MSGBOX_DEFAULT
     closemessage
     applymovement LOCALID_YOUNGSTER, LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachRight1
+    waitmovement 0
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
+    waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer1, MSGBOX_DEFAULT
@@ -134,19 +160,26 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight1::
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer2, MSGBOX_DEFAULT
     closemessage
+    setflag FLAG_YOUNGSTER_DEPARTMENT_STORE
     release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight2::
     lockall
+    playse SE_PIN
     applymovement LOCALID_YOUNGSTER, Common_Movement_ExclamationMark
-    applymovement LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceFasterRight
+    waitmovement 0
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
     waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer0, MSGBOX_DEFAULT
     closemessage
     applymovement LOCALID_YOUNGSTER, LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachRight2
+    waitmovement 0
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
+    waitmovement 0
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer1, MSGBOX_DEFAULT
     closemessage
@@ -155,19 +188,24 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight2::
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer2, MSGBOX_DEFAULT
     closemessage
+    setflag FLAG_YOUNGSTER_DEPARTMENT_STORE
     release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight3::
     lockall
+    playse SE_PIN
     applymovement LOCALID_YOUNGSTER, Common_Movement_ExclamationMark
-    applymovement LOCALID_YOUNGSTER, Common_Movement_WalkInPlaceFasterRight
+    waitmovement 0
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
     waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer0, MSGBOX_DEFAULT
     closemessage
     applymovement LOCALID_YOUNGSTER, LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachRight3
+    waitmovement 0
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
     waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
     waitmovement 0
@@ -178,21 +216,24 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight3::
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer2, MSGBOX_DEFAULT
     closemessage
+    setflag FLAG_YOUNGSTER_DEPARTMENT_STORE
     release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft1::
     lockall
+    clearflag FLAG_HIDE_YOUNGSTER2
     removeobject LOCALID_YOUNGSTER
     addobject LOCALID_YOUNGSTER2
+    playse SE_PIN
     applymovement LOCALID_YOUNGSTER2, Common_Movement_ExclamationMark
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
     waitmovement 0
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer0, MSGBOX_DEFAULT
     closemessage
     applymovement LOCALID_YOUNGSTER2, LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachLeft1
+    waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer1, MSGBOX_DEFAULT
@@ -202,19 +243,23 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft1::
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer2, MSGBOX_DEFAULT
     closemessage
+    setflag FLAG_YOUNGSTER_DEPARTMENT_STORE
     release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft2::
     lockall
+    playse SE_PIN
     applymovement LOCALID_YOUNGSTER, Common_Movement_ExclamationMark
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
     waitmovement 0
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+    applymovement LOCALID_YOUNGSTER, Common_Movement_FacePlayer
+    waitmovement 0
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer0, MSGBOX_DEFAULT
     closemessage
     applymovement LOCALID_YOUNGSTER, LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachLeft2
+    waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer1, MSGBOX_DEFAULT
@@ -224,21 +269,24 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft2::
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer2, MSGBOX_DEFAULT
     closemessage
+    setflag FLAG_YOUNGSTER_DEPARTMENT_STORE
     release
     end
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft3::
     lockall
+    clearflag FLAG_HIDE_YOUNGSTER2
     removeobject LOCALID_YOUNGSTER
     addobject LOCALID_YOUNGSTER2
+    playse SE_PIN
     applymovement LOCALID_YOUNGSTER2, Common_Movement_ExclamationMark
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
     waitmovement 0
-    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer0, MSGBOX_DEFAULT
     closemessage
     applymovement LOCALID_YOUNGSTER2, LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachLeft3
+    waitmovement 0
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer1, MSGBOX_DEFAULT
@@ -248,6 +296,7 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft3::
     waitmovement 0
     msgbox LilycoveCity_DepartmentStore_4F_Text_YoungsterTalkToPlayer2, MSGBOX_DEFAULT
     closemessage
+    setflag FLAG_YOUNGSTER_DEPARTMENT_STORE
     release
     end
 
@@ -317,19 +366,13 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 	release
 	end
 
-LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachMiddle1:
-    walk_in_place_faster_up
-    step_end
-
 LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachMiddle2:
-    walk_in_place_faster_up
     walk_up
     walk_right
     walk_in_place_faster_up
     step_end
 
 LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachMiddle3:
-    walk_in_place_faster_up
     walk_up
     walk_left
     walk_in_place_faster_up
@@ -370,7 +413,6 @@ LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachLeft1:
     walk_left
     walk_left
     walk_left
-    walk_left
     walk_in_place_faster_up
     step_end
 
@@ -389,7 +431,6 @@ LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachLeft2:
     step_end
 
 LilycoveCity_DepartmentStore_4F_Movement_YoungsterApproachLeft3:
-    walk_left
     walk_left
     walk_left
     walk_left
