@@ -9165,13 +9165,15 @@ static const union AnimCmd sAnim_MIMIKYU_BUSTED_1[] =
 
 static const union AnimCmd sAnim_LYCANROC_MIDNIGHT_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_LYCANROC_DUSK_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
