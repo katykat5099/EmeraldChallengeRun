@@ -6,6 +6,7 @@ LilycoveCity_DepartmentStore_4F_MapScripts::
 	.byte 0
 
 LilycoveCity_DepartmentStore_4F_OnTransition::
+    clearflag FLAG_HIDE_YOUNGSTER
     removeobject LOCALID_YOUNGSTER2
     setflag FLAG_HIDE_YOUNGSTER2
     end
@@ -222,6 +223,7 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerRight3::
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft1::
     lockall
+    setflag FLAG_HIDE_YOUNGSTER
     clearflag FLAG_HIDE_YOUNGSTER2
     removeobject LOCALID_YOUNGSTER
     addobject LOCALID_YOUNGSTER2
@@ -275,6 +277,7 @@ LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft2::
 
 LilycoveCity_DepartmentStore_4F_EventScript_YoungsterTalkToPlayerLeft3::
     lockall
+    setflag FLAG_HIDE_YOUNGSTER
     clearflag FLAG_HIDE_YOUNGSTER2
     removeobject LOCALID_YOUNGSTER
     addobject LOCALID_YOUNGSTER2
