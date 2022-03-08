@@ -325,7 +325,7 @@
       "id": "LAYOUT_ROUTE117",
       "name": "Route117_Layout",
       "width": 60,
-      "height": 20,
+      "height": 25,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route117/border.bin",
@@ -4440,6 +4440,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/Route122_OlPottery/border.bin",
       "blockdata_filepath": "data/layouts/Route122_OlPottery/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_MIRROR_SHOP",
+      "name": "MauvilleCity_MirrorShop_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/MauvilleCity_MirrorShop/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_MirrorShop/map.bin"
     }
   ]
 }
