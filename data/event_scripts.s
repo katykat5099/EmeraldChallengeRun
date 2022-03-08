@@ -1061,3 +1061,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/RustboroCity_RustyRelicShop/scripts.inc"
+
+	.include "data/maps/Route118_ManectiteHouse/scripts.inc"
+
+	.include "data/maps/Route122_OlPottery/scripts.inc"

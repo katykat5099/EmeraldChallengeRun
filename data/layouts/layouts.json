@@ -4420,6 +4420,26 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/RustboroCity_RustyRelicShop/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_RustyRelicShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE118_MANECTITE_HOUSE",
+      "name": "Route118_ManectiteHouse_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route118_ManectiteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route118_ManectiteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE122_OL_POTTERY",
+      "name": "Route122_OlPottery_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route122_OlPottery/border.bin",
+      "blockdata_filepath": "data/layouts/Route122_OlPottery/map.bin"
     }
   ]
 }

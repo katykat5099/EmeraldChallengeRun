@@ -1111,6 +1111,10 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
         {
             BuyMenuDisplayMessage(taskId, gText_ThrowInPremierBall, BuyMenuReturnToItemList);
         }
+        else if (tItemId == ITEM_CRACKED_POT && tItemCount == 4 && AddBagItem(ITEM_CHIPPED_POT, 1) == TRUE)
+        {
+            BuyMenuDisplayMessage(taskId, gText_Only4Pots, BuyMenuReturnToItemList);
+        }
         else
         {
             BuyMenuReturnToItemList(taskId);

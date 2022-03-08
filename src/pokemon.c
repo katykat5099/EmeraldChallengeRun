@@ -8212,3 +8212,11 @@ u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
     }
     return 0;
 }
+
+bool8 CheckPartyManectric(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_MANECTRIC)
+        return TRUE;
+
+    return FALSE;
+}
