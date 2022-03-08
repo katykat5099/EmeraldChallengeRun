@@ -362,6 +362,45 @@ Route120_EventScript_Callie::
 	msgbox Route120_Text_CalliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route120_EventScript_AppleArtist::
+	lock
+	faceplayer
+	dotimebasedevents
+	goto_if_set FLAG_DAILY_RECEIVED_APPLE, Route120_EventScript_AlreadyGotApple
+	msgbox Route120_Text_PaintingAnApple, MSGBOX_DEFAULT
+	random 2
+	goto_if_eq VAR_RESULT, 0, Route120_EventScript_TheSweetApple
+	goto_if_eq VAR_RESULT, 1, Route120_EventScript_TheTartApple
+	release
+	end
+
+Route120_EventScript_AlreadyGotApple::
+    msgbox Route120_Text_AlreadyGotApple, MSGBOX_DEFAULT
+    release
+    end
+
+Route120_EventScript_TheSweetApple::
+    giveitem ITEM_SWEET_APPLE
+    setflag FLAG_DAILY_RECEIVED_APPLE
+    release
+    end
+
+Route120_EventScript_TheTartApple::
+    giveitem ITEM_TART_APPLE
+    setflag FLAG_DAILY_RECEIVED_APPLE
+    release
+    end
+
+Route120_Text_AlreadyGotApple:
+	.string "Apples are so tasty!$"
+
+Route120_Text_PaintingAnApple:
+    .string "I found this apple on the ground near\n"
+    .string "that tree over there and started to\p"
+    .string "paint it. I finished just a little\n"
+    .string "while ago. I don't need this apple\p"
+    .string "anymore. I know! You should have it.$"
+
 Route120_Text_StevenGreeting:
 	.string "STEVEN: Hm? {PLAYER}{KUN}, hi.\n"
 	.string "It's been a while.\p"
