@@ -30,4 +30,4 @@ MauvilleCity_MirrorShop_Text_MirrorGirl:
 
 MauvilleCity_MirrorShop_Text_MirrorCurse:
     .string "Don't look into the mirror.$"
-    
+
