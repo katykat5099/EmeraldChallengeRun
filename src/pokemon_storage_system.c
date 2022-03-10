@@ -656,7 +656,7 @@ static void PlaceMon(void);
 static void RefreshDisplayMon(void);
 static void SetMovingMonData(u8, u8);
 static void SetPlacedMonData(u8, u8);
-static void PurgeMonOrBoxMon(u8, u8);
+// static void PurgeMonOrBoxMon(u8, u8); //tx_difficulty_challenges
 static void SetShiftedMonData(u8, u8);
 static bool8 TryStorePartyMonInBox(u8);
 static void ResetSelectionAfterDeposit(void);
@@ -1443,7 +1443,7 @@ u8 CountPartyNonEggMons(void)
 {
     u16 i, count;
 
-    for (i = 0, count = 0; i < PARTY_SIZE; i++)
+    for (i = 0, count = 0; i < GetPartySize(); i++) //tx_difficulty_challenges
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE
             && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
@@ -1602,7 +1602,7 @@ static void Task_PCMainMenu(u8 taskId)
             DestroyTask(taskId);
             break;
         default:
-            if (task->tInput == OPTION_WITHDRAW && CountPartyMons() == PARTY_SIZE)
+            if (task->tInput == OPTION_WITHDRAW && CountPartyMons() == GetPartySize()) //tx_difficulty_challenges
             {
                 // Can't withdraw
                 FillWindowPixelBuffer(0, PIXEL_FILL(1));
@@ -2816,7 +2816,7 @@ static void Task_WithdrawMon(u8 taskId)
     switch (sStorage->state)
     {
     case 0:
-        if (CalculatePlayerPartyCount() == PARTY_SIZE)
+        if (CalculatePlayerPartyCount() == GetPartySize())
         {
             PrintMessage(MSG_PARTY_FULL);
             sStorage->state = 1;
@@ -5883,7 +5883,7 @@ static void GetCursorCoordsByPos(u8 cursorArea, u8 cursorPosition, u16 *x, u16 *
             *x = 104;
             *y = 52;
         }
-        else if (cursorPosition == PARTY_SIZE)
+        else if (cursorPosition == GetPartySize()) //tx_difficulty_challenges
         {
             *x = 152;
             *y = 132;
@@ -6427,7 +6427,7 @@ static void SetPlacedMonData(u8 boxId, u8 position)
     }
 }
 
-static void PurgeMonOrBoxMon(u8 boxId, u8 position)
+void PurgeMonOrBoxMon(u8 boxId, u8 position) //static //tx_difficulty_challenges
 {
     if (boxId == TOTAL_BOXES_COUNT)
         ZeroMonData(&gPlayerParty[position]);
@@ -6878,7 +6878,7 @@ static void TryRefreshDisplayMon(void)
         switch (sCursorArea)
         {
         case CURSOR_AREA_IN_PARTY:
-            if (sCursorPosition < PARTY_SIZE)
+            if (sCursorPosition < GetPartySize()) //tx_difficulty_challenges
             {
                 SetDisplayMonData(&gPlayerParty[sCursorPosition], MODE_PARTY);
                 break;
@@ -7392,14 +7392,14 @@ static u8 HandleInput_InParty(void)
         if (JOY_REPEAT(DPAD_UP))
         {
             if (--cursorPosition < 0)
-                cursorPosition = PARTY_SIZE;
+                cursorPosition = GetPartySize(); //tx_difficulty_challenges;
             if (cursorPosition != sCursorPosition)
                 retVal = INPUT_MOVE_CURSOR;
             break;
         }
         else if (JOY_REPEAT(DPAD_DOWN))
         {
-            if (++cursorPosition > PARTY_SIZE)
+            if (++cursorPosition > GetPartySize()) //tx_difficulty_challenges
                 cursorPosition = 0;
             if (cursorPosition != sCursorPosition)
                 retVal = INPUT_MOVE_CURSOR;
@@ -7430,7 +7430,7 @@ static u8 HandleInput_InParty(void)
 
         if (JOY_NEW(A_BUTTON))
         {
-            if (sCursorPosition == PARTY_SIZE)
+            if (sCursorPosition == GetPartySize()) //tx_difficulty_challenges
             {
                 if (sStorage->boxOption == OPTION_DEPOSIT)
                     return INPUT_CLOSE_BOX;
@@ -10169,4 +10169,36 @@ void UpdateSpeciesSpritePSS(struct BoxPokemon *boxMon)
         }
     }
     sJustOpenedBag = FALSE;
+}
+//tx_difficulty_challenges
+// searches for first pokemon in PC starting at Box 1
+// returns index of that pokemon, or 420 (boxes count * in box count) for none found
+u16 GetFirstBoxPokemon(void) // @Kurausukun
+{
+    u16 i;
+    u16 j;
+
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+        {
+            if (GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_SPECIES) != SPECIES_NONE &&
+            !GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_IS_EGG))
+            {
+                return (i * IN_BOX_COUNT) + j;
+            }
+        }
+    }
+    return IN_BOX_COUNT * TOTAL_BOXES_COUNT; // none found
+}
+void MoveFirstBoxPokemon(void) // @Kurausukun
+{
+    u16 position = GetFirstBoxPokemon();
+    if (position != IN_BOX_COUNT * TOTAL_BOXES_COUNT)
+    {
+        u16 boxNum = position / IN_BOX_COUNT;
+        u16 boxIndex = position - (boxNum * IN_BOX_COUNT);
+        BoxMonAtToMon(boxNum, boxIndex, &gPlayerParty[0]);
+        PurgeMonOrBoxMon(boxNum, boxIndex);
+    }
 }

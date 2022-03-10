@@ -38,5 +38,4 @@ porymap.project.cfg
 *.sym
 agbcc/
 Makefile
-Makefile
-Makefile
+*.js
