@@ -8220,3 +8220,11 @@ bool8 CheckPartyManectric(void)
 
     return FALSE;
 }
+
+bool8 CheckPartySteelix(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_STEELIX)
+        return TRUE;
+
+    return FALSE;
+}

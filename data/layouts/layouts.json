@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/MauvilleCity_MirrorShop/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_MirrorShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE114_STEELIXITE_HOUSE",
+      "name": "Route114_SteelixiteHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route114_SteelixiteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route114_SteelixiteHouse/map.bin"
     }
   ]
 }

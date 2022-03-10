@@ -1067,3 +1067,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route122_OlPottery/scripts.inc"
 
 	.include "data/maps/MauvilleCity_MirrorShop/scripts.inc"
+
+	.include "data/maps/Route114_SteelixiteHouse/scripts.inc"
