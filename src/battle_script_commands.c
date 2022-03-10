@@ -55,6 +55,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
+#include "tx_difficulty_challenges.h"
 #include "battle_util.h"
 
 extern struct Evolution gEvolutionTable[][EVOS_PER_MON];
@@ -13817,16 +13818,30 @@ void BattleDestroyYesNoCursorAt(u8 cursorPosition)
 
 static void Cmd_trygivecaughtmonnick(void)
 {
+    u8 typeChallenge = gSaveBlock1Ptr->txRandTypeChallenge; //tx_difficulty_challenges
+
     switch (gBattleCommunication[MULTIUSE_STATE])
     {
     case 0:
         HandleBattleWindow(24, 8, 29, 13, 0);
-        BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
-        gBattleCommunication[MULTIUSE_STATE]++;
-        gBattleCommunication[CURSOR_POSITION] = 0;
-        BattleCreateYesNoCursorAt(0);
+
+        if (gSaveBlock1Ptr->txRandNuzlocke) //tx_difficulty_challenges
+        {
+            gBattleCommunication[MULTIUSE_STATE]++;
+            BeginFastPaletteFade(3);
+        }
+        else
+        {
+            BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
+            gBattleCommunication[MULTIUSE_STATE]++;
+            gBattleCommunication[CURSOR_POSITION] = 0;
+            BattleCreateYesNoCursorAt(0);
+        }
         break;
     case 1:
+        if (gSaveBlock1Ptr->txRandNuzlocke) //tx_difficulty_challenges
+            gBattleCommunication[MULTIUSE_STATE]++;
+
         if (JOY_NEW(DPAD_UP) && gBattleCommunication[CURSOR_POSITION] != 0)
         {
             PlaySE(SE_SELECT);
@@ -13883,7 +13898,11 @@ static void Cmd_trygivecaughtmonnick(void)
         }
         break;
     case 4:
-        if (CalculatePlayerPartyCount() == PARTY_SIZE)
+        if (CalculatePlayerPartyCount() == GetPartySize()) //tx_difficulty_challenges
+            gBattlescriptCurrInstr += 5;
+        else if (typeChallenge != TX_CHALLENGE_TYPE_OFF && //tx_difficulty_challenges
+                            GetTypeBySpecies(GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerAttacker ^ BIT_SIDE]], MON_DATA_SPECIES), 1) != typeChallenge && 
+                            GetTypeBySpecies(GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerAttacker ^ BIT_SIDE]], MON_DATA_SPECIES), 2) != typeChallenge)
             gBattlescriptCurrInstr += 5;
         else
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);

@@ -13,6 +13,8 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "constants/species.h"
+#include "tx_difficulty_challenges.h"
 
 // this file's functions
 static bool8 HasSuperEffectiveMoveAgainstOpponents(bool8 noRng);
@@ -794,6 +796,9 @@ static bool8 ShouldUseItem(void)
     s32 i;
     u8 validMons = 0;
     bool8 shouldUse = FALSE;
+
+    if (gSaveBlock1Ptr->txRandNoItemTrainer) //tx_difficulty_challenges
+            return FALSE;
 
     // If teaming up with player and Pokemon is on the right, or Pokemon is currently held by Sky Drop
     if ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gActiveBattler) == B_POSITION_PLAYER_RIGHT)

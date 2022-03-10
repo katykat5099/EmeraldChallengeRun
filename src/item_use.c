@@ -44,6 +44,9 @@
 #include "constants/items.h"
 #include "constants/songs.h"
 
+#include "tx_difficulty_challenges.h"
+#include "battle_setup.h" //tx_difficulty_challenges
+
 static void SetUpItemUseCallback(u8 taskId);
 static void FieldCB_UseItemOnField(void);
 static void Task_CallItemUseOnFieldCallback(u8 taskId);
@@ -139,7 +142,7 @@ static void Task_CallItemUseOnFieldCallback(u8 taskId)
         sItemUseOnFieldCB(taskId);
 }
 
-static void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str)
+void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str) //static //tx_difficulty_challenges
 {
     StringExpandPlaceholders(gStringVar4, str);
     if (!isUsingRegisteredKeyItemOnField)
@@ -960,6 +963,14 @@ static u32 GetBallThrowableState(void)
     else if (gStatuses3[GetCatchingBattler()] & STATUS3_SEMI_INVULNERABLE)
         return BALL_THROW_UNABLE_SEMI_INVULNERABLE;
 #endif
+    else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsCaptureBlocked) //tx_difficulty_challenges
+        return BALL_THROW_UNABLE_NUZLOCKE_AREA;
+    else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsSpeciesClauseActive == 2) //already have THIS_mon
+        return BALL_THROW_UNABLE_NUZLOCKE_SPECIES;
+    else if (gSaveBlock1Ptr->txRandTypeChallenge && TypeChallengeCaptureBlocked) //pkmn not of the TYPE CHALLANGE type
+        return BALL_THROW_UNABLE_TYPE_CHALLENGE;
+    else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsSpeciesClauseActive)
+        return BALL_THROW_UNABLE_NUZLOCKE_SPECIES_EVO;
 
     return BALL_THROW_ABLE;
 }
@@ -1010,6 +1021,18 @@ void ItemUseInBattle_PokeBall(u8 taskId)
             DisplayItemMessageInBattlePyramid(taskId, sText_CantThrowPokeBall_SemiInvulnerable, Task_CloseBattlePyramidBagMessage);
         break;
     #endif
+    case BALL_THROW_UNABLE_NUZLOCKE_AREA:
+        DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallRoute);
+        break;
+    case BALL_THROW_UNABLE_NUZLOCKE_SPECIES:
+        DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallAlreadyCaught);
+        break;
+    case BALL_THROW_UNABLE_TYPE_CHALLENGE:
+        DisplayCannotUseItemMessage(taskId, FALSE, gText_TypeChallengeCantThrowPokeBall);
+        break;
+    case BALL_THROW_UNABLE_NUZLOCKE_SPECIES_EVO:
+        DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallSpeciesClause);
+        break;
     }
     if (IsPlayerPartyAndPokemonStorageFull() == FALSE) // have room for mon?
     {

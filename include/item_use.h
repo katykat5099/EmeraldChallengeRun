@@ -41,9 +41,16 @@ enum {
     BALL_THROW_UNABLE_TWO_MONS,
     BALL_THROW_UNABLE_NO_ROOM,
     BALL_THROW_UNABLE_SEMI_INVULNERABLE,
+    BALL_THROW_UNABLE_NO_CATCHING_FLAG,
+    BALL_THROW_UNABLE_NUZLOCKE_AREA,
+    BALL_THROW_UNABLE_NUZLOCKE_SPECIES,
+    BALL_THROW_UNABLE_TYPE_CHALLENGE,
+    BALL_THROW_UNABLE_NUZLOCKE_SPECIES_EVO,
     BALL_THROW_ABLE,
 };
 
 bool32 CanThrowBall(void);
+
+void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str); //tx_difficultiy_challenges
 
 #endif // GUARD_ITEM_USE_H
