@@ -24,7 +24,7 @@ Route118_ManectiteHouse_EventScript_GetMegaStone::
     release
     end
 
-Route118_ManectiteHouse_EventScript_ManAlreadyRecieved
+Route118_ManectiteHouse_EventScript_ManAlreadyRecieved::
     msgbox Route118_ManectiteHouse_Text_Man, MSGBOX_NPC
     end
 

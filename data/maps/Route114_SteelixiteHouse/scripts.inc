@@ -21,7 +21,7 @@ Route114_SteelixiteHouse_EventScript_GetSteelixite::
     release
     end
 
-Route114_SteelixiteHouse_EventScript_FatManRecieved
+Route114_SteelixiteHouse_EventScript_FatManRecieved::
     msgbox Route114_SteelixiteHouse_Text_FatMan2, MSGBOX_NPC
     end
 
