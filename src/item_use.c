@@ -953,48 +953,50 @@ void ItemUseOutOfBattle_EvolutionStone(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
-static u32 GetBallThrowableState(void)
+u32 CanThrowBall(void)
 {
     if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))
-     && IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)))
-        return BALL_THROW_UNABLE_TWO_MONS;
+        && IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)))
+    {
+        return 1;   // There are two present pokemon.
+    }
     else if (IsPlayerPartyAndPokemonStorageFull() == TRUE)
-        return BALL_THROW_UNABLE_NO_ROOM;
-#if B_SEMI_INVULNERABLE_CATCH >= GEN_4
+    {
+        return 2;   // No room for mon
+    }
+    #if B_SEMI_INVULNERABLE_CATCH >= GEN_4
     else if (gStatuses3[GetCatchingBattler()] & STATUS3_SEMI_INVULNERABLE)
-        return BALL_THROW_UNABLE_SEMI_INVULNERABLE;
-#endif
+    {
+        return 3;   // in semi-invulnerable state
+    }
+    #endif
     else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsCaptureBlocked) //tx_difficulty_challenges
-        return BALL_THROW_UNABLE_NUZLOCKE_AREA;
+    {
+        return 4;
+    }
     else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsSpeciesClauseActive == 2) //already have THIS_mon
-        return BALL_THROW_UNABLE_NUZLOCKE_SPECIES;
-    else if (gSaveBlock1Ptr->txRandTypeChallenge && TypeChallengeCaptureBlocked) //pkmn not of the TYPE CHALLANGE type
-        return BALL_THROW_UNABLE_TYPE_CHALLENGE;
+    {
+        return 5;
+    }
+    else if (gSaveBlock1Ptr->txRandTypeChallenge && TypeChallengeCaptureBlocked) //pkmn not of the TYPE CHALLENGE type
+    {
+        return 6;
+    }
     else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsSpeciesClauseActive)
-        return BALL_THROW_UNABLE_NUZLOCKE_SPECIES_EVO;
+    {
+        return 7;
+    }
 
-    return BALL_THROW_ABLE;
-}
-
-bool32 CanThrowBall(void)
-{
-    return (GetBallThrowableState() == BALL_THROW_ABLE);
+    return 0;   // usable
 }
 
 static const u8 sText_CantThrowPokeBall_TwoMons[] = _("Cannot throw a ball!\nThere are two Pokémon out there!\p");
 static const u8 sText_CantThrowPokeBall_SemiInvulnerable[] = _("Cannot throw a ball!\nThere's no Pokémon in sight!\p");
 void ItemUseInBattle_PokeBall(u8 taskId)
 {
-    #ifdef TX_DEBUGGING
-    if (FlagGet(FLAG_SYS_NO_CATCHING)){ //DEBUG
-        static const u8 sText_BallsCannotBeUsed[] = _("Poké Balls cannot be used\nright now!\p");
-        DisplayItemMessage(taskId, 1, sText_BallsCannotBeUsed, CloseItemMessage);
-        return;
-    }
-    #endif
-    switch (GetBallThrowableState())
+    switch (CanThrowBall())
     {
-    case BALL_THROW_ABLE:
+    case 0: // usable
     default:
         RemoveBagItem(gSpecialVar_ItemId, 1);
         if (!InBattlePyramid())
@@ -1002,72 +1004,38 @@ void ItemUseInBattle_PokeBall(u8 taskId)
         else
             CloseBattlePyramidBag(taskId);
         break;
-    case BALL_THROW_UNABLE_TWO_MONS:
+    case 1:  // There are two present pokemon.
         if (!InBattlePyramid())
             DisplayItemMessage(taskId, FONT_NORMAL, sText_CantThrowPokeBall_TwoMons, CloseItemMessage);
         else
             DisplayItemMessageInBattlePyramid(taskId, sText_CantThrowPokeBall_TwoMons, Task_CloseBattlePyramidBagMessage);
         break;
-    case BALL_THROW_UNABLE_NO_ROOM:
+    case 2: // No room for mon
         if (!InBattlePyramid())
             DisplayItemMessage(taskId, FONT_NORMAL, gText_BoxFull, CloseItemMessage);
         else
             DisplayItemMessageInBattlePyramid(taskId, gText_BoxFull, Task_CloseBattlePyramidBagMessage);
         break;
     #if B_SEMI_INVULNERABLE_CATCH >= GEN_4
-    case BALL_THROW_UNABLE_SEMI_INVULNERABLE:
+    case 3: // Semi-Invulnerable
         if (!InBattlePyramid())
             DisplayItemMessage(taskId, FONT_NORMAL, sText_CantThrowPokeBall_SemiInvulnerable, CloseItemMessage);
         else
             DisplayItemMessageInBattlePyramid(taskId, sText_CantThrowPokeBall_SemiInvulnerable, Task_CloseBattlePyramidBagMessage);
         break;
     #endif
-    case BALL_THROW_UNABLE_NUZLOCKE_AREA:
+    case 4:
         DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallRoute);
         break;
-    case BALL_THROW_UNABLE_NUZLOCKE_SPECIES:
+    case 5:
         DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallAlreadyCaught);
         break;
-    case BALL_THROW_UNABLE_TYPE_CHALLENGE:
+    case 6:
         DisplayCannotUseItemMessage(taskId, FALSE, gText_TypeChallengeCantThrowPokeBall);
         break;
-    case BALL_THROW_UNABLE_NUZLOCKE_SPECIES_EVO:
+    case 7:
         DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallSpeciesClause);
         break;
-    }
-    if (IsPlayerPartyAndPokemonStorageFull() == FALSE) // have room for mon?
-    {
-        switch (CanThrowBall())
-        {
-        case 0: // usable
-        default:
-            RemoveBagItem(gSpecialVar_ItemId, 1);
-            if (!InBattlePyramid())
-                Task_FadeAndCloseBagMenu(taskId);
-            else
-                CloseBattlePyramidBag(taskId);
-            break;
-        case 1:  // There are two present pokemon.
-            if (!InBattlePyramid())
-                DisplayItemMessage(taskId, FONT_NORMAL, sText_CantThrowPokeBall_TwoMons, CloseItemMessage);
-            else
-                DisplayItemMessageInBattlePyramid(taskId, sText_CantThrowPokeBall_TwoMons, Task_CloseBattlePyramidBagMessage);
-            break;
-        case 2: // No room for mon
-            if (!InBattlePyramid())
-                DisplayItemMessage(taskId, FONT_NORMAL, gText_BoxFull, CloseItemMessage);
-            else
-                DisplayItemMessageInBattlePyramid(taskId, gText_BoxFull, Task_CloseBattlePyramidBagMessage);
-            break;
-        #if B_SEMI_INVULNERABLE_CATCH >= GEN_4
-        case 3: // Semi-Invulnerable
-            if (!InBattlePyramid())
-                DisplayItemMessage(taskId, FONT_NORMAL, sText_CantThrowPokeBall_SemiInvulnerable, CloseItemMessage);
-            else
-                DisplayItemMessageInBattlePyramid(taskId, sText_CantThrowPokeBall_SemiInvulnerable, Task_CloseBattlePyramidBagMessage);
-            break;
-        #endif
-        }
     }
 }
 
