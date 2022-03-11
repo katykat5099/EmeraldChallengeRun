@@ -10,6 +10,7 @@ Route118_ManectiteHouse_EventScript_Man::
 	end
 
 Route118_ManectiteHouse_EventScript_PetalburgGymDefeated::
+    goto_if_set FLAG_RECEIVED_MANECTITE, Route118_ManectiteHouse_EventScript_ManAlreadyRecieved
     specialvar VAR_RESULT, CheckPartyManectric
 	goto_if_eq VAR_RESULT, TRUE, Route118_ManectiteHouse_EventScript_GetMegaStone
     msgbox Route118_ManectiteHouse_Text_Worthy, MSGBOX_DEFAULT
@@ -21,6 +22,10 @@ Route118_ManectiteHouse_EventScript_GetMegaStone::
     giveitem ITEM_MANECTITE
     setflag FLAG_RECEIVED_MANECTITE
     release
+    end
+
+Route118_ManectiteHouse_EventScript_ManAlreadyRecieved
+    msgbox Route118_ManectiteHouse_Text_Man, MSGBOX_NPC
     end
 
 Route118_ManectiteHouse_Text_Man:

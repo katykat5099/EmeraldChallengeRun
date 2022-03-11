@@ -6617,6 +6617,7 @@ static void InitCanReleaseMonVars(void)
         // Pokémon knows no restricted moves, can be released
         sStorage->releaseStatusResolved = TRUE;
         sStorage->canReleaseMon = TRUE;
+        AddBagItem(ITEM_RARE_CANDY, 10);//Should add? - Katy
     }
 
     sStorage->releaseCheckState = 0;
