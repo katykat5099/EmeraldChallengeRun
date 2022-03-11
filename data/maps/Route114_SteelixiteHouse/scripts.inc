@@ -9,18 +9,18 @@ Route114_SteelixiteHouse_EventScript_FatMan::
 Route114_SteelixiteHouse_EventScript_PetalburgGymDefeated::
     specialvar VAR_RESULT, CheckPartySteelix
 	goto_if_eq VAR_RESULT, TRUE, Route114_SteelixiteHouse_EventScript_GetSteelixite
-    msgbox Route114_SteelixiteHouse_Text_PleaseTakeIt, MSGBOX_DEFAULT
-    release
     end
 
 Route114_SteelixiteHouse_EventScript_GetSteelixite::
+    lock
+    msgbox Route114_SteelixiteHouse_Text_PleaseTakeIt, MSGBOX_DEFAULT
     giveitem ITEM_STEELIXITE
     setflag FLAG_RECEIVED_STEELIXITE
     release
     end
 
 Route114_SteelixiteHouse_Text_FatMan:
-    .string "I feel so sick…\n"
+    .string "I feel so sick…$"
 
 Route114_SteelixiteHouse_Text_PleaseTakeIt:
     .string "This stone is very precious to\n"

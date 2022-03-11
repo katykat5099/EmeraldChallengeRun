@@ -225,7 +225,7 @@
       "id": "LAYOUT_ROUTE107",
       "name": "Route107_Layout",
       "width": 60,
-      "height": 20,
+      "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route107/border.bin",
@@ -4460,6 +4460,26 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/Route114_SteelixiteHouse/border.bin",
       "blockdata_filepath": "data/layouts/Route114_SteelixiteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE107_ALAKAZITE_HOUSE",
+      "name": "Route107_AlakaziteHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route107_AlakaziteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route107_AlakaziteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE107_AGGRONITE_HOUSE",
+      "name": "Route107_AggroniteHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route107_AggroniteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route107_AggroniteHouse/map.bin"
     }
   ]
 }

@@ -13176,6 +13176,7 @@ void NuzlockeDeleteFaintedPartyPokemon(void) // @Kurausukun
                 if (monItem != ITEM_NONE)
                     AddBagItem(monItem, 1);
                 NuzlockeDeletePartyMon(i);
+                AddBagItem(ITEM_RARE_CANDY, 10);//Should add? - Katy
             }
         }
     }
@@ -13236,3 +13237,20 @@ bool8 CheckPartySteelix(void)
 
     return FALSE;
 }
+
+bool8 CheckPartyAggron(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_AGGRON)
+        return TRUE;
+
+    return FALSE;
+}
+
+bool8 CheckPartyAlakazam(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_ALAKAZAM)
+        return TRUE;
+
+    return FALSE;
+}
+

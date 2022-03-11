@@ -540,3 +540,5 @@ gSpecials::
 	def_special SetTotemBoost
 	def_special CheckPartyManectric
 	def_special CheckPartySteelix
+	def_special CheckPartyAggron
+	def_special CheckPartyAlakazam
