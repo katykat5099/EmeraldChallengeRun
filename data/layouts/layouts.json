@@ -4480,6 +4480,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/Route107_AggroniteHouse/border.bin",
       "blockdata_filepath": "data/layouts/Route107_AggroniteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE123_FORBIDDEN_REGION",
+      "name": "Route123_ForbiddenRegion_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route123_ForbiddenRegion/border.bin",
+      "blockdata_filepath": "data/layouts/Route123_ForbiddenRegion/map.bin"
     }
   ]
 }

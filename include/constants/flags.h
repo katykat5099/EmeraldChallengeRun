@@ -1190,7 +1190,7 @@
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
+#define FLAG_HIDE_CONTEST_ANABEL                                    0x479
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
@@ -1221,7 +1221,7 @@
 #define FLAG_RECEIVED_STEELIXITE                                    0x494
 #define FLAG_RECEIVED_AGGRONITE                                     0x495
 #define FLAG_RECEIVED_ALAKAZITE                                     0x496
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
+#define FLAG_RECEIVED_ALTARIANITE                                   0x497
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag

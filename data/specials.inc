@@ -542,3 +542,4 @@ gSpecials::
 	def_special CheckPartySteelix
 	def_special CheckPartyAggron
 	def_special CheckPartyAlakazam
+	def_special CheckPartyAltaria

@@ -1073,3 +1073,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route107_AlakaziteHouse/scripts.inc"
 
 	.include "data/maps/Route107_AggroniteHouse/scripts.inc"
+
+	.include "data/maps/Route123_ForbiddenRegion/scripts.inc"

@@ -618,7 +618,8 @@
     "Route113_GlassWorkshop"
   ],
   "gMapGroup_IndoorRoute123": [
-    "Route123_BerryMastersHouse"
+    "Route123_BerryMastersHouse",
+    "Route123_ForbiddenRegion"
   ],
   "gMapGroup_IndoorRoute119": [
     "Route119_WeatherInstitute_1F",
