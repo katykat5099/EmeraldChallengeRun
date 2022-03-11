@@ -45,7 +45,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_GROWLITHE]             = {{EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE}},
     [SPECIES_POLIWAG]               = {{EVO_LEVEL, 25, SPECIES_POLIWHIRL}},
     [SPECIES_POLIWHIRL]             = {{EVO_ITEM, ITEM_WATER_STONE, SPECIES_POLIWRATH},
-                                       {EVO_ITEM_HOLD_ITEM, ITEM_KINGS_ROCK, SPECIES_POLITOED},//param2
+                                       {EVO_ITEM, ITEM_KINGS_ROCK, SPECIES_POLITOED},
                                        {EVO_TRADE_ITEM, ITEM_KINGS_ROCK, SPECIES_POLITOED}},
     [SPECIES_ABRA]                  = {{EVO_LEVEL, 16, SPECIES_KADABRA}},
     [SPECIES_KADABRA]               = {{EVO_TRADE, 0, SPECIES_ALAKAZAM},
@@ -61,7 +61,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_GRAVELER]              = {{EVO_TRADE, 0, SPECIES_GOLEM}},
     [SPECIES_PONYTA]                = {{EVO_LEVEL, 40, SPECIES_RAPIDASH}},
     [SPECIES_SLOWPOKE]              = {{EVO_LEVEL, 37, SPECIES_SLOWBRO},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_SLOWKING},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_KINGS_ROCK, SPECIES_SLOWKING},
                                        {EVO_TRADE_ITEM, ITEM_KINGS_ROCK, SPECIES_SLOWKING}},
     [SPECIES_SLOWBRO]               = {{EVO_MEGA_EVOLUTION, ITEM_SLOWBRONITE, SPECIES_SLOWBRO_MEGA}},
     [SPECIES_MAGNEMITE]             = {{EVO_LEVEL, 30, SPECIES_MAGNETON}},
@@ -76,7 +76,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_GENGAR}},
     [SPECIES_GENGAR]                = {{EVO_MEGA_EVOLUTION, ITEM_GENGARITE, SPECIES_GENGAR_MEGA}},
     [SPECIES_ONIX]                  = {{EVO_TRADE_ITEM, ITEM_METAL_COAT, SPECIES_STEELIX},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_STEELIX}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_METAL_COAT, SPECIES_STEELIX}},
     [SPECIES_DROWZEE]               = {{EVO_LEVEL, 26, SPECIES_HYPNO}},
     [SPECIES_KRABBY]                = {{EVO_LEVEL, 28, SPECIES_KINGLER}},
     [SPECIES_VOLTORB]               = {{EVO_LEVEL, 30, SPECIES_ELECTRODE}},
@@ -88,21 +88,21 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_KOFFING]               = {{EVO_LEVEL, 35, SPECIES_WEEZING}},
     [SPECIES_RHYHORN]               = {{EVO_LEVEL, 42, SPECIES_RHYDON}},
     [SPECIES_RHYDON]                = {{EVO_TRADE_ITEM, ITEM_PROTECTOR, SPECIES_RHYPERIOR},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_RHYPERIOR}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_PROTECTOR, SPECIES_RHYPERIOR}},
     [SPECIES_CHANSEY]               = {{EVO_FRIENDSHIP, 0, SPECIES_BLISSEY}},
     [SPECIES_TANGELA]               = {{EVO_MOVE, MOVE_ANCIENT_POWER, SPECIES_TANGROWTH}},
     [SPECIES_KANGASKHAN]            = {{EVO_MEGA_EVOLUTION, ITEM_KANGASKHANITE, SPECIES_KANGASKHAN_MEGA}},
     [SPECIES_HORSEA]                = {{EVO_LEVEL, 32, SPECIES_SEADRA}},
     [SPECIES_SEADRA]                = {{EVO_TRADE_ITEM, ITEM_DRAGON_SCALE, SPECIES_KINGDRA},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_KINGDRA}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_DRAGON_SCALE, SPECIES_KINGDRA}},
     [SPECIES_GOLDEEN]               = {{EVO_LEVEL, 33, SPECIES_SEAKING}},
     [SPECIES_STARYU]                = {{EVO_ITEM, ITEM_WATER_STONE, SPECIES_STARMIE}},
     [SPECIES_SCYTHER]               = {{EVO_TRADE_ITEM, ITEM_METAL_COAT, SPECIES_SCIZOR},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_SCIZOR}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_METAL_COAT, SPECIES_SCIZOR}},
     [SPECIES_ELECTABUZZ]            = {{EVO_TRADE_ITEM, ITEM_ELECTIRIZER, SPECIES_ELECTIVIRE},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_ELECTIVIRE}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_ELECTIRIZER, SPECIES_ELECTIVIRE}},
     [SPECIES_MAGMAR]                = {{EVO_TRADE_ITEM, ITEM_MAGMARIZER, SPECIES_MAGMORTAR},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_MAGMORTAR}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_MAGMARIZER, SPECIES_MAGMORTAR}},
     [SPECIES_PINSIR]                = {{EVO_MEGA_EVOLUTION, ITEM_PINSIRITE, SPECIES_PINSIR_MEGA}},
     [SPECIES_MAGIKARP]              = {{EVO_LEVEL, 20, SPECIES_GYARADOS}},
     [SPECIES_GYARADOS]              = {{EVO_MEGA_EVOLUTION, ITEM_GYARADOSITE, SPECIES_GYARADOS_MEGA}},
@@ -117,7 +117,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
                                        {EVO_ITEM, ITEM_ICE_STONE, SPECIES_GLACEON},
                                        {EVO_MOVE_TYPE, TYPE_FAIRY, SPECIES_SYLVEON}},
     [SPECIES_PORYGON]               = {{EVO_TRADE_ITEM, ITEM_UPGRADE, SPECIES_PORYGON2},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_PORYGON2}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_UPGRADE, SPECIES_PORYGON2}},
     [SPECIES_OMANYTE]               = {{EVO_LEVEL, 40, SPECIES_OMASTAR}},
     [SPECIES_KABUTO]                = {{EVO_LEVEL, 40, SPECIES_KABUTOPS}},
     [SPECIES_AERODACTYL]            = {{EVO_MEGA_EVOLUTION, ITEM_AERODACTYLITE, SPECIES_AERODACTYL_MEGA}},
@@ -170,7 +170,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_HOUNDOOM]              = {{EVO_MEGA_EVOLUTION, ITEM_HOUNDOOMINITE, SPECIES_HOUNDOOM_MEGA}},
     [SPECIES_PHANPY]                = {{EVO_LEVEL, 25, SPECIES_DONPHAN}},
     [SPECIES_PORYGON2]              = {{EVO_TRADE_ITEM, ITEM_DUBIOUS_DISC, SPECIES_PORYGON_Z},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_PORYGON_Z}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_DUBIOUS_DISC, SPECIES_PORYGON_Z}},
     [SPECIES_TYROGUE]               = {{EVO_LEVEL_ATK_LT_DEF, 20, SPECIES_HITMONCHAN},
                                        {EVO_LEVEL_ATK_GT_DEF, 20, SPECIES_HITMONLEE},
                                        {EVO_LEVEL_ATK_EQ_DEF, 20, SPECIES_HITMONTOP}},
@@ -214,7 +214,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_CORPHISH]              = {{EVO_LEVEL, 30, SPECIES_CRAWDAUNT}},
     [SPECIES_FEEBAS]                = {{EVO_BEAUTY, 170, SPECIES_MILOTIC},
                                        {EVO_TRADE_ITEM, ITEM_PRISM_SCALE, SPECIES_MILOTIC},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_MILOTIC}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_PRISM_SCALE, SPECIES_MILOTIC}},
     [SPECIES_CARVANHA]              = {{EVO_LEVEL, 30, SPECIES_SHARPEDO}},
     [SPECIES_SHARPEDO]              = {{EVO_MEGA_EVOLUTION, ITEM_SHARPEDONITE, SPECIES_SHARPEDO_MEGA}},
     [SPECIES_TRAPINCH]              = {{EVO_LEVEL, 35, SPECIES_VIBRAVA}},
@@ -240,7 +240,7 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_WYNAUT]                = {{EVO_LEVEL, 15, SPECIES_WOBBUFFET}},
     [SPECIES_DUSKULL]               = {{EVO_LEVEL, 37, SPECIES_DUSCLOPS}},
     [SPECIES_DUSCLOPS]              = {{EVO_TRADE_ITEM, ITEM_REAPER_CLOTH, SPECIES_DUSKNOIR},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_DUSKNOIR}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_REAPER_CLOTH, SPECIES_DUSKNOIR}},
     [SPECIES_ROSELIA]               = {{EVO_ITEM, ITEM_SHINY_STONE, SPECIES_ROSERADE}},
     [SPECIES_SLAKOTH]               = {{EVO_LEVEL, 18, SPECIES_VIGOROTH}},
     [SPECIES_VIGOROTH]              = {{EVO_LEVEL, 36, SPECIES_SLAKING}},
@@ -248,9 +248,9 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_WHISMUR]               = {{EVO_LEVEL, 20, SPECIES_LOUDRED}},
     [SPECIES_LOUDRED]               = {{EVO_LEVEL, 40, SPECIES_EXPLOUD}},
     [SPECIES_CLAMPERL]              = {{EVO_TRADE_ITEM, ITEM_DEEP_SEA_TOOTH, SPECIES_HUNTAIL},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_HUNTAIL},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_DEEP_SEA_TOOTH, SPECIES_HUNTAIL},
                                        {EVO_TRADE_ITEM, ITEM_DEEP_SEA_SCALE, SPECIES_GOREBYSS},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_GOREBYSS}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_DEEP_SEA_SCALE, SPECIES_GOREBYSS}},
     [SPECIES_ABSOL]                 = {{EVO_MEGA_EVOLUTION, ITEM_ABSOLITE, SPECIES_ABSOL_MEGA}},
     [SPECIES_SHUPPET]               = {{EVO_LEVEL, 37, SPECIES_BANETTE}},
     [SPECIES_BANETTE]               = {{EVO_MEGA_EVOLUTION, ITEM_BANETTITE, SPECIES_BANETTE_MEGA}},
@@ -419,9 +419,9 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_HONEDGE]               = {{EVO_LEVEL, 35, SPECIES_DOUBLADE}},
     [SPECIES_DOUBLADE]              = {{EVO_ITEM, ITEM_DUSK_STONE, SPECIES_AEGISLASH}},
     [SPECIES_SPRITZEE]              = {{EVO_TRADE_ITEM, ITEM_SACHET, SPECIES_AROMATISSE},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_AROMATISSE}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_SACHET, SPECIES_AROMATISSE}},
     [SPECIES_SWIRLIX]               = {{EVO_TRADE_ITEM, ITEM_WHIPPED_DREAM, SPECIES_SLURPUFF},
-                                       {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_SLURPUFF}},//Change to hold item + use item
+                                       {EVO_ITEM, ITEM_WHIPPED_DREAM, SPECIES_SLURPUFF}},
     [SPECIES_INKAY]                 = {{EVO_LEVEL, 30, SPECIES_MALAMAR}},
     [SPECIES_BINACLE]               = {{EVO_LEVEL, 39, SPECIES_BARBARACLE}},
     [SPECIES_SKRELP]                = {{EVO_LEVEL, 48, SPECIES_DRAGALGE}},
