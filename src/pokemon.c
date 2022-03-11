@@ -3976,7 +3976,7 @@ static const u8 gSpeciesMapping[NUM_SPECIES+1] =
     [SPECIES_ORANGURU]          = EVO_TYPE_0,
     [SPECIES_PASSIMIAN]         = EVO_TYPE_0,
     [SPECIES_WIMPOD]            = EVO_TYPE_0,
-    [SPECIES_GOLISOPOD]         = EVO_TYPE_1,
+    [SPECIES_GOLISOPOD]         = EVO_TYPE_0,
     [SPECIES_SANDYGAST]         = EVO_TYPE_0,
     [SPECIES_PALOSSAND]         = EVO_TYPE_1,
     [SPECIES_PYUKUMUKU]         = EVO_TYPE_0,
@@ -6842,7 +6842,6 @@ static const u16 gRandomSpeciesEvo1[] =
     SPECIES_SALAZZLE          , //= EVO_TYPE_1,
     SPECIES_BEWEAR            , //= EVO_TYPE_1,
     SPECIES_STEENEE           , //= EVO_TYPE_1,
-    SPECIES_GOLISOPOD         , //= EVO_TYPE_1,
     SPECIES_PALOSSAND         , //= EVO_TYPE_1,
     SPECIES_HAKAMO_O          , //= EVO_TYPE_1,
     SPECIES_THWACKEY          , //= EVO_TYPE_1,
@@ -7065,171 +7064,6 @@ static const u16 gRandomSpeciesEvo2[] =
     SPECIES_FLORGES_BLUE_FLOWER , //= EVO_TYPE_2,
     SPECIES_FLORGES_WHITE_FLOWER , //= EVO_TYPE_2,
     SPECIES_AEGISLASH_BLADE    , //= EVO_TYPE_2,
-    #endif
-};
-#define RANDOM_SPECIES_EVO_LEGENDARY_COUNT ARRAY_COUNT(gRandomSpeciesEvoLegendary)
-static const u16 gRandomSpeciesEvoLegendary[] =
-{
-    SPECIES_ARTICUNO                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZAPDOS                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MOLTRES                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MEWTWO                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MEW                           , //= EVO_TYPE_LEGENDARY,
-    SPECIES_RAIKOU                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ENTEI                         , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SUICUNE                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_LUGIA                         , //= EVO_TYPE_LEGENDARY,
-    SPECIES_HO_OH                         , //= EVO_TYPE_LEGENDARY,
-    SPECIES_CELEBI                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_REGIROCK                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_REGICE                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_REGISTEEL                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_KYOGRE                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GROUDON                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_RAYQUAZA                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_LATIAS                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_LATIOS                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_JIRACHI                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_DEOXYS                        , //= EVO_TYPE_LEGENDARY,
-    #ifdef POKEMON_EXPANSION
-    SPECIES_UXIE                          , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MESPRIT                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_AZELF                         , //= EVO_TYPE_LEGENDARY,
-    SPECIES_DIALGA                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_PALKIA                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_HEATRAN                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_REGIGIGAS                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GIRATINA                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_CRESSELIA                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_PHIONE                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MANAPHY                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_DARKRAI                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SHAYMIN                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_VICTINI                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_COBALION                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_TERRAKION                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_VIRIZION                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_TORNADUS                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_THUNDURUS                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_RESHIRAM                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZEKROM                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_LANDORUS                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_KYUREM                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_KELDEO                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MELOETTA                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GENESECT                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_XERNEAS                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_YVELTAL                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZYGARDE                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_DIANCIE                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_HOOPA                         , //= EVO_TYPE_LEGENDARY,
-    SPECIES_VOLCANION                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_TYPE_NULL                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_TAPU_KOKO                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_TAPU_LELE                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_TAPU_BULU                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_TAPU_FINI                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_COSMOG                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_COSMOEM                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SOLGALEO                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_LUNALA                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_NIHILEGO                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_BUZZWOLE                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_PHEROMOSA                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_XURKITREE                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_CELESTEELA                    , //= EVO_TYPE_LEGENDARY,
-    SPECIES_KARTANA                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GUZZLORD                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_NECROZMA                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MAGEARNA                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MARSHADOW                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_POIPOLE                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_NAGANADEL                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_STAKATAKA                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_BLACEPHALON                   , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZERAORA                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MELTAN                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MELMETAL                      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZACIAN                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZAMAZENTA                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ETERNATUS                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_KUBFU                         , //= EVO_TYPE_LEGENDARY,
-    SPECIES_URSHIFU                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZARUDE                        , //= EVO_TYPE_LEGENDARY,
-    SPECIES_REGIELEKI                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_REGIDRAGO                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GLASTRIER                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SPECTRIER                     , //= EVO_TYPE_LEGENDARY,
-    SPECIES_CALYREX                       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARTICUNO_GALARIAN             , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZAPDOS_GALARIAN               , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MOLTRES_GALARIAN              , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GIRATINA_ORIGIN               , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SHAYMIN_SKY                   , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_FIGHTING               , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_FLYING                 , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_POISON                 , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_GROUND                 , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_ROCK                   , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_BUG                    , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_GHOST                  , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_STEEL                  , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_FIRE                   , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_WATER                  , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_GRASS                  , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_ELECTRIC               , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_PSYCHIC                , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_ICE                    , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_DRAGON                 , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_DARK                   , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ARCEUS_FAIRY                  , //= EVO_TYPE_LEGENDARY,
-    SPECIES_TORNADUS_THERIAN              , //= EVO_TYPE_LEGENDARY,
-    SPECIES_THUNDURUS_THERIAN             , //= EVO_TYPE_LEGENDARY,
-    SPECIES_LANDORUS_THERIAN              , //= EVO_TYPE_LEGENDARY,
-    SPECIES_KYUREM_WHITE                  , //= EVO_TYPE_LEGENDARY,
-    SPECIES_KYUREM_BLACK                  , //= EVO_TYPE_LEGENDARY,
-    SPECIES_KELDEO_RESOLUTE               , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MELOETTA_PIROUETTE            , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GENESECT_DOUSE_DRIVE          , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GENESECT_SHOCK_DRIVE          , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GENESECT_BURN_DRIVE           , //= EVO_TYPE_LEGENDARY,
-    SPECIES_GENESECT_CHILL_DRIVE          , //= EVO_TYPE_LEGENDARY,
-    SPECIES_XERNEAS_ACTIVE                , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZYGARDE_10                    , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZYGARDE_10_POWER_CONSTRUCT    , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZYGARDE_50_POWER_CONSTRUCT    , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZYGARDE_COMPLETE              , //= EVO_TYPE_LEGENDARY,
-    SPECIES_HOOPA_UNBOUND                 , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_FIGHTING             , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_FLYING               , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_POISON               , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_GROUND               , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_ROCK                 , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_BUG                  , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_GHOST                , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_STEEL                , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_FIRE                 , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_WATER                , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_GRASS                , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_ELECTRIC             , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_PSYCHIC              , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_ICE                  , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_DRAGON               , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_DARK                 , //= EVO_TYPE_LEGENDARY,
-    SPECIES_SILVALLY_FAIRY                , //= EVO_TYPE_LEGENDARY,
-    SPECIES_NECROZMA_DUSK_MANE            , //= EVO_TYPE_LEGENDARY,
-    SPECIES_NECROZMA_DAWN_WINGS           , //= EVO_TYPE_LEGENDARY,
-    SPECIES_NECROZMA_ULTRA                , //= EVO_TYPE_LEGENDARY,
-    SPECIES_MAGEARNA_ORIGINAL_COLOR       , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZACIAN_CROWNED_SWORD          , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZAMAZENTA_CROWNED_SHIELD      , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ETERNATUS_ETERNAMAX           , //= EVO_TYPE_LEGENDARY,
-    SPECIES_URSHIFU_RAPID_STRIKE_STYLE    , //= EVO_TYPE_LEGENDARY,
-    SPECIES_ZARUDE_DADA                   , //= EVO_TYPE_LEGENDARY,
-    SPECIES_CALYREX_ICE_RIDER             , //= EVO_TYPE_LEGENDARY,
-    SPECIES_CALYREX_SHADOW_RIDER          , //= EVO_TYPE_LEGENDARY,
     #endif
 };
 
@@ -13181,10 +13015,9 @@ void RandomizeSpeciesListEWRAMLegendary(u16 seed)
     free(stemp);
 }
 
-u16 PickRandomizedSpeciesFromEWRAM(u16 species, u16 depth) //internal use only!
+u16 PickRandomizedSpeciesFromEWRAM(u16 species, u16 depth)
 {
     u8 i;
-    u16 start_depth = depth;
 
     #ifdef GBA_PRINTF
         switch (depth)
@@ -13202,7 +13035,6 @@ u16 PickRandomizedSpeciesFromEWRAM(u16 species, u16 depth) //internal use only!
             mgba_printf(MGBA_LOG_DEBUG, "TX_RANDOM_OFFSET_MOVES: species = %d = %s", species, ConvertToAscii(gSpeciesNames[species]) );
             break;
         case TX_RANDOM_OFFSET_ENCOUNTER:
-            mgba_printf(MGBA_LOG_DEBUG, "gSaveBlock1Ptr->txRandEncounterSimilar == FALSE");
             mgba_printf(MGBA_LOG_DEBUG, "TX_RANDOM_OFFSET_ENCOUNTER: species = %d = %s", species, ConvertToAscii(gSpeciesNames[species]) );
             break;
         case TX_RANDOM_OFFSET_EVOLUTION:
@@ -13211,22 +13043,14 @@ u16 PickRandomizedSpeciesFromEWRAM(u16 species, u16 depth) //internal use only!
         }
     #endif
 
-    if ((depth == TX_RANDOM_OFFSET_TRAINER || depth == TX_RANDOM_OFFSET_ENCOUNTER) && gSaveBlock1Ptr->txRandEncounterMapBased)
-        depth += NuzlockeGetCurrentRegionMapSectionId() % 3;
-
-    if (depth == TX_RANDOM_OFFSET_MOVES && gSaveBlock1Ptr->txRandEncounterMapBased)
-        depth += species % 4;
-
     for (i = 0; i < depth; i++)
     {
         species = sSpeciesList[species];
         #ifdef GBA_PRINTF
-            //mgba_printf(MGBA_LOG_DEBUG, "depth[%d], species = %d", i, species );
+            mgba_printf(MGBA_LOG_DEBUG, "depth[%d], species = %d", i, species );
         #endif
     }
     #ifdef GBA_PRINTF
-        if (gSaveBlock1Ptr->txRandEncounterMapBased && (start_depth == TX_RANDOM_OFFSET_TRAINER || start_depth == TX_RANDOM_OFFSET_ENCOUNTER || start_depth == TX_RANDOM_OFFSET_MOVES))
-            mgba_printf(MGBA_LOG_DEBUG, "MapBased depth: start=%d/new=%d", start_depth, depth);
         mgba_printf(MGBA_LOG_DEBUG, "depth[%d], species = %d = %s", i, sSpeciesList[species], ConvertToAscii(gSpeciesNames[sSpeciesList[species]]));
         mgba_printf(MGBA_LOG_DEBUG, "");
     #endif
@@ -13237,6 +13061,12 @@ u16 PickRandomizedSpeciesFromEWRAM(u16 species, u16 depth) //internal use only!
 u16 PickRandomEvo0Species(u16 species) //For choosing a starter
 {
     return gRandomSpeciesEvo0[RandomSeeded(species, TRUE) % RANDOM_SPECIES_EVO_0_COUNT];
+}
+
+u8 PickRandomTypeChallengeType()
+{
+    u16 type = (RandomSeeded(1, TRUE) % (NUMBER_OF_MON_TYPES-1));
+    type = sTypeChallengeValidTypes[type];
 }
 
 u8 GetTypeBySpecies(u16 species, u8 type)
@@ -13262,13 +13092,9 @@ u8 GetTypeBySpecies(u16 species, u8 type)
 u16 GetSpeciesRandomSeeded(u16 species, u8 depth, u8 random, u8 seeded)
 {
     u8 slot = gSpeciesMapping[species];
-    u8 slot_new;
-
-    //if EVO_TYPE is SELF or LEGENDARY and !txRandEncounterLegendary
     if (!random || slot == EVO_TYPE_SELF || (slot == EVO_TYPE_LEGENDARY && !gSaveBlock1Ptr->txRandEncounterLegendary))
         return species;
 
-    //if not seeded, aka chaos
     if (!seeded)
     {
         if (gSaveBlock1Ptr->txRandEncounterLegendary)
@@ -13277,57 +13103,31 @@ u16 GetSpeciesRandomSeeded(u16 species, u8 depth, u8 random, u8 seeded)
             return sRandomSpecies[(Random() % RANDOM_SPECIES_COUNT) + 1];
     }
 
-    //if random, seeded and similar && Encounter || Trainer
-    if (gSaveBlock1Ptr->txRandEncounterSimilar && (depth == TX_RANDOM_OFFSET_ENCOUNTER || depth == TX_RANDOM_OFFSET_TRAINER))
+    if (!gSaveBlock1Ptr->txRandEncounterSimilar)
+        return PickRandomizedSpeciesFromEWRAM(species, depth);  //return sRandomSpecies[(RandomSeeded(species+offset, seeded) % RANDOM_SPECIES_COUNT) + 1];
+
+    //if random, seeded and similar
+    switch (slot)
     {
-        u16 result;
-        u8 offset = 0;
-
-        if (gSaveBlock1Ptr->txRandEncounterMapBased)
-            offset = NuzlockeGetCurrentRegionMapSectionId();
-
-        switch (slot)
-        {
-        case EVO_TYPE_0:
-            result = gRandomSpeciesEvo0[RandomSeeded(species+(depth+offset)*3, seeded) % RANDOM_SPECIES_EVO_0_COUNT];
-            break;
-        case EVO_TYPE_1:
-            result = gRandomSpeciesEvo1[RandomSeeded(species+(depth+offset)*3, seeded) % RANDOM_SPECIES_EVO_1_COUNT];
-            break;
-        case EVO_TYPE_2:
-            result = gRandomSpeciesEvo2[RandomSeeded(species+(depth+offset)*3, seeded) % RANDOM_SPECIES_EVO_2_COUNT];
-            break;
-        case EVO_TYPE_LEGENDARY:
-            result = gRandomSpeciesEvoLegendary[RandomSeeded(species+(depth+offset)*3, seeded) % RANDOM_SPECIES_EVO_LEGENDARY_COUNT];
-            break;
-        }
-
-        #ifdef GBA_PRINTF
-        mgba_printf(MGBA_LOG_DEBUG, "gSaveBlock1Ptr->txRandEncounterSimilar == TRUE");
-        mgba_printf(MGBA_LOG_DEBUG, "TX_RANDOM_OFFSET_ENCOUNTER: species = %d = %s; EVO_TYPE = %d", species, ConvertToAscii(gSpeciesNames[species]), slot);
-        mgba_printf(MGBA_LOG_DEBUG, "species+(depth+offset)*3 = %d + (%d + %d)*3 = %d", species, depth, offset, species+(depth+offset)*3);
-        mgba_printf(MGBA_LOG_DEBUG, "RandomSeeded(%d) =%d mod = %d", species+(depth+offset)*3, RandomSeeded(species+(depth+offset)*3, seeded), RandomSeeded(species+(depth+offset)*3, seeded) % RANDOM_SPECIES_EVO_0_COUNT);
-        slot_new = gSpeciesMapping[result];
-        mgba_printf(MGBA_LOG_DEBUG, "new species = %d = %s; EVO_TYPE = %d", result, ConvertToAscii(gSpeciesNames[result]), slot_new);
-        mgba_printf(MGBA_LOG_DEBUG, "");
-        #endif
-
-        return result;
+    case  EVO_TYPE_0:
+        return gRandomSpeciesEvo0[RandomSeeded(species+depth*3, seeded) % RANDOM_SPECIES_EVO_0_COUNT];
+        break;
+    case  EVO_TYPE_1:
+        return gRandomSpeciesEvo1[RandomSeeded(species+depth*3, seeded) % RANDOM_SPECIES_EVO_1_COUNT];
+        break;
+    case  EVO_TYPE_2:
+        return gRandomSpeciesEvo2[RandomSeeded(species+depth*3, seeded) % RANDOM_SPECIES_EVO_2_COUNT];
+        break;
     }
 
-    //else
-    return PickRandomizedSpeciesFromEWRAM(species, depth);
 }
 
 u16 GetEvolutionTargetSpeciesRandom(u16 species, u8 random, u8 seeded)
 {
     u8 slot = gSpeciesMapping[species];
-
-    //if EVO_TYPE is SELF or LEGENDARY and !txRandEncounterLegendary
     if (!random || slot == EVO_TYPE_SELF || (slot == EVO_TYPE_LEGENDARY && !gSaveBlock1Ptr->txRandEncounterLegendary))
         return species;
-    
-    //if not seeded, aka chaos
+
     if (!seeded)
     {
         if (gSaveBlock1Ptr->txRandEncounterLegendary)
@@ -13351,7 +13151,11 @@ u16 GetEvolutionTargetSpeciesRandom(u16 species, u8 random, u8 seeded)
     }
 }
 
-// Nuzzlocke
+u8 GetPartySize()
+{
+    return gSaveBlock1Ptr->txRandPartyLimit;
+}
+
 void NuzlockeDeletePartyMon(u8 position)
 {
     PurgeMonOrBoxMon(TOTAL_BOXES_COUNT, position);
@@ -13379,20 +13183,11 @@ void NuzlockeDeleteFaintedPartyPokemon(void) // @Kurausukun
     CompactPartySlots();
 }
 
-// Challenges
-u8 GetPartySize()
-{
-    return gSaveBlock1Ptr->txRandPartyLimit;
-}
 u8 GetPokemonCenterChallenge()
 {
     return !gSaveBlock1Ptr->txRandPkmnCenter;
 }
-u8 PickRandomTypeChallengeType()
-{
-    u16 type = (RandomSeeded(1, TRUE) % (NUMBER_OF_MON_TYPES-1));
-    type = sTypeChallengeValidTypes[type];
-}
+
 void RandomizeTypeEffectivenessListEWRAM(u16 seed)
 {
     u8 i;
@@ -13425,32 +13220,6 @@ u8 GetTypeEffectivenessRandom(u8 type)
         return type;
 
     return sTypeEffectivenessList[type];
-}
-// DEBUG
-void PrintTXSaveData(void)
-{
-    #ifdef GBA_PRINTF
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandChaos"             , gSaveBlock1Ptr->txRandChaos);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandEncounter"         , gSaveBlock1Ptr->txRandEncounter);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandEncounterSimilar"  , gSaveBlock1Ptr->txRandEncounterSimilar);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandEncounterMapBased" , gSaveBlock1Ptr->txRandEncounterMapBased);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandEncounterLegendary", gSaveBlock1Ptr->txRandEncounterLegendary);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandType"              , gSaveBlock1Ptr->txRandType);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandTypeEffectiveness" , gSaveBlock1Ptr->txRandTypeEffectiveness);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandAbilities"         , gSaveBlock1Ptr->txRandAbilities);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandMoves"             , gSaveBlock1Ptr->txRandMoves);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandTrainer"           , gSaveBlock1Ptr->txRandTrainer);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandEvolutions"        , gSaveBlock1Ptr->txRandEvolutions);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandEvolutionMethodes" , gSaveBlock1Ptr->txRandEvolutionMethodes);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandEvoLimit"          , gSaveBlock1Ptr->txRandEvoLimit);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandNuzlocke"          , gSaveBlock1Ptr->txRandNuzlocke);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandNuzlockeHardcore"  , gSaveBlock1Ptr->txRandNuzlockeHardcore);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandNoItemPlayer"      , gSaveBlock1Ptr->txRandNoItemPlayer);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandNoItemTrainer"     , gSaveBlock1Ptr->txRandNoItemTrainer);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandTypeChallenge"     , gSaveBlock1Ptr->txRandTypeChallenge);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandPartyLimit"        , gSaveBlock1Ptr->txRandPartyLimit);
-    mgba_printf(MGBA_LOG_DEBUG, "%d txRandPkmnCenter"        , gSaveBlock1Ptr->txRandPkmnCenter);
-    #endif
 }
 
 bool8 CheckPartyManectric(void)
@@ -13492,3 +13261,4 @@ bool8 CheckPartyAltaria(void)
 
     return FALSE;
 }
+

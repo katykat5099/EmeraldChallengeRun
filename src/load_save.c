@@ -206,7 +206,6 @@ void CopyPartyAndObjectsFromSave(void)
     else
         RandomizeSpeciesListEWRAMNormal(1);
     RandomizeTypeEffectivenessListEWRAM(1);
-    PrintTXSaveData();
     LoadPlayerParty();
     LoadObjectEvents();
 }

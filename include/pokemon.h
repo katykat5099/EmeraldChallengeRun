@@ -480,6 +480,5 @@ u8 GetPartySize();
 void NuzlockeDeletePartyMon(u8 position);
 void NuzlockeDeleteFaintedPartyPokemon(void) ;
 u8 GetPokemonCenterChallenge();
-void PrintTXSaveData(void);
 
 #endif // GUARD_POKEMON_H
