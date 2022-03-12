@@ -13492,3 +13492,11 @@ bool8 CheckPartyAltaria(void)
 
     return FALSE;
 }
+
+bool8 CheckPartyCamerupt(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_CAMERUPT)
+        return TRUE;
+
+    return FALSE;
+}

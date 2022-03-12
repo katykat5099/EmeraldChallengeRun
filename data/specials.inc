@@ -543,3 +543,4 @@ gSpecials::
 	def_special CheckPartyAggron
 	def_special CheckPartyAlakazam
 	def_special CheckPartyAltaria
+    def_special CheckPartyCamerupt

@@ -94,6 +94,31 @@ JaggedPass_EventScript_GuardDefeated::
 	releaseall
 	end
 
+JaggedPass_EventScript_CameruptHiker::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, JaggedPass_EventScript_CameruptHikerCheckCamerupt
+	msgbox JaggedPass_Text_TheVolcanoIsHotLikeCamerupt, MSGBOX_NPC
+	end
+
+JaggedPass_EventScript_CameruptHikerCheckCamerupt::
+    goto_if_set FLAG_RECEIVED_CAMERUPTITE, JaggedPass_EventScript_CameruptHikerBattle
+    specialvar VAR_RESULT, CheckPartyCamerupt
+    goto_if_eq VAR_RESULT, TRUE, JaggedPass_EventScript_CameruptHikerGiveMegaStone
+    msgbox JaggedPass_Text_TheVolcanoIsHotLikeCamerupt, MSGBOX_NPC
+    end
+
+JaggedPass_EventScript_CameruptHikerGiveMegaStone::
+    lock
+    faceplayer
+    msgbox JaggedPass_Text_TheMegaStone, MSGBOX_DEFAULT
+    giveitem ITEM_CAMERUPTITE
+    setflag FLAG_RECEIVED_CAMERUPTITE
+    release
+    end
+
+JaggedPass_EventScript_CameruptHikerBattle::
+    msgbox JaggedPass_Text_ReadyToShowMe, MSGBOX_NPC
+    end
+
 JaggedPass_EventScript_Eric::
 	trainerbattle_single TRAINER_ERIC, JaggedPass_Text_EricIntro, JaggedPass_Text_EricDefeat
 	msgbox JaggedPass_Text_EricPostBattle, MSGBOX_AUTOCLOSE
@@ -266,3 +291,19 @@ JaggedPass_Text_AutumnPostBattle:
 	.string "What is that odd rock protrusion\n"
 	.string "a little up the hill from here?$"
 
+JaggedPass_Text_TheVolcanoIsHotLikeCamerupt:
+    .string "There is a hot form of the POKeMON\n"
+    .string "CAMERUPT. It's shape is was so\p"
+    .string "familiar I just had to come to the\n"
+    .string "place it reminded me of.$"
+
+JaggedPass_Text_TheMegaStone:
+    .string "You have a MEGA RING?\n"
+    .string "Please, take this CAMERUPTITE from\p"
+    .string "me. I've always wanted to see the\n"
+    .string "form myself, so come visit me again\p"
+    .string "once you master this MEGA EVOLUTION.$"
+
+JaggedPass_Text_ReadyToShowMe:
+    .string "Are you ready to show me the\n"
+    .string "the MEGA EVOLUTION?$"

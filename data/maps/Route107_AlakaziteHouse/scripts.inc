@@ -19,6 +19,7 @@ Route107_AlakaziteHouse_EventScript_Zigzagoon2::
 
 Route107_AlakaziteHouse_EventScript_Zigzagoon3::
     lock
+    faceplayer
     msgbox Route107_AlakaziteHouse_Text_Zigzagoon2, MSGBOX_DEFAULT
     giveitem ITEM_ALAKAZITE
     setflag FLAG_RECEIVED_ALAKAZITE
