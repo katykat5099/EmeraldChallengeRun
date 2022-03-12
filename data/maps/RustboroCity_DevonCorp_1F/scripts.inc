@@ -8,6 +8,31 @@ RustboroCity_DevonCorp_1F_OnTransition:
 	call_if_unset FLAG_RETURNED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_BlockStairs
 	end
 
+RustboroCity_DevonCorp_1F_EventScript_AerodactyliteDude::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, RustboroCity_DevonCorp_1F_EventScript_AerodactyliteCheck
+	msgbox RustboroCity_DevonCorp_1F_Text_AerodactyliteDude, MSGBOX_NPC
+	end
+
+RustboroCity_DevonCorp_1F_EventScript_AerodactyliteCheck::
+    goto_if_set FLAG_RECEIVED_AERODACTYLITE, RustboroCity_DevonCorp_1F_EventScript_AerodactyliteAlreadyGot
+    specialvar VAR_RESULT, CheckPartyAerodactyl
+    goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_1F_EventScript_AerodactyliteGive
+    msgbox RustboroCity_DevonCorp_1F_Text_AerodactyliteDude, MSGBOX_NPC
+    end
+
+RustboroCity_DevonCorp_1F_EventScript_AerodactyliteGive::
+    lock
+    faceplayer
+    msgbox RustboroCity_DevonCorp_1F_Text_AerodactyliteGive, MSGBOX_DEFAULT
+    giveitem ITEM_AERODACTYLITE
+    setflag FLAG_RECEIVED_AERODACTYLITE
+    release
+    end
+
+RustboroCity_DevonCorp_1F_EventScript_AerodactyliteAlreadyGot::
+    msgbox RustboroCity_DevonCorp_1F_Text_IsTheFossilStronger, MSGBOX_NPC
+	end
+
 RustboroCity_DevonCorp_1F_EventScript_BlockStairs::
 	setobjectxyperm LOCALID_STAIR_GUARD, 14, 2
 	setobjectmovementtype LOCALID_STAIR_GUARD, MOVEMENT_TYPE_FACE_DOWN
@@ -144,3 +169,15 @@ RustboroCity_DevonCorp_1F_Text_ProductDisplay:
 	.string "tools for POKéMON TRAINERS, including\l"
 	.string "POKé BALLS and POKéNAV systems.”$"
 
+RustboroCity_DevonCorp_1F_Text_AerodactyliteDude:
+    .string "Do you like Fossil POKéMON?\n"
+    .string "If you ever get a flying fossil\p"
+    .string "POKéMON, come back to me.$"
+
+RustboroCity_DevonCorp_1F_Text_AerodactyliteGive:
+    .string "That's the flying fossil that I\n"
+    .string "wanted to see! Thank you for\p"
+    .string "showing me. Please, take this.$"
+
+RustboroCity_DevonCorp_1F_Text_IsTheFossilStronger:
+    .string "Is your fossil POKéMON stronger now?$"

@@ -1223,7 +1223,7 @@
 #define FLAG_RECEIVED_ALAKAZITE                                     0x496
 #define FLAG_RECEIVED_ALTARIANITE                                   0x497
 #define FLAG_RECEIVED_CAMERUPTITE                                   0x498
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
+#define FLAG_RECEIVED_AERODACTYLITE                                 0x499
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
 #define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag

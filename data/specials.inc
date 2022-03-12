@@ -544,3 +544,4 @@ gSpecials::
 	def_special CheckPartyAlakazam
 	def_special CheckPartyAltaria
     def_special CheckPartyCamerupt
+    def_special CheckPartyAerodactyl

@@ -13500,3 +13500,12 @@ bool8 CheckPartyCamerupt(void)
 
     return FALSE;
 }
+
+bool8 CheckPartyAerodactyl(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_AERODACTYL)
+        return TRUE;
+
+    return FALSE;
+}
+
