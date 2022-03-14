@@ -545,3 +545,6 @@ gSpecials::
 	def_special CheckPartyAltaria
     def_special CheckPartyCamerupt
     def_special CheckPartyAerodactyl
+    def_special CheckPartyKangaskhan
+    def_special CheckPartyPinsir
+    def_special CheckPartyAmpharos

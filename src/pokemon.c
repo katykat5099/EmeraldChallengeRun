@@ -13514,3 +13514,27 @@ bool8 CheckPartyAerodactyl(void)
     return FALSE;
 }
 
+bool8 CheckPartyKangaskhan(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_KANGASKHAN)
+        return TRUE;
+
+    return FALSE;
+}
+
+bool8 CheckPartyPinsir(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_PINSIR)
+        return TRUE;
+
+    return FALSE;
+}
+
+bool8 CheckPartyAmpharos(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_AMPHAROS)
+        return TRUE;
+
+    return FALSE;
+}
+
