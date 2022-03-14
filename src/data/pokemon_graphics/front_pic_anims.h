@@ -14628,6 +14628,21 @@ static const union AnimCmd *const sAnims_GIRATINA_ORIGIN[] ={
     sAnim_GIRATINA_ORIGIN_1,
 };
 
+static const union AnimCmd *const sAnims_SAWSBUCK_SUMMER[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SAWSBUCK_SUMMER_1,
+};
+
+static const union AnimCmd *const sAnims_SAWSBUCK_AUTUMN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SAWSBUCK_AUTUMN_1,
+};
+
+static const union AnimCmd *const sAnims_SAWSBUCK_WINTER[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SAWSBUCK_WINTER_1,
+};
+
 static const union AnimCmd *const sAnims_DARMANITAN_ZEN_MODE[] ={
     sAnim_GeneralFrame0,
     sAnim_DARMANITAN_ZEN_MODE_1,
@@ -15887,9 +15902,9 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD_FULL(DEERLING_SUMMER, sAnims_DEERLING),
     ANIM_CMD_FULL(DEERLING_AUTUMN, sAnims_DEERLING),
     ANIM_CMD_FULL(DEERLING_WINTER, sAnims_DEERLING),
-    ANIM_CMD_FULL(SAWSBUCK_SUMMER, sAnims_SAWSBUCK),
-    ANIM_CMD_FULL(SAWSBUCK_AUTUMN, sAnims_SAWSBUCK),
-    ANIM_CMD_FULL(SAWSBUCK_WINTER, sAnims_SAWSBUCK),
+    ANIM_CMD(SAWSBUCK_SUMMER),
+    ANIM_CMD(SAWSBUCK_AUTUMN),
+    ANIM_CMD(SAWSBUCK_WINTER),
     ANIM_CMD(TORNADUS_THERIAN),
     ANIM_CMD(THUNDURUS_THERIAN),
     ANIM_CMD(LANDORUS_THERIAN),
