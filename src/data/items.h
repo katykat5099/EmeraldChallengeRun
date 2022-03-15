@@ -3841,7 +3841,7 @@ const struct Item gItems[] =
     {
         .name = _("RustedSword"),
         .itemId = ITEM_RUSTED_SWORD,
-        .price = 0,
+        .price = 10000,
         .description = sRustedSwordDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -3852,7 +3852,7 @@ const struct Item gItems[] =
     {
         .name = _("RustedShield"),
         .itemId = ITEM_RUSTED_SHIELD,
-        .price = 0,
+        .price = 10000,
         .description = sRustedShieldDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -10028,6 +10028,28 @@ const struct Item gItems[] =
         .importance = 1,
         .unk19 = 1,
         .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_FAKE_SWORD] =
+    {
+        .name = _("RustedSword"),
+        .itemId = ITEM_RUSTED_SWORD,
+        .price = 10000,
+        .description = sRustedSwordDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_FAKE_SHIELD] =
+    {
+        .name = _("RustedShield"),
+        .itemId = ITEM_RUSTED_SHIELD,
+        .price = 10000,
+        .description = sRustedShieldDesc,
+        .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },

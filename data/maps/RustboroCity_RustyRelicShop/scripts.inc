@@ -69,8 +69,8 @@ RustboroCity_RustyRelicShop_EventScript_SetFlagShield::
 
 	.align 2
 RustboroCity_RustyRelicShop_Pokemart_Fakes:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_POTION
+	.2byte ITEM_FAKE_SWORD
+	.2byte ITEM_FAKE_SHIELD
 	.2byte ITEM_NONE
 	release
 	end
@@ -86,14 +86,14 @@ RustboroCity_RustyRelicShop_Pokemart_Real:
 	.align 2
 RustboroCity_RustyRelicShop_Pokemart_BuySwordReal:
     .2byte ITEM_RUSTED_SWORD
-    .2byte ITEM_POTION
+    .2byte ITEM_FAKE_SHIELD
     .2byte ITEM_NONE
 	release
 	end
 
 	.align 2
 RustboroCity_RustyRelicShop_Pokemart_BuyShieldReal:
-	.2byte ITEM_POKE_BALL
+	.2byte ITEM_FAKE_SWORD
     .2byte ITEM_RUSTED_SHIELD
     .2byte ITEM_NONE
 	release

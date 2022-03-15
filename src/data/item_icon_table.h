@@ -313,6 +313,8 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_FAIRY_MEMORY] = {gItemIcon_FairyMemory, gItemIconPalette_FairyMemory},
     [ITEM_RUSTED_SWORD] = {gItemIcon_RustedSword, gItemIconPalette_RustedWeapons},
     [ITEM_RUSTED_SHIELD] = {gItemIcon_RustedShield, gItemIconPalette_RustedWeapons},
+    [ITEM_FAKE_SWORD] = {gItemIcon_RustedSword, gItemIconPalette_RustedWeapons},
+    [ITEM_FAKE_SHIELD] = {gItemIcon_RustedShield, gItemIconPalette_RustedWeapons},
     // Colored Orbs
     [ITEM_RED_ORB] = {gItemIcon_RedOrb, gItemIconPalette_RedOrb},
     [ITEM_BLUE_ORB] = {gItemIcon_BlueOrb, gItemIconPalette_BlueOrb},
