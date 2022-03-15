@@ -607,6 +607,4 @@
 
 #define MAP_GROUPS_COUNT 37
 
-// static const u8 MAP_GROUP_COUNT[] = {57, 5, 5, 6, 7, 8, 9, 7, 7, 14, 9, 18, 10, 23, 13, 15, 15, 2, 2, 2, 4, 1, 1, 1, 108, 61, 89, 2, 1, 13, 1, 2, 3, 1, 1, 1, 2, 0};
-
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

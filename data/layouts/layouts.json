@@ -4485,7 +4485,7 @@
       "id": "LAYOUT_ROUTE123_FORBIDDEN_REGION",
       "name": "Route123_ForbiddenRegion_Layout",
       "width": 20,
-      "height": 20,
+      "height": 21,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route123_ForbiddenRegion/border.bin",
