@@ -21,4 +21,4 @@ Route123_ForbiddenRegion_Text_Artist:
     .string "You might need these.$"
 
 Route123_ForbiddenRegion_Text_Artist2:
-    .string "!$"
+    .string "…$"

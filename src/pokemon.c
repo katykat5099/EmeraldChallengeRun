@@ -14020,3 +14020,11 @@ bool8 CheckPartyAmpharos(void)
     return FALSE;
 }
 
+bool8 CheckPartyGenesect(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_GENESECT)
+        return TRUE;
+
+    return FALSE;
+}
+

@@ -548,3 +548,4 @@ gSpecials::
     def_special CheckPartyKangaskhan
     def_special CheckPartyPinsir
     def_special CheckPartyAmpharos
+    def_special CheckPartyGenesect
