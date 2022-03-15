@@ -3,7 +3,7 @@
   "name": "Route123_ForbiddenRegion",
   "layout": "LAYOUT_ROUTE123_FORBIDDEN_REGION",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_ROUTE_23",
+  "region_map_section": "MAPSEC_FORBIDDEN_LAND",
   "requires_flash": false,
   "weather": "WEATHER_FOG_DIAGONAL",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Route123_ForbiddenRegion_EventScript_Artist",
       "flag": "0"
     }
   ],
