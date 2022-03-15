@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE122_OL_POTTERY",
   "name": "Route122_OlPottery",
   "layout": "LAYOUT_ROUTE122_OL_POTTERY",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_ROUTE122",
   "region_map_section": "MAPSEC_ROUTE_22",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

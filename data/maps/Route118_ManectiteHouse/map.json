@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE118_MANECTITE_HOUSE",
   "name": "Route118_ManectiteHouse",
   "layout": "LAYOUT_ROUTE118_MANECTITE_HOUSE",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_RUSTBORO",
   "region_map_section": "MAPSEC_ROUTE_118",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
