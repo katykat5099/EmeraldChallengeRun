@@ -484,12 +484,6 @@ void BattleSetup_StartWildBattle(void)
             NuzlockeIsSpeciesClauseActive = NuzlockeIsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
 
             NuzlockeIsCaptureBlocked = NuzlockeFlagGet(NuzlockeGetCurrentRegionMapSectionId());
-
-            if (IsMonShiny(&gEnemyParty[0]))
-            {
-                NuzlockeIsCaptureBlocked = FALSE;
-                NuzlockeIsSpeciesClauseActive = FALSE;
-            }
         }
         else
         {
