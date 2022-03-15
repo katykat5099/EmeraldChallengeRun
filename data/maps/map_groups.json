@@ -326,7 +326,8 @@
     "Route117_PokemonDayCare"
   ],
   "gMapGroup_IndoorRoute121": [
-    "Route121_SafariZoneEntrance"
+    "Route121_SafariZoneEntrance",
+    "Route121_HeracroniteHouse"
   ],
   "gMapGroup_Dungeons": [
     "MeteorFalls_1F_1R",
