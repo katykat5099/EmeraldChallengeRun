@@ -18,7 +18,7 @@ Route123_ForbiddenRegion_EventScript_Artist2::
 
 Route123_ForbiddenRegion_Text_Artist:
     .string "Welcome.\p"
-    .string "You might need these.\n"
+    .string "You might need these.$"
 
 Route123_ForbiddenRegion_Text_Artist2:
     .string "!$"
