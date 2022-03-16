@@ -1227,7 +1227,7 @@
 #define FLAG_RECEIVED_KANGASKHANITE                                 0x49A
 #define FLAG_RECEIVED_PINSIRITE                                     0x49B
 #define FLAG_RECEIVED_AMPHAROSITE                                   0x49C
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
+#define FLAG_RECEIVED_HERACRONITE                                   0x49D
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag

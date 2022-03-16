@@ -14030,3 +14030,11 @@ bool8 CheckPartyGenesect(void)
     return FALSE;
 }
 
+bool8 CheckPartyHeracross(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_HERACROSS)
+        return TRUE;
+
+    return FALSE;
+}
+

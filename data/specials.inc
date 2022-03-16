@@ -549,3 +549,4 @@ gSpecials::
     def_special CheckPartyPinsir
     def_special CheckPartyAmpharos
     def_special CheckPartyGenesect
+    def_special CheckPartyHeracross
