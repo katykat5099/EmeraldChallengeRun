@@ -734,11 +734,11 @@
 #define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_RECEIVED_DRIVES          0x2B9
-#define FLAG_RECEIVED_GALARICA_ITEMS  0x2BA
-#define FLAG_HIDE_YOUNGSTER           0x2BB // In Department f4
+#define FLAG_MOVE_TUTOR_TAUGHT_RELIC_SONG 0x2B7
+#define FLAG_HIDE_MELOETTA_CAVE_HIKER     0x2B8
+#define FLAG_RECEIVED_DRIVES              0x2B9
+#define FLAG_RECEIVED_GALARICA_ITEMS      0x2BA
+#define FLAG_HIDE_YOUNGSTER               0x2BB // In Department f4
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
@@ -1228,7 +1228,7 @@
 #define FLAG_RECEIVED_PINSIRITE                                     0x49B
 #define FLAG_RECEIVED_AMPHAROSITE                                   0x49C
 #define FLAG_RECEIVED_HERACRONITE                                   0x49D
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
+#define FLAG_RECEIVED_AUDINITE                                      0x49E
 #define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag

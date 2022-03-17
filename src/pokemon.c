@@ -14038,3 +14038,19 @@ bool8 CheckPartyHeracross(void)
     return FALSE;
 }
 
+bool8 CheckPartyAudino(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_AUDINO)
+        return TRUE;
+
+    return FALSE;
+}
+
+bool8 CheckPartyMeloetta(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_MELOETTA)
+        return TRUE;
+
+    return FALSE;
+}
+

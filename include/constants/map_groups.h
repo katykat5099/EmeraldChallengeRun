@@ -249,6 +249,7 @@
 #define MAP_SOOTOPOLIS_CITY_LOTAD_AND_SEEDOT_HOUSE   (12 | (15 << 8))
 #define MAP_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F  (13 | (15 << 8))
 #define MAP_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_B1F (14 | (15 << 8))
+#define MAP_SOOTOPOLIS_CITY_AUDINITE_HOUSE           (15 | (15 << 8))
 
 // gMapGroup_IndoorEverGrande
 #define MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM      (0 | (16 << 8))
@@ -606,6 +607,11 @@
 #define MAP_ROUTE107_ALAKAZITE_HOUSE (0 | (36 << 8))
 #define MAP_ROUTE107_AGGRONITE_HOUSE (1 | (36 << 8))
 
-#define MAP_GROUPS_COUNT 37
+// gMapGroup_IndoorRoute126
+#define MAP_ROUTE126_MELOETTA_CAVE (0 | (37 << 8))
+
+#define MAP_GROUPS_COUNT 38
+
+// static const u8 MAP_GROUP_COUNT[] = {57, 5, 5, 6, 7, 8, 9, 7, 7, 14, 9, 18, 10, 23, 13, 16, 15, 2, 2, 2, 4, 1, 1, 2, 108, 61, 89, 2, 1, 13, 1, 2, 3, 1, 1, 1, 2, 1, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

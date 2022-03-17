@@ -1077,3 +1077,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route123_ForbiddenRegion/scripts.inc"
 
 	.include "data/maps/Route121_HeracroniteHouse/scripts.inc"
+
+	.include "data/maps/SootopolisCity_AudiniteHouse/scripts.inc"
+
+	.include "data/maps/Route126_MeloettaCave/scripts.inc"

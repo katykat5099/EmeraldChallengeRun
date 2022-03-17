@@ -235,3 +235,25 @@ MoveTutor_Text_ExplosionTaught:
 	.string "to ignite my own EXPLOSION…\p"
 	.string "Maybe it's because deep down,\n"
 	.string "I would rather stay here…$"
+
+MoveTutor_Text_RelicSongTeach:
+    .string "Ah, the mythical POKeMON, MELOETTA.\n"
+    .string "Known widely for it's beautiful\l"
+    .string "song. But, what's this? You say\p"
+    .string "your MELOETTA does not know this\n"
+    .string "song I speak of? Well, lucky for\l"
+    .string "you and your MELOETTA, I just so\p"
+    .string "happen to know it. Would you like\n"
+    .string "me to teach the RELIC SONG?$"
+
+MoveTutor_Text_RelicSongDeclined:
+    .string "You do not wish to hear the song?\n"
+    .string "now THAT is unheard of.$"
+
+MoveTutor_Text_RelicSongWhichMon:
+    .string "Show me your MELOETTA and I will\n"
+    .string "quickly teach it.$"
+
+MoveTutor_Text_RelicSongTaught:
+    .string "The RELIC SONG is both a move so\n"
+    .string "powerful in battle, and to the ears.$"

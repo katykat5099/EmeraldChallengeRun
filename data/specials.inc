@@ -550,3 +550,5 @@ gSpecials::
     def_special CheckPartyAmpharos
     def_special CheckPartyGenesect
     def_special CheckPartyHeracross
+    def_special CheckPartyAudino
+    def_special CheckPartyMeloetta

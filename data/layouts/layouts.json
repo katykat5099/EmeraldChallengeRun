@@ -4500,6 +4500,26 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/Route121_HeracroniteHouse/border.bin",
       "blockdata_filepath": "data/layouts/Route121_HeracroniteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOOTOPOLIS_CITY_AUDINITE_HOUSE",
+      "name": "SootopolisCity_AudiniteHouse_Layout",
+      "width": 8,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SootopolisCity_AudiniteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/SootopolisCity_AudiniteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE126_MELOETTA_CAVE",
+      "name": "Route126_MeloettaCave_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route126_MeloettaCave/border.bin",
+      "blockdata_filepath": "data/layouts/Route126_MeloettaCave/map.bin"
     }
   ]
 }

@@ -258,6 +258,32 @@ MoveTutor_EventScript_ExplosionTaught::
 	release
 	end
 
+Route126_MeloettaCave_EventScript_RelicSongTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_RELIC_SONG, MoveTutor_EventScript_RelicSongTaught
+	msgbox MoveTutor_Text_RelicSongTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RelicSongDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RelicSongDeclined
+	msgbox MoveTutor_Text_RelicSongWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, TUTOR_MOVE_RELIC_SONG
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RelicSongDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_RELIC_SONG
+	goto MoveTutor_EventScript_RelicSongTaught
+	end
+
+MoveTutor_EventScript_RelicSongDeclined::
+	msgbox MoveTutor_Text_RelicSongDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RelicSongTaught::
+	msgbox MoveTutor_Text_RelicSongTaught, MSGBOX_DEFAULT
+	release
+	end
+
 MoveTutor_EventScript_OpenPartyMenu::
 	special ChooseMonForMoveTutor
 	waitstate

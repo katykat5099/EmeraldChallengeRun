@@ -37,7 +37,8 @@
     "gMapGroup_IndoorRoute124",
     "gMapGroup_IndoorRoute118",
     "gMapGroup_IndoorRoute122",
-    "gMapGroup_IndoorRoute107"
+    "gMapGroup_IndoorRoute107",
+    "gMapGroup_IndoorRoute126"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -282,7 +283,8 @@
     "SootopolisCity_House7",
     "SootopolisCity_LotadAndSeedotHouse",
     "SootopolisCity_MysteryEventsHouse_1F",
-    "SootopolisCity_MysteryEventsHouse_B1F"
+    "SootopolisCity_MysteryEventsHouse_B1F",
+    "SootopolisCity_AudiniteHouse"
   ],
   "gMapGroup_IndoorEverGrande": [
     "EverGrandeCity_SidneysRoom",
@@ -639,5 +641,8 @@
   "gMapGroup_IndoorRoute107": [
     "Route107_AlakaziteHouse",
     "Route107_AggroniteHouse"
+  ],
+  "gMapGroup_IndoorRoute126": [
+    "Route126_MeloettaCave"
   ]
 }
