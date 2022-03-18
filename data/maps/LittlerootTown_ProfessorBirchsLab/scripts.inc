@@ -120,6 +120,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	waitfanfare
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_DEFAULT
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
+	clearflag FLAG_HIDE_KATY
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter::

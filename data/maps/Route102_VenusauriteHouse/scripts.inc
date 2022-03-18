@@ -28,7 +28,7 @@ Route102_VenusauriteHouse_EventScript_VenusauriteGot:
 
 Route102_VenusauriteHouse_Text_OldMan:
     .string "Have you ever been to KANTO?\p"
-    .string "Of The three starter POKeMON\l"
+    .string "Of The three starter POKéMON\l"
     .string "every new trainer gets to\n"
     .string "choose either SQUIRTLE,\p"
     .string "BULBASAUR or CHARMANDER.\l"

@@ -731,8 +731,8 @@
 #define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
 #define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
 #define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
-#define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
-#define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
+#define FLAG_HIDE_KATY                    0x2B4
+#define FLAG_MET_KATY                     0x2B5
 #define FLAG_ITEM_ROUTE_104_PRISON_BOTTLE 0x2B6
 #define FLAG_MOVE_TUTOR_TAUGHT_RELIC_SONG 0x2B7
 #define FLAG_HIDE_MELOETTA_CAVE_HIKER     0x2B8
