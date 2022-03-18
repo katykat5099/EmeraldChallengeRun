@@ -269,8 +269,9 @@
 #define MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_2F (14 | (16 << 8))
 
 // gMapGroup_IndoorRoute104
-#define MAP_ROUTE104_MR_BRINEYS_HOUSE         (0 | (17 << 8))
-#define MAP_ROUTE104_PRETTY_PETAL_FLOWER_SHOP (1 | (17 << 8))
+#define MAP_ROUTE104_MR_BRINEYS_HOUSE          (0 | (17 << 8))
+#define MAP_ROUTE104_PRETTY_PETAL_FLOWER_SHOP  (1 | (17 << 8))
+#define MAP_ROUTE104_HOOPA_PRISON_BOTTLE_HOUSE (2 | (17 << 8))
 
 // gMapGroup_IndoorRoute111
 #define MAP_ROUTE111_WINSTRATE_FAMILYS_HOUSE (0 | (18 << 8))
@@ -610,8 +611,12 @@
 // gMapGroup_IndoorRoute126
 #define MAP_ROUTE126_MELOETTA_CAVE (0 | (37 << 8))
 
-#define MAP_GROUPS_COUNT 38
+// gMapGroup_IndoorRoute102
+#define MAP_ROUTE102_GARDEVOIRITE_HOUSE (0 | (38 << 8))
+#define MAP_ROUTE102_VENUSAURITE_HOUSE  (1 | (38 << 8))
 
-// static const u8 MAP_GROUP_COUNT[] = {57, 5, 5, 6, 7, 8, 9, 7, 7, 14, 9, 18, 10, 23, 13, 16, 15, 2, 2, 2, 4, 1, 1, 2, 108, 61, 89, 2, 1, 13, 1, 2, 3, 1, 1, 1, 2, 1, 0};
+#define MAP_GROUPS_COUNT 39
+
+// static const u8 MAP_GROUP_COUNT[] = {57, 5, 5, 6, 7, 8, 9, 7, 7, 14, 9, 18, 10, 23, 13, 16, 15, 3, 2, 2, 4, 1, 1, 2, 108, 61, 89, 2, 1, 13, 1, 2, 3, 1, 1, 1, 2, 1, 2, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

@@ -14054,3 +14054,23 @@ bool8 CheckPartyMeloetta(void)
     return FALSE;
 }
 
+bool8 CheckPartyGardevoir(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2, 0) == SPECIES_GARDEVOIR)
+        return TRUE;
+
+    return FALSE;
+}
+
+bool8 CheckPartyVenusaur(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_VENUSAUR)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+

@@ -552,3 +552,5 @@ gSpecials::
     def_special CheckPartyHeracross
     def_special CheckPartyAudino
     def_special CheckPartyMeloetta
+    def_special CheckPartyGardevoir
+    def_special CheckPartyVenusaur

@@ -1081,3 +1081,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/SootopolisCity_AudiniteHouse/scripts.inc"
 
 	.include "data/maps/Route126_MeloettaCave/scripts.inc"
+
+	.include "data/maps/Route102_GardevoiriteHouse/scripts.inc"
+
+	.include "data/maps/Route102_VenusauriteHouse/scripts.inc"
+
+	.include "data/maps/Route104_HoopaPrisonBottleHouse/scripts.inc"

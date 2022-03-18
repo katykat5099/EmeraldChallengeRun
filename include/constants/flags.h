@@ -733,7 +733,7 @@
 #define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
 #define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
+#define FLAG_ITEM_ROUTE_104_PRISON_BOTTLE 0x2B6
 #define FLAG_MOVE_TUTOR_TAUGHT_RELIC_SONG 0x2B7
 #define FLAG_HIDE_MELOETTA_CAVE_HIKER     0x2B8
 #define FLAG_RECEIVED_DRIVES              0x2B9
@@ -1229,8 +1229,8 @@
 #define FLAG_RECEIVED_AMPHAROSITE                                   0x49C
 #define FLAG_RECEIVED_HERACRONITE                                   0x49D
 #define FLAG_RECEIVED_AUDINITE                                      0x49E
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
+#define FLAG_RECEIVED_GARDEVOIRITE                                  0x49F
+#define FLAG_RECEIVED_VENUSAURITE                                   0x4A0
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag

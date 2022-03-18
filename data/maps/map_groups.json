@@ -38,7 +38,8 @@
     "gMapGroup_IndoorRoute118",
     "gMapGroup_IndoorRoute122",
     "gMapGroup_IndoorRoute107",
-    "gMapGroup_IndoorRoute126"
+    "gMapGroup_IndoorRoute126",
+    "gMapGroup_IndoorRoute102"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -305,7 +306,8 @@
   ],
   "gMapGroup_IndoorRoute104": [
     "Route104_MrBrineysHouse",
-    "Route104_PrettyPetalFlowerShop"
+    "Route104_PrettyPetalFlowerShop",
+    "Route104_HoopaPrisonBottleHouse"
   ],
   "gMapGroup_IndoorRoute111": [
     "Route111_WinstrateFamilysHouse",
@@ -644,5 +646,9 @@
   ],
   "gMapGroup_IndoorRoute126": [
     "Route126_MeloettaCave"
+  ],
+  "gMapGroup_IndoorRoute102": [
+    "Route102_GardevoiriteHouse",
+    "Route102_VenusauriteHouse"
   ]
 }

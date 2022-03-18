@@ -4520,6 +4520,36 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route126_MeloettaCave/border.bin",
       "blockdata_filepath": "data/layouts/Route126_MeloettaCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE102_GARDEVOIRITE_HOUSE",
+      "name": "Route102_GardevoiriteHouse_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route102_GardevoiriteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route102_GardevoiriteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE102_VENUSAURITE_HOUSE",
+      "name": "Route102_VenusauriteHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route102_VenusauriteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route102_VenusauriteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104_HOOPA_PRISON_BOTTLE_HOUSE",
+      "name": "Route104_HoopaPrisonBottleHouse_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route104_HoopaPrisonBottleHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route104_HoopaPrisonBottleHouse/map.bin"
     }
   ]
 }
