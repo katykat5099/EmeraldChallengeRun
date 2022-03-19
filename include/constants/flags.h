@@ -730,7 +730,7 @@
 #define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
 #define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
 #define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
-#define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
+#define FLAG_GRISEOUS_ORB_OBTAINED        0x2B3
 #define FLAG_HIDE_KATY                    0x2B4
 #define FLAG_MET_KATY                     0x2B5
 #define FLAG_ITEM_ROUTE_104_PRISON_BOTTLE 0x2B6

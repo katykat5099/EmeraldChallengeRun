@@ -276,6 +276,7 @@
 // gMapGroup_IndoorRoute111
 #define MAP_ROUTE111_WINSTRATE_FAMILYS_HOUSE (0 | (18 << 8))
 #define MAP_ROUTE111_OLD_LADYS_REST_STOP     (1 | (18 << 8))
+#define MAP_ROUTE111_GIRATINA_CAVE           (2 | (18 << 8))
 
 // gMapGroup_IndoorRoute112
 #define MAP_ROUTE112_CABLE_CAR_STATION   (0 | (19 << 8))
@@ -616,7 +617,5 @@
 #define MAP_ROUTE102_VENUSAURITE_HOUSE  (1 | (38 << 8))
 
 #define MAP_GROUPS_COUNT 39
-
-// static const u8 MAP_GROUP_COUNT[] = {57, 5, 5, 6, 7, 8, 9, 7, 7, 14, 9, 18, 10, 23, 13, 16, 15, 3, 2, 2, 4, 1, 1, 2, 108, 61, 89, 2, 1, 13, 1, 2, 3, 1, 1, 1, 2, 1, 2, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

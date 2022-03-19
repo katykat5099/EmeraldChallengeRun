@@ -1087,3 +1087,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route102_VenusauriteHouse/scripts.inc"
 
 	.include "data/maps/Route104_HoopaPrisonBottleHouse/scripts.inc"
+
+	.include "data/maps/Route111_GiratinaCave/scripts.inc"

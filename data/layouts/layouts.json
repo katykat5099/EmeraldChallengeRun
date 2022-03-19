@@ -4550,6 +4550,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/Route104_HoopaPrisonBottleHouse/border.bin",
       "blockdata_filepath": "data/layouts/Route104_HoopaPrisonBottleHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE111_GIRATINA_CAVE",
+      "name": "Route111_GiratinaCave_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route111_GiratinaCave/border.bin",
+      "blockdata_filepath": "data/layouts/Route111_GiratinaCave/map.bin"
     }
   ]
 }
