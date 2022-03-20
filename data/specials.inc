@@ -556,3 +556,5 @@ gSpecials::
     def_special CheckPartyVenusaur
     def_special CheckPartyTyranitar
     def_special CheckPartyGarchomp
+    def_special CheckPartyHoundoom
+    def_special CheckPartySalamence

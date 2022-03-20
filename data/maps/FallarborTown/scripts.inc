@@ -39,6 +39,22 @@ FallarborTown_EventScript_Azurill::
 	release
 	end
 
+FallarborTown_EventScript_RedNectarRichBoy::
+	lock
+    faceplayer
+    msgbox FallarborTown_Text_RedNectarRichBoy, MSGBOX_DEFAULT
+    giveitem ITEM_RED_NECTAR, 5
+    setflag FLAG_RECEIVED_RED_NECTAR
+    release
+    end
+
+FallarborTown_Text_RedNectarRichBoy:
+    .string "Do you know the POKeMON\p"
+    .string "ORICORIO? They can change\l"
+    .string "their dancing style just\p"
+    .string "by smelling NECTAR!\n"
+    .string "Try it!$"
+
 FallarborTown_EventScript_BattleTentSign::
 	msgbox FallarborTown_Text_BattleTentSign, MSGBOX_SIGN
 	end

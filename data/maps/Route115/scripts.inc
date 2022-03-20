@@ -19,6 +19,47 @@ Route115_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
 
+Route115_EventScript_SalamenceHiker::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Route115_EventScript_SalamenceHikerCheck
+    msgbox Route115_Text_SalamenceHiker, MSGBOX_NPC
+    end
+
+Route115_EventScript_SalamenceHikerCheck::
+    goto_if_set FLAG_RECEIVED_SALAMENCITE, Route115_EventScript_SalamenceHikerGot
+    specialvar VAR_RESULT, CheckPartySalamence
+    goto_if_eq VAR_RESULT, TRUE, Route115_EventScript_SalamenceHikerGive
+    msgbox Route115_Text_SalamenceHiker, MSGBOX_NPC
+    end
+
+Route115_EventScript_SalamenceHikerGive::
+    lock
+    faceplayer
+    msgbox Route115_Text_SalamenceHikerGive, MSGBOX_DEFAULT
+    giveitem ITEM_SALAMENCITE
+    setflag FLAG_RECEIVED_SALAMENCITE
+    release
+    end
+
+Route115_EventScript_SalamenceHikerGot::
+    msgbox Route115_Text_SalamenceHikerGot, MSGBOX_NPC
+    end
+
+Route115_Text_SalamenceHiker:
+    .string "Wow you came all this way\n"
+    .string "to see me? Where's your\l"
+    .string "SALAMENCE? Don't you want\p"
+    .string "to train!?$"
+
+Route115_Text_SalamenceHikerGive:
+    .string "What!? Your Salamence is\n"
+    .string "amazing! I don't know how\l"
+    .string "to train it much more.\p"
+    .string "Oh, I know, take this!$"
+
+Route115_Text_SalamenceHikerGot:
+    .string "Your Salamence is truly\n"
+    .string "amazing.$"
+
 Route115_EventScript_Woman::
 	msgbox Route115_Text_NeverKnowWhenCavePokemonWillAppear, MSGBOX_NPC
 	end

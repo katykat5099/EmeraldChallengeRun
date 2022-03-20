@@ -726,10 +726,10 @@
 #define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
 #define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
 #define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
-#define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
-#define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
-#define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
-#define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
+#define FLAG_RECEIVED_PURPLE_NECTAR       0x2AF
+#define FLAG_RECEIVED_PINK_NECTAR         0x2B0
+#define FLAG_RECEIVED_YELLOW_NECTAR       0x2B1
+#define FLAG_RECEIVED_RED_NECTAR          0x2B2
 #define FLAG_GRISEOUS_ORB_OBTAINED        0x2B3
 #define FLAG_HIDE_KATY                    0x2B4
 #define FLAG_MET_KATY                     0x2B5
@@ -1233,8 +1233,8 @@
 #define FLAG_RECEIVED_VENUSAURITE                                   0x4A0
 #define FLAG_RECEIVED_TYRANITARITE                                  0x4A1
 #define FLAG_RECEIVED_GARCHOMPITE                                   0x4A2
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
+#define FLAG_RECEIVED_HOUNDOOMINITE                                 0x4A3
+#define FLAG_RECEIVED_SALAMENCITE                                   0x4A4
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
