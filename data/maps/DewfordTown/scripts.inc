@@ -65,6 +65,22 @@ DewfordTown_EventScript_SailBackToPetalburg::
 	goto DewfordTown_EventScript_SailToPetalburg
 	end
 
+DewfordTown_EventScript_YellowNectarRichBoy::
+	lock
+    faceplayer
+    msgbox DewfordTown_Text_YellowNectarRichBoy, MSGBOX_DEFAULT
+    giveitem ITEM_YELLOW_NECTAR, 5
+    setflag FLAG_RECEIVED_YELLOW_NECTAR
+    release
+    end
+
+DewfordTown_Text_YellowNectarRichBoy:
+    .string "Do you know the POKéMON\p"
+    .string "ORICORIO? They can change\l"
+    .string "their dancing style just\p"
+    .string "by smelling NECTAR!\n"
+    .string "Try it!$"
+
 DewfordTown_EventScript_Woman::
 	msgbox DewfordTown_Text_TinyIslandCommunity, MSGBOX_NPC
 	end

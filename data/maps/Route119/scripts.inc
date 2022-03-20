@@ -164,6 +164,32 @@ Route119_EventScript_RivalExitScottArrive::
 	releaseall
 	end
 
+Route119_EventScript_CharizardMega::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Route119_EventScript_CharizardMegaCheck
+	msgbox Route119_Text_CharizardMega, MSGBOX_NPC
+	end
+
+Route119_EventScript_CharizardMegaCheck::
+    goto_if_set FLAG_RECEIVED_CHARIZARDITE, Route119_EventScript_CharizardMegaGot
+    specialvar VAR_RESULT, CheckPartyCharizard
+    goto_if_eq VAR_RESULT, TRUE, Route119_EventScript_CharizardMegaGet
+    msgbox Route119_Text_CharizardMega, MSGBOX_NPC
+    end
+
+Route119_EventScript_CharizardMegaGet::
+    lock
+    faceplayer
+    msgbox Route119_Text_CharizardMegaGet, MSGBOX_DEFAULT
+    giveitem ITEM_CHARIZARDITE_X
+    giveitem ITEM_CHARIZARDITE_Y
+    setflag FLAG_RECEIVED_CHARIZARDITE
+    release
+    end
+
+Route119_EventScript_CharizardMegaGot::
+    msgbox Route119_Text_CharizardMegaGot, MSGBOX_NPC
+    end
+
 Route119_EventScript_SetScottPos1::
 	setobjectxyperm LOCALID_SCOTT, 27, 25
 	return
@@ -612,3 +638,22 @@ Route119_Text_TrainerTipsDecoration:
 	.string "Pick your favorite items and create\n"
 	.string "your very own SECRET BASE exactly the\l"
 	.string "way you want.$"
+
+Route119_Text_CharizardMega:
+    .string "Have you ever been to KANTO?\p"
+    .string "Of The three starter POKéMON\l"
+    .string "every new trainer gets to\n"
+    .string "choose either SQUIRTLE,\p"
+    .string "BULBASAUR or CHARMANDER.\l"
+    .string "I specialize in CHARMANDER.$"
+
+Route119_Text_CharizardMegaGet:
+    .string "So I see you chose CHARMANDER.\p"
+    .string "Well, you're never complete\n"
+    .string "without having the MEGA STONES.\p"
+    .string "Take them.$"
+
+Route119_Text_CharizardMegaGot:
+    .string "I hope your CHARMANDER\p"
+    .string "becomes a very strong\l"
+    .string "CHARIZARD some day.$"

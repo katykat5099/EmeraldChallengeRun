@@ -1245,20 +1245,20 @@
 #define FLAG_RECEIVED_DIANCITE                                      0x4AC
 #define FLAG_RECEIVED_GALLADITE                                     0x4AD
 #define FLAG_RECEIVED_METAGROSSITE                                  0x4AE
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
+#define FLAG_RECEIVED_ABOMASITE                                     0x4AF
+#define FLAG_RECEIVED_CHARIZARDITE                                  0x4B0
+#define FLAG_RECEIVED_BANETTITE                                     0x4B1
+#define FLAG_RECEIVED_GENGARITE                                     0x4B2
+#define FLAG_RECEIVED_GLALITITE                                     0x4B3
+#define FLAG_RECEIVED_GYARADOSITE                                   0x4B4
+#define FLAG_RECEIVED_SLOWBRONITE                                   0x4B5
+#define FLAG_RECEIVED_LUCARIONITE                                   0x4B6
+#define FLAG_RECEIVED_MEDICHAMITE                                   0x4B7
+#define FLAG_RECEIVED_SABLENITE                                     0x4B8
+#define FLAG_RECEIVED_MAWILITE                                      0x4B9
+#define FLAG_RECEIVED_LOPUNNITE                                     0x4BA
+#define FLAG_RECEIVED_PIDGEOTITE                                    0x4BB
+#define FLAG_RECEIVED_SCIZORITE                                     0x4BC
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag

@@ -26,6 +26,31 @@ MossdeepCity_Mart_Pokemart:
 	release
 	end
 
+MossdeepCity_Mart_EventScript_SlowbroMega::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, MossdeepCity_Mart_EventScript_SlowbroMegaCheck
+	msgbox MossdeepCity_Mart_Text_SlowbroMega, MSGBOX_NPC
+	end
+
+MossdeepCity_Mart_EventScript_SlowbroMegaCheck::
+    goto_if_set FLAG_RECEIVED_SLOWBRONITE, MossdeepCity_Mart_EventScript_SlowbroMegaGot
+    specialvar VAR_RESULT, CheckPartySlowbro
+    goto_if_eq VAR_RESULT, TRUE, MossdeepCity_Mart_EventScript_SlowbroMegaGet
+    msgbox MossdeepCity_Mart_Text_SlowbroMega, MSGBOX_NPC
+    end
+
+MossdeepCity_Mart_EventScript_SlowbroMegaGet::
+    lock
+    faceplayer
+    msgbox MossdeepCity_Mart_Text_SlowbroMegaGet, MSGBOX_DEFAULT
+    giveitem ITEM_SLOWBRONITE
+    setflag FLAG_RECEIVED_SLOWBRONITE
+    release
+    end
+
+MossdeepCity_Mart_EventScript_SlowbroMegaGot::
+    msgbox MossdeepCity_Mart_Text_SlowbroMega, MSGBOX_NPC
+    end
+
 MossdeepCity_Mart_EventScript_Woman::
 	msgbox MossdeepCity_Mart_Text_ReviveIsFantastic, MSGBOX_NPC
 	end
@@ -57,4 +82,15 @@ MossdeepCity_Mart_Text_NetAndDiveBallsRare:
 	.string "BUG-type and WATER-type POKéMON.\p"
 	.string "A DIVE BALL works best on POKéMON\n"
 	.string "at the bottom of the sea.$"
+
+MossdeepCity_Mart_Text_SlowbroMega:
+    .string "They've got everything you could\n"
+    .string "ever need here!\n"
+
+MossdeepCity_Mart_Text_SlowbroMegaGet:
+    .string "That POKeMON you have.\n"
+    .string "It's the same color as this stone\p"
+    .string "I have. What? It's a MEGA STONE?\n"
+    .string "I don't need this, how about you?\p"
+    .string "Yeah, you take it.$"
 

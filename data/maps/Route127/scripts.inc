@@ -20,6 +20,31 @@ Route127_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
 
+Route127_EventScript_LucarioMega::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Route127_EventScript_LucarioMegaCheck
+	msgbox Route127_Text_LucarioMega, MSGBOX_NPC
+	end
+
+Route127_EventScript_LucarioMegaCheck::
+    goto_if_set FLAG_RECEIVED_LUCARIONITE, Route127_EventScript_LucarioMegaGot
+    specialvar VAR_RESULT, CheckPartyLucario
+    goto_if_eq VAR_RESULT, TRUE, Route127_EventScript_LucarioMegaGet
+    msgbox Route127_Text_LucarioMega, MSGBOX_NPC
+    end
+
+Route127_EventScript_LucarioMegaGet::
+    lock
+    faceplayer
+    msgbox Route127_Text_LucarioMegaGet, MSGBOX_DEFAULT
+    giveitem ITEM_LUCARIONITE
+    setflag FLAG_RECEIVED_LUCARIONITE
+    release
+    end
+
+Route127_EventScript_LucarioMegaGot::
+    msgbox Route127_Text_LucarioMegaGot, MSGBOX_NPC
+    end
+
 Route127_EventScript_Camden::
 	trainerbattle_single TRAINER_CAMDEN, Route127_Text_CamdenIntro, Route127_Text_CamdenDefeat
 	msgbox Route127_Text_CamdenPostBattle, MSGBOX_AUTOCLOSE
@@ -75,4 +100,18 @@ Route127_EventScript_RematchKoji::
 	trainerbattle_rematch TRAINER_KOJI_1, Route127_Text_KojiRematchIntro, Route127_Text_KojiRematchDefeat
 	msgbox Route127_Text_KojiPostRematch, MSGBOX_AUTOCLOSE
 	end
+
+Route127_Text_LucarioMega:
+    .string "Me and my LUCARIO come here to\p"
+    .string "train every day.$"
+
+Route127_Text_LucarioMegaGet:
+    .string "You have a LUCARIO too! You\p"
+    .string "train hard too! Let's be friends,\n"
+    .string "Have this stone, as a sign of\l"
+    .string "our friendship!$"
+
+Route127_Text_LucarioMegaGot:
+    .string "Hi friend!\p"
+    .string "How's training going?$"
 

@@ -1,6 +1,31 @@
 MtPyre_1F_MapScripts::
 	.byte 0
 
+MtPyre_1F_EventScript_GengarMega::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, MtPyre_1F_EventScript_GengarMegaCheck
+	msgbox MtPyre_1F_Text_GengarMega, MSGBOX_NPC
+	end
+
+MtPyre_1F_EventScript_GengarMegaCheck::
+    goto_if_set FLAG_RECEIVED_GENGARITE, MtPyre_1F_EventScript_GengarMegaGot
+    specialvar VAR_RESULT, CheckPartyGengar
+    goto_if_eq VAR_RESULT, TRUE, MtPyre_1F_EventScript_GengarMegaGet
+    msgbox MtPyre_1F_Text_GengarMega, MSGBOX_NPC
+    end
+
+MtPyre_1F_EventScript_GengarMegaGet::
+    lock
+    faceplayer
+    msgbox MtPyre_1F_Text_GengarMegaGet, MSGBOX_DEFAULT
+    giveitem ITEM_GENGARITE
+    setflag FLAG_RECEIVED_GENGARITE
+    release
+    end
+
+MtPyre_1F_EventScript_GengarMegaGot::
+    msgbox MtPyre_1F_Text_GengarMega, MSGBOX_NPC
+    end
+
 MtPyre_1F_EventScript_CleanseTagWoman::
 	lock
 	faceplayer
@@ -44,4 +69,11 @@ MtPyre_1F_Text_ComeToPayRespects:
 MtPyre_1F_Text_RestingPlaceOfZigzagoon:
 	.string "This is the final resting place of my\n"
 	.string "ZIGZAGOON. I cherished it…$"
+
+MtPyre_1F_Text_GengarMega:
+    .string "Beware of GENGAR.$"
+
+MtPyre_1F_Text_GengarMegaGet:
+    .string "He-he, I wont play any tricks on\n"
+    .string "you. Here, have this.$"
 

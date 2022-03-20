@@ -33,6 +33,22 @@ LilycoveCity_EventScript_SetWailmerMetatiles::
 	setmetatile 78, 17, METATILE_Lilycove_Wailmer3, TRUE
 	return
 
+LilycoveCity_EventScript_PurpleNectarRichBoy::
+	lock
+    faceplayer
+    msgbox LilycoveCity_Text_PurpleNectarRichBoy, MSGBOX_DEFAULT
+    giveitem ITEM_PURPLE_NECTAR, 5
+    setflag FLAG_RECEIVED_PURPLE_NECTAR
+    release
+    end
+
+LilycoveCity_Text_PurpleNectarRichBoy:
+    .string "Do you know the POKéMON\p"
+    .string "ORICORIO? They can change\l"
+    .string "their dancing style just\p"
+    .string "by smelling NECTAR!\n"
+    .string "Try it!$"
+
 LilycoveCity_EventScript_BerryGentleman::
 	lock
 	faceplayer

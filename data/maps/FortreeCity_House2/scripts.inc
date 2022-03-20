@@ -41,6 +41,44 @@ FortreeCity_House2_EventScript_WrongGuess::
 	release
 	end
 
+FortreeCity_House2_EventScript_PidgeotLittleGirl::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, FortreeCity_House2_EventScript_PidgeotLittleGirlCheck
+	msgbox FortreeCity_House2_Text_PidgeotLittleGirl, MSGBOX_NPC
+	end
+
+FortreeCity_House2_EventScript_PidgeotLittleGirlCheck::
+    goto_if_set FLAG_RECEIVED_PIDGEOTITE, FortreeCity_House2_EventScript_PidgeotLittleGirlGot
+    specialvar VAR_RESULT, CheckPartyPidgeot
+    goto_if_eq VAR_RESULT, TRUE, FortreeCity_House2_EventScript_PidgeotLittleGirlGet
+    msgbox FortreeCity_House2_Text_PidgeotLittleGirl, MSGBOX_NPC
+    end
+
+FortreeCity_House2_EventScript_PidgeotLittleGirlGet::
+    lock
+    faceplayer
+    msgbox FortreeCity_House2_Text_PidgeotLittleGirlGet, MSGBOX_DEFAULT
+    giveitem ITEM_PIDGEOTITE
+    setflag FLAG_RECEIVED_PIDGEOTITE
+    release
+    end
+
+FortreeCity_House2_EventScript_PidgeotLittleGirlGot::
+    msgbox FortreeCity_House2_Text_PidgeotLittleGirlGot, MSGBOX_NPC
+    end
+
+FortreeCity_House2_Text_PidgeotLittleGirl:
+    .string "I like collecting many kinds of\n"
+    .string "pretty stones and give them to people.$"
+
+FortreeCity_House2_Text_PidgeotLittleGirlGet:
+    .string "I like collecting many kinds of\n"
+    .string "pretty stones and give them to people.\l"
+    .string "Here, you can have this one.$"
+
+FortreeCity_House2_Text_PidgeotLittleGirlGot:
+    .string "Teehee, I hope you like your new\n"
+    .string "stone!\p"
+
 FortreeCity_House2_Text_HiddenPowersArousedByNature:
 	.string "People… POKéMON…\p"
 	.string "Their hidden powers are aroused by\n"

@@ -14266,4 +14266,171 @@ bool8 CheckPartyAbsol(void)
     return FALSE;
 }
 
+bool8 CheckPartyAbomasnow(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_ABOMASNOW)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyCharizard(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_CHARIZARD)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyBanette(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_BANETTE)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyGengar(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_GENGAR)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyGlalie(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_GLALIE)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyGyarados(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_GYARADOS)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartySlowbro(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_SLOWBRO)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyLucario(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_LUCARIO)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyMedicham(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_MEDICHAM)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartySableye(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_SABLEYE)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyMawile(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_MAWILE)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyLopunny(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_LOPUNNY)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyPidgeot(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_PIDGEOT)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyScizor(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_SCIZOR)
+            return TRUE;
+    }
+
+    return FALSE;
+}
 

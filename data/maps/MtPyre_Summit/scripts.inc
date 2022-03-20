@@ -429,6 +429,31 @@ MtPyre_Summit_EventScript_Grunt4::
 	msgbox MtPyre_Summit_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
+MtPyre_Summit_EventScript_MedichamBlackBelt::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, MtPyre_Summit_EventScript_MedichamBlackBeltCheck
+	msgbox MtPyre_Summit_Text_MedichamBlackBelt, MSGBOX_NPC
+	end
+
+MtPyre_Summit_EventScript_MedichamBlackBeltCheck::
+    goto_if_set FLAG_RECEIVED_MEDICHAMITE, MtPyre_Summit_EventScript_MedichamBlackBeltGot
+    specialvar VAR_RESULT, CheckPartyMedicham
+    goto_if_eq VAR_RESULT, TRUE, MtPyre_Summit_EventScript_MedichamBlackBeltGet
+    msgbox MtPyre_Summit_Text_MedichamBlackBelt, MSGBOX_NPC
+    end
+
+MtPyre_Summit_EventScript_MedichamBlackBeltGet::
+    lock
+    faceplayer
+    msgbox MtPyre_Summit_Text_MedichamBlackBeltGet, MSGBOX_DEFAULT
+    giveitem ITEM_MEDICHAMITE
+    setflag FLAG_RECEIVED_MEDICHAMITE
+    release
+    end
+
+MtPyre_Summit_EventScript_MedichamBlackBeltGot::
+    msgbox MtPyre_Summit_Text_MedichamBlackBelt, MSGBOX_NPC
+    end
+
 MtPyre_Summit_Text_Grunt1Intro:
 	.string "No! Those TEAM MAGMA goons got\n"
 	.string "here ahead of us!\p"
@@ -622,4 +647,17 @@ MtPyre_Summit_Text_HoennTrioTale:
 	.string "becalmed the two enraged POKéMON.\p"
 	.string "Then, its duty done, the green POKéMON\n"
 	.string "flew off into the wild blue yonder…$"
+
+MtPyre_Summit_Text_MedichamBlackBelt:
+    .string "I come up here to train against\p"
+    .string "the GHOSTS and PSYCHICS every day.\n"
+    .string "I must be able to beat my weakness\l"
+    .string "to overcome anything.$"
+
+MtPyre_Summit_Text_MedichamBlackBeltGet:
+    .string "Ah, the FIGHTING and PSYCHIC\p"
+    .string "POKéMON, MEDICHAM. The perfect\n"
+    .string "combo of strength and weakness.\l"
+    .string "Thank you for showing me your epic\p"
+    .string "POKéMON. Take this.$"
 

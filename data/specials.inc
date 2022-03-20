@@ -565,3 +565,17 @@ gSpecials::
     def_special CheckPartySwampert
     def_special CheckPartySharpedo
     def_special CheckPartyAbsol
+    def_special CheckPartyAbomasnow
+    def_special CheckPartyCharizard
+    def_special CheckPartyBanette
+    def_special CheckPartyGengar
+    def_special CheckPartyGlalie
+    def_special CheckPartyGyarados
+    def_special CheckPartySlowbro
+    def_special CheckPartyLucario
+    def_special CheckPartyMedicham
+    def_special CheckPartyMawile
+    def_special CheckPartySableye
+    def_special CheckPartyLopunny
+    def_special CheckPartyPidgeot
+    def_special CheckPartyScizor

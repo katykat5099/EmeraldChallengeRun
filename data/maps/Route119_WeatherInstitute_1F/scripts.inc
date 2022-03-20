@@ -27,6 +27,31 @@ Route119_WeatherInstitute_1F_EventScript_LittleBoyTeamAquaHere::
 	release
 	end
 
+Route119_WeatherInstitute_1F_EventScript_AbomasnowMan::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Route119_WeatherInstitute_1F_EventScript_AbomasnowManCheck
+	msgbox Route119_WeatherInstitute_1F_Text_AbomasnowMan, MSGBOX_NPC
+	end
+
+Route119_WeatherInstitute_1F_EventScript_AbomasnowManCheck::
+    goto_if_set FLAG_RECEIVED_ABOMASITE, Route119_WeatherInstitute_1F_EventScript_AbomasnowManGot
+    specialvar VAR_RESULT, CheckPartyAbomasnow
+    goto_if_eq VAR_RESULT, TRUE, Route119_WeatherInstitute_1F_EventScript_AbomasnowManGet
+    msgbox Route119_WeatherInstitute_1F_Text_AbomasnowMan, MSGBOX_NPC
+    end
+
+Route119_WeatherInstitute_1F_EventScript_AbomasnowManGet::
+    lock
+    faceplayer
+    msgbox Route119_WeatherInstitute_1F_Text_AbomasnowManGet, MSGBOX_DEFAULT
+    giveitem ITEM_ABOMASITE
+    setflag FLAG_RECEIVED_ABOMASITE
+    release
+    end
+
+Route119_WeatherInstitute_1F_EventScript_AbomasnowManGot::
+    msgbox Route119_WeatherInstitute_1F_Text_AbomasnowGot, MSGBOX_NPC
+    end
+
 Route119_WeatherInstitute_1F_EventScript_InstituteWorker1::
 	lock
 	faceplayer
@@ -132,4 +157,17 @@ Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo:
 Route119_WeatherInstitute_1F_Text_TakeRestInBed:
 	.string "There's a bed…\n"
 	.string "Let's take a rest.$"
+
+Route119_WeatherInstitute_1F_Text_AbomasnowMan:
+    .string "There's never winter in HOENN\n"
+    .string "But even so, I still research it.$"
+
+Route119_WeatherInstitute_1F_Text_AbomasnowManGet:
+    .string "You have an ABOMASNOW?\n"
+    .string "This is fantastic, this POKéMON\l"
+    .string "can make it snow in HOENN.\p"
+    .string "Take this stone, make it snow!!$"
+
+Route119_WeatherInstitute_1F_Text_AbomasnowGot:
+    .string "Snow, snow, snow!!!$"
 
