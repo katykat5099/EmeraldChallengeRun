@@ -1236,7 +1236,7 @@
 #define FLAG_RECEIVED_HOUNDOOMINITE                                 0x4A3
 #define FLAG_RECEIVED_SALAMENCITE                                   0x4A4
 #define FLAG_RECEIVED_BEEDRILLITE                                   0x4A5
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
+#define FLAG_RECEIVED_BLASTOISINITE                                 0x4A6
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag

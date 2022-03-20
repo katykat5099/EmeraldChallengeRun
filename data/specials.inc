@@ -559,3 +559,4 @@ gSpecials::
     def_special CheckPartyHoundoom
     def_special CheckPartySalamence
     def_special CheckPartyBeedrill
+    def_special CheckPartyBlastoise

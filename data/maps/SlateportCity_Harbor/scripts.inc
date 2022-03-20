@@ -15,6 +15,50 @@ SlateportCity_Harbor_OnTransition:
 	call_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_ShowSSTidal
 	end
 
+SlateportCity_Harbor_EventScript_BlastoiseMan::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, SlateportCity_Harbor_EventScript_BlastoiseManCheck
+	msgbox SlateportCity_Harbor_Text_BlastoiseMan, MSGBOX_NPC
+	end
+
+SlateportCity_Harbor_EventScript_BlastoiseManCheck::
+    goto_if_set FLAG_RECEIVED_BLASTOISINITE, SlateportCity_Harbor_EventScript_BlastoiseManGot
+    specialvar VAR_RESULT, CheckPartyBlastoise
+    goto_if_eq VAR_RESULT, TRUE, SlateportCity_Harbor_EventScript_BlastoiseManGive
+    msgbox SlateportCity_Harbor_Text_BlastoiseMan, MSGBOX_NPC
+    end
+
+SlateportCity_Harbor_EventScript_BlastoiseManGive::
+    lock
+    faceplayer
+    msgbox SlateportCity_Harbor_Text_BlastoiseManGive, MSGBOX_DEFAULT
+    giveitem ITEM_BLASTOISINITE
+    setflag FLAG_RECEIVED_BLASTOISINITE
+    release
+    end
+
+SlateportCity_Harbor_EventScript_BlastoiseManGot::
+    msgbox SlateportCity_Harbor_Text_BlastoiseManGot, MSGBOX_NPC
+    end
+
+SlateportCity_Harbor_Text_BlastoiseMan:
+    .string "Have you ever been to KANTO?\p"
+    .string "Of The three starter POKéMON\l"
+    .string "every new trainer gets to\n"
+    .string "choose either SQUIRTLE,\p"
+    .string "BULBASAUR or CHARMANDER.\l"
+    .string "I specialize in SQUIRTLE.$"
+
+SlateportCity_Harbor_Text_BlastoiseManGive:
+    .string "So I see you chose SQUIRTLE.\p"
+    .string "Well, you're never complete\n"
+    .string "without having the MEGA STONE.\p"
+    .string "Take it.$"
+
+SlateportCity_Harbor_Text_BlastoiseManGot:
+    .string "I hope your SQUIRTLE\p"
+    .string "becomes a very strong\l"
+    .string "BLASTOISE some day.$"
+
 SlateportCity_Harbor_EventScript_ShowSSTidal::
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL
 	return
