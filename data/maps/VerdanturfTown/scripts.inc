@@ -78,44 +78,44 @@ VerdanturfTown_EventScript_RusturfTunnelSign::
 	msgbox VerdanturfTown_Text_RusturfTunnelSign, MSGBOX_SIGN
 	end
 
-VerdanturfTown_EventScript_EventScript_LopunnyBeauty::
-    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, VerdanturfTown_EventScript_EventScript_LopunnyBeautyCheck
-	msgbox VerdanturfTown_EventScript_Text_LopunnyBeauty, MSGBOX_NPC
+VerdanturfTown_EventScript_LopunnyBeauty::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, VerdanturfTown_EventScript_LopunnyBeautyCheck
+	msgbox VerdanturfTown_Text_LopunnyBeauty, MSGBOX_NPC
 	end
 
-VerdanturfTown_EventScript_EventScript_LopunnyBeautyCheck::
-    goto_if_set FLAG_RECEIVED_LOPUNNITE, VerdanturfTown_EventScript_EventScript_LopunnyBeautyGot
+VerdanturfTown_EventScript_LopunnyBeautyCheck::
+    goto_if_set FLAG_RECEIVED_LOPUNNITE, VerdanturfTown_EventScript_LopunnyBeautyGot
     specialvar VAR_RESULT, CheckPartyLopunny
-    goto_if_eq VAR_RESULT, TRUE, VerdanturfTown_EventScript_EventScript_LopunnyBeautyGet
-    msgbox VerdanturfTown_EventScript_Text_LopunnyBeauty, MSGBOX_NPC
+    goto_if_eq VAR_RESULT, TRUE, VerdanturfTown_EventScript_LopunnyBeautyGet
+    msgbox VerdanturfTown_Text_LopunnyBeauty, MSGBOX_NPC
     end
 
-VerdanturfTown_EventScript_EventScript_LopunnyBeautyGet::
+VerdanturfTown_EventScript_LopunnyBeautyGet::
     lock
     faceplayer
-    msgbox VerdanturfTown_EventScript_Text_LopunnyBeautyGet, MSGBOX_DEFAULT
+    msgbox VerdanturfTown_Text_LopunnyBeautyGet, MSGBOX_DEFAULT
     giveitem ITEM_LOPUNNITE
     setflag FLAG_RECEIVED_LOPUNNITE
     release
     end
 
-VerdanturfTown_EventScript_EventScript_LopunnyBeautyGot::
-    msgbox VerdanturfTown_EventScript_Text_LopunnyBeautyGot, MSGBOX_NPC
+VerdanturfTown_EventScript_LopunnyBeautyGot::
+    msgbox VerdanturfTown_Text_LopunnyBeautyGot, MSGBOX_NPC
     end
 
-VerdanturfTown_EventScript_Text_LopunnyBeauty:
+VerdanturfTown_Text_LopunnyBeauty:
     .string "I love POKéMON that are beautiful.\p"
     .string "I wanna meet all the beautiful\n"
     .string "POKéMON.$"
 
-VerdanturfTown_EventScript_Text_LopunnyBeautyGet:
+VerdanturfTown_Text_LopunnyBeautyGet:
     .string "Wow! Your LOPUNNY is so beautiful.\p"
     .string "I've been holding on to the LOPUNNY\n"
     .string "MEGA STONE for some time now, I bet\l"
     .string "it makes LOPUNNY even more pretty.\p"
     .string "You deserve it. Take it.$"
 
-VerdanturfTown_EventScript_Text_LopunnyBeautyGot:
+VerdanturfTown_Text_LopunnyBeautyGot:
     .string "Thank you.$"
 
 VerdanturfTown_Text_ManTryingToDigTunnel:
