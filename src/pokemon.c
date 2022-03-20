@@ -14206,3 +14206,51 @@ bool8 CheckPartyBlastoise(void)
     return FALSE;
 }
 
+bool8 CheckPartySceptile(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_SCEPTILE)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyBlaziken(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_BLAZIKEN)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartySwampert(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_SWAMPERT)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartySharpedo(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_SHARPEDO)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+

@@ -560,3 +560,7 @@ gSpecials::
     def_special CheckPartySalamence
     def_special CheckPartyBeedrill
     def_special CheckPartyBlastoise
+    def_special CheckPartySceptile
+    def_special CheckPartyBlaziken
+    def_special CheckPartySwampert
+    def_special CheckPartySharpedo

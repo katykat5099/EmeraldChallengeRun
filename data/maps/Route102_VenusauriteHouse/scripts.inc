@@ -10,7 +10,7 @@ Route102_VenusauriteHouse_EventScript_VenusaurCheck::
     goto_if_set FLAG_RECEIVED_VENUSAURITE, Route102_VenusauriteHouse_EventScript_VenusauriteGot
     specialvar VAR_RESULT, CheckPartyVenusaur
     goto_if_eq VAR_RESULT, TRUE, Route102_VenusauriteHouse_EventScript_VenusauriteGet
-    msgbox Route107_AlakaziteHouse_Text_Woman, MSGBOX_NPC
+    msgbox Route102_VenusauriteHouse_Text_OldMan, MSGBOX_NPC
     end
 
 Route102_VenusauriteHouse_EventScript_VenusauriteGet::
@@ -22,7 +22,7 @@ Route102_VenusauriteHouse_EventScript_VenusauriteGet::
     release
     end
 
-Route102_VenusauriteHouse_EventScript_VenusauriteGot:
+Route102_VenusauriteHouse_EventScript_VenusauriteGot::
     msgbox Route102_VenusauriteHouse_Text_VenusauriteGot, MSGBOX_NPC
     end
 

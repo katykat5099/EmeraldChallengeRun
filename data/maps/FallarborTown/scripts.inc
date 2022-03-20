@@ -49,7 +49,7 @@ FallarborTown_EventScript_RedNectarRichBoy::
     end
 
 FallarborTown_Text_RedNectarRichBoy:
-    .string "Do you know the POKeMON\p"
+    .string "Do you know the POKéMON\p"
     .string "ORICORIO? They can change\l"
     .string "their dancing style just\p"
     .string "by smelling NECTAR!\n"

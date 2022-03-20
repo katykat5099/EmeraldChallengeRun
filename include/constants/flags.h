@@ -1237,10 +1237,10 @@
 #define FLAG_RECEIVED_SALAMENCITE                                   0x4A4
 #define FLAG_RECEIVED_BEEDRILLITE                                   0x4A5
 #define FLAG_RECEIVED_BLASTOISINITE                                 0x4A6
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
+#define FLAG_RECEIVED_SCEPTILITE                                    0x4A7
+#define FLAG_RECEIVED_BLAZIKENITE                                   0x4A8
+#define FLAG_RECEIVED_SWAMPERTITE                                   0x4A9
+#define FLAG_RECEIVED_SHARPEDONITE                                  0x4AA
 #define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
 #define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
