@@ -1242,9 +1242,9 @@
 #define FLAG_RECEIVED_SWAMPERTITE                                   0x4A9
 #define FLAG_RECEIVED_SHARPEDONITE                                  0x4AA
 #define FLAG_RECEIVED_ABSOLITE                                      0x4AB
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
+#define FLAG_RECEIVED_DIANCITE                                      0x4AC
+#define FLAG_RECEIVED_GALLADITE                                     0x4AD
+#define FLAG_RECEIVED_METAGROSSITE                                  0x4AE
 #define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
