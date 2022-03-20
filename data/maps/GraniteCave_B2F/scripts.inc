@@ -3,14 +3,14 @@ GraniteCave_B2F_MapScripts::
 
 GraniteCave_B2F_EventScript_HexTwin1::
     goto_if_set FLAG_DEFEATED_PETALBURG_GYM, GraniteCave_B2F_EventScript_HexTwin1Check
-	msgbox GraniteCave_Text_HexTwin, MSGBOX_NPC
+	msgbox GraniteCave_B2F_Text_HexTwin, MSGBOX_NPC
 	end
 
 GraniteCave_B2F_EventScript_HexTwin1Check::
     goto_if_set FLAG_RECEIVED_MAWILITE, GraniteCave_B2F_EventScript_HexTwin1Got
     specialvar VAR_RESULT, CheckPartyMawile
     goto_if_eq VAR_RESULT, TRUE, GraniteCave_B2F_EventScript_HexTwin1Get
-    msgbox GraniteCave_Text_HexTwin, MSGBOX_NPC
+    msgbox GraniteCave_B2F_Text_HexTwin, MSGBOX_NPC
     end
 
 GraniteCave_B2F_EventScript_HexTwin1Get::
