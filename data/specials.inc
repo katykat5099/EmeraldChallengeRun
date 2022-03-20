@@ -564,3 +564,4 @@ gSpecials::
     def_special CheckPartyBlaziken
     def_special CheckPartySwampert
     def_special CheckPartySharpedo
+    def_special CheckPartyAbsol

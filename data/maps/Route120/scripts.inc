@@ -86,6 +86,31 @@ Route120_EventScript_SetRainyWeather::
 	setweather WEATHER_RAIN
 	return
 
+Route120_EventScript_AbsolMega::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Route120_EventScript_AbsolCheck
+	msgbox Route120_Text_AbsolMega, MSGBOX_NPC
+	end
+
+Route120_EventScript_AbsolCheck::
+    goto_if_set FLAG_RECEIVED_ABSOLITE, Route120_EventScript_AbsolMegaGot
+    specialvar VAR_RESULT, CheckPartyAbsol
+    goto_if_eq VAR_RESULT, TRUE, Route120_EventScript_AbsolMegaGet
+    msgbox Route120_Text_AbsolMega, MSGBOX_NPC
+    end
+
+Route120_EventScript_AbsolMegaGet::
+    lock
+    faceplayer
+    msgbox Route120_Text_AbsolMegaGet, MSGBOX_DEFAULT
+    giveitem ITEM_ABSOLITE
+    setflag FLAG_RECEIVED_ABSOLITE
+    release
+    end
+
+Route120_EventScript_AbsolMegaGot::
+    msgbox Route120_Text_AbsolMega, MSGBOX_NPC
+    end
+
 Route120_EventScript_BerryBeauty::
 	lock
 	faceplayer
@@ -469,3 +494,13 @@ Route120_Text_RouteSignFortree:
 Route120_Text_RouteSign121:
 	.string "{RIGHT_ARROW} ROUTE 121\n"
 	.string "{LEFT_ARROW} ROUTE 120$"
+
+Route120_Text_AbsolMega:
+    .string "ABSOL only shows up when there\p"
+    .string "may be a disaster. Are you here\l"
+    .string "as a result of a disaster?$"
+
+Route120_Text_AbsolMegaGet:
+    .string "You have an ABSOL.\p"
+    .string "Do you face disaster every day?\l"
+    .string "Does this count as a disaster?$"
