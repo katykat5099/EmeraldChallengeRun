@@ -554,3 +554,5 @@ gSpecials::
     def_special CheckPartyMeloetta
     def_special CheckPartyGardevoir
     def_special CheckPartyVenusaur
+    def_special CheckPartyTyranitar
+    def_special CheckPartyGarchomp

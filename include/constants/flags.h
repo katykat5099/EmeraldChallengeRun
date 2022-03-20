@@ -1231,8 +1231,8 @@
 #define FLAG_RECEIVED_AUDINITE                                      0x49E
 #define FLAG_RECEIVED_GARDEVOIRITE                                  0x49F
 #define FLAG_RECEIVED_VENUSAURITE                                   0x4A0
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
+#define FLAG_RECEIVED_TYRANITARITE                                  0x4A1
+#define FLAG_RECEIVED_GARCHOMPITE                                   0x4A2
 #define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
 #define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag

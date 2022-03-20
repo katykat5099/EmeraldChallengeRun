@@ -34,7 +34,7 @@ Route121_HeracroniteHouse_Text_BugCatcher:
     .string "Do you like BUG POKéMON?\p"
     .string "BUG POKéMON are so cool.\n"
     .string "I like the SAFARI ZONE because\p"
-    .string "I can find rare BUG POKéMON$"
+    .string "I can find rare BUG POKéMON.$"
 
 Route121_HeracroniteHouse_Text_BugCatcherGiveMegaStone:
     .string "Woah!\p"

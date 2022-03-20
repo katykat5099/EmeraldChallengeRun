@@ -400,6 +400,57 @@ Route111_EventScript_Man2::
 	msgbox Route111_Text_WinstrateFamilyDestroyedMe, MSGBOX_NPC
 	end
 
+Route111_EventScript_TyranitarHiker::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Route111_EventScript_TyranitarCheck
+    msgbox Route111_Text_TyranitarHiker, MSGBOX_NPC
+    end
+
+Route111_EventScript_TyranitarCheck::
+    goto_if_set FLAG_RECEIVED_HERACRONITE, Route111_EventScript_TyranitariteGot
+    specialvar VAR_RESULT, CheckPartyTyranitar
+    goto_if_eq VAR_RESULT, TRUE, Route111_EventScript_TyranitariteGet
+    msgbox Route111_Text_TyranitarHiker, MSGBOX_NPC
+    end
+
+Route111_EventScript_TyranitariteGet::
+    lock
+    faceplayer
+    msgbox Route111_Text_TyranitarHikerGive, MSGBOX_DEFAULT
+    giveitem ITEM_TYRANITARITE
+    setflag FLAG_RECEIVED_HERACRONITE
+    release
+    end
+
+Route111_EventScript_TyranitariteGot::
+    msgbox Route111_Text_TyranitarHikerGot, MSGBOX_NPC
+    end
+
+Route111_EventScript_GarchompHiker::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Route111_EventScript_GarchompCheck
+    msgbox Route111_Text_GarchompHiker, MSGBOX_NPC
+    end
+
+Route111_EventScript_GarchompCheck::
+    goto_if_set FLAG_RECEIVED_HERACRONITE, Route111_EventScript_GarchompiteGot
+    specialvar VAR_RESULT, CheckPartyGarchomp
+    goto_if_eq VAR_RESULT, TRUE, Route111_EventScript_GarchompiteGet
+    msgbox Route111_Text_GarchompHiker, MSGBOX_NPC
+    end
+
+Route111_EventScript_GarchompiteGet::
+    lock
+    faceplayer
+    msgbox Route111_Text_GarchompHikerGive, MSGBOX_DEFAULT
+    giveitem ITEM_GARCHOMPITE
+    setflag FLAG_RECEIVED_GARCHOMPITE
+    release
+    end
+
+Route111_EventScript_GarchompiteGot::
+    msgbox Route111_Text_GarchompHikerGot, MSGBOX_NPC
+    end
+
+
 Route111_EventScript_Hiker::
 	lock
 	faceplayer
@@ -726,4 +777,34 @@ Route111_Text_TrainerHillSign:
 	.string "{RIGHT_ARROW} TRAINER HILL ENTRANCE\p"
 	.string "“Scale the heights, you hot-blooded\n"
 	.string "TRAINERS!”$"
+
+Route111_Text_TyranitarHiker:
+    .string "Where do you think such strong winds\p"
+    .string "come from?$"
+
+Route111_Text_TyranitarHikerGive:
+    .string "You have a TYRANITAR? That POKeMON\p"
+    .string "causes strong SANDSTORMS. It must\l"
+    .string "be the reason!\n"
+    .string "You have made me realize. Take this.$"
+
+Route111_Text_TyranitarHikerGot:
+    .string "You're saying that TYRANITAR is not\p"
+    .string "the reason!?$"
+
+Route111_Text_GarchompHiker:
+    .string "There's a Hiker nearby who thinks\p"
+    .string "TYRANITAR is the reason for the nearby\l"
+    .string "SANDSTORMS. Hah!$"
+
+Route111_Text_GarchompHikerGive:
+    .string "I think that GARCHOMP could be strong\p"
+    .string "enough to make SANDSTORMS, but not a\l"
+    .string "strong one like the natural ones in the\n"
+    .string "desert. Don't you agree?\p"
+    .string "Why don't you have this stone. I think\p"
+    .string "you can use it.$"
+
+Route111_Text_GarchompHikerGot:
+    .string "GARCHOMP is very cool.$"
 
