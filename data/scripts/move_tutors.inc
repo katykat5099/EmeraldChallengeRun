@@ -284,6 +284,32 @@ MoveTutor_EventScript_RelicSongTaught::
 	release
 	end
 
+Route119_EventScript_SecretSwordTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SECRET_SWORD, MoveTutor_EventScript_SecretSwordTaught
+	msgbox MoveTutor_Text_SecretSwordTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SecretSwordDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SecretSwordDeclined
+	msgbox MoveTutor_Text_SecretSwordWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, TUTOR_MOVE_SECRET_SWORD
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SecretSwordDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_SECRET_SWORD
+	goto MoveTutor_EventScript_SecretSwordTaught
+	end
+
+MoveTutor_EventScript_SecretSwordDeclined::
+	msgbox MoveTutor_Text_SecretSwordDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SecretSwordTaught::
+	msgbox MoveTutor_Text_SecretSwordTaught, MSGBOX_DEFAULT
+	release
+	end
+
 MoveTutor_EventScript_OpenPartyMenu::
 	special ChooseMonForMoveTutor
 	waitstate

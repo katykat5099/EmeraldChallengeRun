@@ -257,3 +257,20 @@ MoveTutor_Text_RelicSongWhichMon:
 MoveTutor_Text_RelicSongTaught:
     .string "The RELIC SONG is both a move so\n"
     .string "powerful in battle, and to the ears.$"
+
+MoveTutor_Text_SecretSwordTeach:
+    .string "Hello, I am a MOVE TUTOR. What do\n"
+    .string "I teach? Well, that's a SECRET. why\l"
+    .string "not check which POKéMON might be\p"
+    .string "compatible, hmm? What do you say?$"
+
+MoveTutor_Text_SecretSwordDeclined:
+    .string "Will you find the SECRET POKéMON?$"
+
+MoveTutor_Text_SecretSwordWhichMon:
+    .string "Which POKéMON will it be?$"
+
+MoveTutor_Text_SecretSwordTaught:
+    .string "So you figured out which POKéMON\n"
+    .string "I can teach. SECRET SWORD is a\l"
+    .string "great move for KELDEO. Use it well.$"
