@@ -558,3 +558,4 @@ gSpecials::
     def_special CheckPartyGarchomp
     def_special CheckPartyHoundoom
     def_special CheckPartySalamence
+    def_special CheckPartyBeedrill

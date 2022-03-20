@@ -14182,3 +14182,15 @@ bool8 CheckPartySalamence(void)
     return FALSE;
 }
 
+bool8 CheckPartyBeedrill(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_BEEDRILL)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
