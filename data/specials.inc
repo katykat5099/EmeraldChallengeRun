@@ -580,3 +580,6 @@ gSpecials::
     def_special CheckPartyPidgeot
     def_special CheckPartyScizor
     def_special CheckPartySilvally
+    def_special CheckPartyLatios
+    def_special CheckPartyLatias
+    def_special CheckPartyMewtwo

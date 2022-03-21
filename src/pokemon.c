@@ -14446,3 +14446,39 @@ bool8 CheckPartySilvally(void)
     return FALSE;
 }
 
+bool8 CheckPartyLatios(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_LATIOS)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyLatias(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_LATIAS)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool8 CheckPartyMewtwo(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_MEWTWO)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+

@@ -1,6 +1,53 @@
 VictoryRoad_B1F_MapScripts::
 	.byte 0
 
+VictoryRoad_B1F_EventScript_MegaHiker::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, VictoryRoad_B1F_EventScript_MegaHikerCheck
+	msgbox VictoryRoad_B1F_Text_MegaHiker, MSGBOX_NPC
+	end
+
+VictoryRoad_B1F_EventScript_MegaHikerCheck::
+    goto_if_set FLAG_RECEIVED_LATIOSITE, Route107_AggroniteHouse_EventScript_Hiker2
+    goto_if_set FLAG_RECEIVED_LATIASITE, Route107_AggroniteHouse_EventScript_Hiker2
+    goto_if_set FLAG_RECEIVED_MEWTWONITE, Route107_AggroniteHouse_EventScript_Hiker2
+    specialvar VAR_RESULT, CheckPartyLatios
+    goto_if_eq VAR_RESULT, TRUE, VictoryRoad_B1F_EventScript_MegaHikerGiveLatios
+    specialvar VAR_RESULT, CheckPartyLatias
+    goto_if_eq VAR_RESULT, TRUE, VictoryRoad_B1F_EventScript_MegaHikerGiveLatias
+    specialvar VAR_RESULT, CheckPartyMewtwo
+    goto_if_eq VAR_RESULT, TRUE, VictoryRoad_B1F_EventScript_MegaHikerGiveMewtwo
+    msgbox VictoryRoad_B1F_Text_MegaHiker, MSGBOX_NPC
+    end
+
+VictoryRoad_B1F_EventScript_MegaHikerGiveLatios::
+    lock
+    msgbox VictoryRoad_B1F_Text_MegaHikerGive, MSGBOX_DEFAULT
+    giveitem ITEM_LATIOSITE
+    setflag FLAG_RECEIVED_LATIOSITE
+    release
+    end
+
+VictoryRoad_B1F_EventScript_MegaHikerGiveLatias::
+    lock
+    msgbox VictoryRoad_B1F_Text_MegaHikerGive, MSGBOX_DEFAULT
+    giveitem ITEM_LATIASITE
+    setflag FLAG_RECEIVED_LATIASITE
+    release
+    end
+
+VictoryRoad_B1F_EventScript_MegaHikerGiveMewtwo::
+    lock
+    msgbox VictoryRoad_B1F_Text_MegaHikerGive, MSGBOX_DEFAULT
+    giveitem ITEM_MEWTWONITE_X
+    giveitem ITEM_MEWTWONITE_Y
+    setflag FLAG_RECEIVED_MEWTWONITE
+    release
+    end
+
+VictoryRoad_B1F_EventScript_MegaHiker2::
+    msgbox VictoryRoad_B1F_Text_MegaHiker, MSGBOX_NPC
+    end
+
 VictoryRoad_B1F_EventScript_Samuel::
 	trainerbattle_single TRAINER_SAMUEL, VictoryRoad_B1F_Text_SamuelIntro, VictoryRoad_B1F_Text_SamuelDefeat
 	msgbox VictoryRoad_B1F_Text_SamuelPostBattle, MSGBOX_AUTOCLOSE
@@ -88,4 +135,13 @@ VictoryRoad_B1F_Text_HallePostBattle:
 	.string "the path you've taken so far.\p"
 	.string "Try to enjoy things the rest of\n"
 	.string "the way!$"
+
+VictoryRoad_B1F_Text_MegaHiker:
+    .string "You're an interesting fellow,\p"
+    .string "I can sense it.$"
+
+VictoryRoad_B1F_Text_MegaHikerGive:
+    .string "I knew you were intersting,\p"
+    .string "you have a LEGENDARY POKéMON.\n"
+    .string "You should have this.$"
 

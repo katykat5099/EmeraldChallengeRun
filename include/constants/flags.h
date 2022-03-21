@@ -1259,9 +1259,9 @@
 #define FLAG_RECEIVED_LOPUNNITE                                     0x4BA
 #define FLAG_RECEIVED_PIDGEOTITE                                    0x4BB
 #define FLAG_RECEIVED_SCIZORITE                                     0x4BC
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
+#define FLAG_RECEIVED_MEWTWONITE                                    0x4BD
+#define FLAG_RECEIVED_LATIASITE                                     0x4BE
+#define FLAG_RECEIVED_LATIOSITE                                     0x4BF
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
