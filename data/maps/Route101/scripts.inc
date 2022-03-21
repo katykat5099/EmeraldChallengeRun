@@ -254,7 +254,10 @@ Route101_Movement_KatyLeavePlayer:
 
 Route101_Movement_KatyApproachPlayer1:
     walk_fast_down
+    walk_in_place_faster_down
     jump_down
+    walk_down
+    walk_down
     walk_down
     walk_down
     step_end
@@ -264,6 +267,8 @@ Route101_Movement_KatyApproachPlayer2:
     walk_in_place_faster_down
     jump_down
     walk_right
+    walk_down
+    walk_down
     walk_down
     walk_down
     step_end
