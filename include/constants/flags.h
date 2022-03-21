@@ -721,7 +721,7 @@
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
-#define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
+#define FLAG_RECEIVED_EVENT_ITEMS            0x2AA
 #define FLAG_MOVE_TUTOR_TAUGHT_DRAGON_ASCENT 0x2AB
 #define FLAG_GOT_MEMORIES                    0x2AC
 #define FLAG_GOT_PLATES                      0x2AD

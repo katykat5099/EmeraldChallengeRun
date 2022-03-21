@@ -73,6 +73,28 @@ SlateportCity_OnFrame:
 	map_script_2 VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_ScottScene
 	.2byte 0
 
+SlateportCity_EventScript_VeryKindSailor::
+    goto_if_unset FLAG_DEFEATED_SOOTOPOLIS_GYM, SlateportCity_EventScript_VeryKindSailor3
+    goto_if_set FLAG_RECEIVED_EVENT_ITEMS, SlateportCity_EventScript_VeryKindSailor2
+    lock
+    faceplayer
+    msgbox SlateportCity_Text_DidYouDropThese, MSGBOX_DEFAULT
+    giveitem ITEM_EON_TICKET
+    giveitem ITEM_AURORA_TICKET
+    giveitem ITEM_MYSTIC_TICKET
+    giveitem ITEM_OLD_SEA_MAP
+    setflag FLAG_RECEIVED_EVENT_ITEMS
+    release
+    end
+
+SlateportCity_EventScript_VeryKindSailor2::
+    msgbox SlateportCity_Text_ThoseLookedReallyInteresting, MSGBOX_NPC
+    end
+
+SlateportCity_EventScript_VeryKindSailor3::
+    msgbox SlateportCity_Text_HelpingOthers, MSGBOX_NPC
+    end
+
 SlateportCity_EventScript_ScottScene::
 	lockall
 	addobject LOCALID_SCOTT
@@ -1383,3 +1405,15 @@ SlateportCity_Text_TakingBattleTentChallenge:
 	.string "After all, a tough TRAINER is\n"
 	.string "the perfect fit for the BATTLE TENT!\p"
 	.string "Give it your best effort!$"
+
+SlateportCity_Text_DidYouDropThese:
+    .string "Hey! I just saw you drop these when\p"
+    .string "passing by. Don't lose them again!$"
+
+SlateportCity_Text_ThoseLookedReallyInteresting:
+    .string "Those things you dropped looked\p"
+    .string "really interesting…$"
+
+SlateportCity_Text_HelpingOthers:
+    .string "Helping others might bring you\p"
+    .string "good luck in return!$"
