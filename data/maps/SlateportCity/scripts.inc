@@ -74,8 +74,16 @@ SlateportCity_OnFrame:
 	.2byte 0
 
 SlateportCity_EventScript_VeryKindSailor::
-    goto_if_unset FLAG_DEFEATED_SOOTOPOLIS_GYM, SlateportCity_EventScript_VeryKindSailor3
+    goto_if_set FLAG_DEFEATED_SOOTOPOLIS_GYM, SlateportCity_EventScript_VeryKindSailor3
     goto_if_set FLAG_RECEIVED_EVENT_ITEMS, SlateportCity_EventScript_VeryKindSailor2
+    msgbox SlateportCity_Text_HelpingOthers, MSGBOX_NPC
+    end
+
+SlateportCity_EventScript_VeryKindSailor2::
+    msgbox SlateportCity_Text_ThoseLookedReallyInteresting, MSGBOX_NPC
+    end
+
+SlateportCity_EventScript_VeryKindSailor3::
     lock
     faceplayer
     msgbox SlateportCity_Text_DidYouDropThese, MSGBOX_DEFAULT
@@ -85,14 +93,6 @@ SlateportCity_EventScript_VeryKindSailor::
     giveitem ITEM_OLD_SEA_MAP
     setflag FLAG_RECEIVED_EVENT_ITEMS
     release
-    end
-
-SlateportCity_EventScript_VeryKindSailor2::
-    msgbox SlateportCity_Text_ThoseLookedReallyInteresting, MSGBOX_NPC
-    end
-
-SlateportCity_EventScript_VeryKindSailor3::
-    msgbox SlateportCity_Text_HelpingOthers, MSGBOX_NPC
     end
 
 SlateportCity_EventScript_ScottScene::
