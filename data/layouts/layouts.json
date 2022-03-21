@@ -4560,6 +4560,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route111_GiratinaCave/border.bin",
       "blockdata_filepath": "data/layouts/Route111_GiratinaCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_PACIFIDLOG_TOWN_CAVE",
+      "name": "PacifidlogTown_Cave_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/PacifidlogTown_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/PacifidlogTown_Cave/map.bin"
     }
   ]
 }
