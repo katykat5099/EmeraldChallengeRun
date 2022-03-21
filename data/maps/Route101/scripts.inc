@@ -230,6 +230,7 @@ Route101_EventScript_KatyApproachTrigger1::
     removeobject LOCALID_KATY
     setflag FLAG_HIDE_KATY
     setflag FLAG_MET_KATY
+    setvar VAR_KATY_VARIABLE, 1
     release
     end
 
@@ -246,6 +247,7 @@ Route101_EventScript_KatyApproachTrigger2::
     removeobject LOCALID_KATY
     setflag FLAG_HIDE_KATY
     setflag FLAG_MET_KATY
+    setvar VAR_KATY_VARIABLE, 1
     release
     end
 
