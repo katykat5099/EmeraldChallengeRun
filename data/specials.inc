@@ -579,3 +579,4 @@ gSpecials::
     def_special CheckPartyLopunny
     def_special CheckPartyPidgeot
     def_special CheckPartyScizor
+    def_special CheckPartySilvally

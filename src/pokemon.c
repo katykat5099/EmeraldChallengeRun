@@ -14434,3 +14434,15 @@ bool8 CheckPartyScizor(void)
     return FALSE;
 }
 
+bool8 CheckPartySilvally(void)
+{
+    s32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_SILVALLY)
+            return TRUE;
+    }
+
+    return FALSE;
+}
+

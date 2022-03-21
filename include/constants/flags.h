@@ -723,7 +723,7 @@
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
 #define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
 #define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
-#define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
+#define FLAG_GOT_MEMORIES                   0x2AC
 #define FLAG_GOT_PLATES                     0x2AD
 #define FLAG_MOVE_TUTOR_TAUGHT_SECRET_SWORD 0x2AE
 #define FLAG_RECEIVED_PURPLE_NECTAR         0x2AF
