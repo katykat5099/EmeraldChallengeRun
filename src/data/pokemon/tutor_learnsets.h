@@ -31,7 +31,6 @@ const u16 gTutorMoves[] =
     [TUTOR_MOVE_FIRE_PUNCH] = MOVE_FIRE_PUNCH,
     [TUTOR_MOVE_FURY_CUTTER] = MOVE_FURY_CUTTER,
     [TUTOR_MOVE_RELIC_SONG] = MOVE_RELIC_SONG,
-    [TUTOR_MOVE_SECRET_SWORD] = MOVE_SECRET_SWORD,
     [TUTOR_MOVE_DRAGON_ASCENT] = MOVE_DRAGON_ASCENT,
 };
 
@@ -8306,8 +8305,7 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SNORE)
                                             | TUTOR(MOVE_SUBSTITUTE)
                                             | TUTOR(MOVE_SWAGGER)
-                                            | TUTOR(MOVE_SWORDS_DANCE)
-                                            | TUTOR(MOVE_SECRET_SWORD)),
+                                            | TUTOR(MOVE_SWORDS_DANCE)),
 
     [SPECIES_MELOETTA]      = TUTOR_LEARNSET(TUTOR(MOVE_DREAM_EATER)
                                             | TUTOR(MOVE_FIRE_PUNCH)
