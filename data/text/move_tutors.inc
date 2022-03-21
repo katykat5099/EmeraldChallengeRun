@@ -285,7 +285,7 @@ MoveTutor_Text_DragonAscentDeclined:
     .string "Hrmm…$"
 
 MoveTutor_Text_DragonAscentWhichMon:
-    .string "Show me the POKéMON$"
+    .string "Show me the POKéMON.$"
 
 MoveTutor_Text_DragonAscentTaught:
     .string "I hope it tasted good. Heheheh.$"
