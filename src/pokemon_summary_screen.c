@@ -28,6 +28,7 @@
 #include "palette.h"
 #include "pokeball.h"
 #include "pokemon.h"
+#include "pokemon_debug.h"
 #include "pokemon_storage_system.h"
 #include "pokemon_summary_screen.h"
 #include "region_map.h"
@@ -47,6 +48,8 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/battle_config.h"
+#include "constants/species.h"
+#include "tx_difficulty_challenges.h"
 
 enum {
     PSS_PAGE_INFO,
@@ -1638,6 +1641,15 @@ static void Task_HandleInput(u8 taskId)
             PlaySE(SE_SELECT);
             BeginCloseSummaryScreen(taskId);
         }
+        #if P_ENABLE_DEBUG == TRUE
+        else if (JOY_NEW(SELECT_BUTTON) && !gMain.inBattle)
+        {
+            sMonSummaryScreen->callback = CB2_Debug_Pokemon;
+            StopPokemonAnimations();
+            PlaySE(SE_SELECT);
+            CloseSummaryScreen(taskId);
+        }
+        #endif
     }
 }
 
@@ -2315,7 +2327,8 @@ static bool8 CanReplaceMove(void)
 {
     if (sMonSummaryScreen->firstMoveIndex == MAX_MON_MOVES
         || sMonSummaryScreen->newMove == MOVE_NONE
-        || IsMoveHm(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]) != TRUE)
+        || IsMoveHm(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]) != TRUE //)
+        || gSaveBlock1Ptr->txRandNuzlocke) //tx_difficulty_challenges
         return TRUE;
     else
         return FALSE;
@@ -3884,10 +3897,10 @@ static void SetMonTypeIcons(void)
     }
     else
     {
-        SetTypeSpritePosAndPal(gBaseStats[summary->species].type1, 120, 48, SPRITE_ARR_ID_TYPE);
-        if (gBaseStats[summary->species].type1 != gBaseStats[summary->species].type2)
+        SetTypeSpritePosAndPal(GetTypeBySpecies(summary->species, 1), 120, 48, SPRITE_ARR_ID_TYPE); //tx_difficulty_challenges
+        if (GetTypeBySpecies(summary->species, 1) != GetTypeBySpecies(summary->species, 2)) //tx_difficulty_challenges
         {
-            SetTypeSpritePosAndPal(gBaseStats[summary->species].type2, 160, 48, SPRITE_ARR_ID_TYPE + 1);
+            SetTypeSpritePosAndPal(GetTypeBySpecies(summary->species, 2), 160, 48, SPRITE_ARR_ID_TYPE + 1); //tx_difficulty_challenges
             SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, FALSE);
         }
         else

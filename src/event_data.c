@@ -33,6 +33,7 @@ EWRAM_DATA u16 gSpecialVar_Unused_0x8014 = 0;
 EWRAM_DATA static u8 gSpecialFlags[SPECIAL_FLAGS_SIZE] = {0};
 
 extern u16 *const gSpecialVars[];
+extern u8 NuzlockeLUT[]; //tx_difficulty_challenges
 
 void InitEventData(void)
 {
@@ -184,6 +185,14 @@ u16 VarGet(u16 id)
     return *ptr;
 }
 
+u16 VarGetIfExist(u16 id)
+{
+    u16 *ptr = GetVarPointer(id);
+    if (!ptr)
+        return 65535;
+    return *ptr;
+}
+
 bool8 VarSet(u16 id, u16 value)
 {
     u16 *ptr = GetVarPointer(id);
@@ -216,6 +225,14 @@ u8 FlagSet(u16 id)
     return 0;
 }
 
+u8 FlagToggle(u16 id)
+{
+    u8 *ptr = GetFlagPointer(id);
+    if (ptr)
+        *ptr ^= 1 << (id & 7);
+    return 0;
+}
+
 u8 FlagClear(u16 id)
 {
     u8 *ptr = GetFlagPointer(id);
@@ -235,4 +252,34 @@ bool8 FlagGet(u16 id)
         return FALSE;
 
     return TRUE;
+}
+
+//tx_difficulty_challenges
+u8 NuzlockeFlagSet(u16 mapsec) // @Kurausukun
+{
+    u8 id = NuzlockeLUT[mapsec];
+    u8 * ptr = &gSaveBlock1Ptr->NuzlockeEncounterFlags[id / 8];
+    if (ptr)
+        * ptr |= 1 << (id & 7);
+    return 0;
+}
+u8 NuzlockeFlagClear(u16 mapsec) // @Kurausukun
+{
+    u8 id = NuzlockeLUT[mapsec];
+    u8 * ptr = &gSaveBlock1Ptr->NuzlockeEncounterFlags[id / 8];
+    if (ptr)
+        * ptr &= ~(1 << (id & 7));
+    return 0;
+}
+u8 NuzlockeFlagGet(u16 mapsec) // @Kurausukun
+{
+    u8 id = NuzlockeLUT[mapsec];
+    u8 * ptr = &gSaveBlock1Ptr->NuzlockeEncounterFlags[id / 8];
+
+    if (!ptr)
+        return 0;
+
+    if (!(((*ptr) >> (id & 7)) & 1))
+        return 0;
+    return 1;
 }

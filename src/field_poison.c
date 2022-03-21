@@ -16,6 +16,8 @@
 #include "trainer_hill.h"
 #include "constants/field_poison.h"
 #include "constants/party_menu.h"
+#include "constants/species.h"
+#include "tx_difficulty_challenges.h"
 
 static bool32 IsMonValidSpecies(struct Pokemon *pokemon)
 {
@@ -51,6 +53,8 @@ static void FaintFromFieldPoison(u8 partyIdx)
     SetMonData(pokemon, MON_DATA_STATUS, &status);
     GetMonData(pokemon, MON_DATA_NICKNAME, gStringVar1);
     StringGet_Nickname(gStringVar1);
+    if (gSaveBlock1Ptr->txRandNuzlocke) //tx_difficulty_challenges
+        NuzlockeDeleteFaintedPartyPokemon();
 }
 
 static bool32 MonFaintedFromPoison(u8 partyIdx)

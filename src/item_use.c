@@ -9,6 +9,7 @@
 #include "bike.h"
 #include "coins.h"
 #include "data.h"
+#include "debug.h"
 #include "event_data.h"
 #include "event_object_lock.h"
 #include "event_object_movement.h"
@@ -42,6 +43,9 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+
+#include "tx_difficulty_challenges.h"
+#include "battle_setup.h" //tx_difficulty_challenges
 
 static void SetUpItemUseCallback(u8 taskId);
 static void FieldCB_UseItemOnField(void);
@@ -138,7 +142,7 @@ static void Task_CallItemUseOnFieldCallback(u8 taskId)
         sItemUseOnFieldCB(taskId);
 }
 
-static void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str)
+void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str) //static //tx_difficulty_challenges
 {
     StringExpandPlaceholders(gStringVar4, str);
     if (!isUsingRegisteredKeyItemOnField)
@@ -865,6 +869,7 @@ static void Task_UseRepel(u8 taskId)
     if (!IsSEPlaying())
     {
         VarSet(VAR_REPEL_STEP_COUNT, ItemId_GetHoldEffectParam(gSpecialVar_ItemId));
+        VarSet(VAR_REPEL_LAST_USED, gSpecialVar_ItemId);
         RemoveUsedItem();
         if (!InBattlePyramid())
             DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, CloseItemMessage);
@@ -951,7 +956,7 @@ void ItemUseOutOfBattle_EvolutionStone(u8 taskId)
 u32 CanThrowBall(void)
 {
     if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))
-        && IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))) 
+        && IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)))
     {
         return 1;   // There are two present pokemon.
     }
@@ -965,8 +970,24 @@ u32 CanThrowBall(void)
         return 3;   // in semi-invulnerable state
     }
     #endif
-    
-    return 0;   // usable 
+    else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsCaptureBlocked) //tx_difficulty_challenges
+    {
+        return 4;
+    }
+    else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsSpeciesClauseActive == 2) //already have THIS_mon
+    {
+        return 5;
+    }
+    else if (gSaveBlock1Ptr->txRandTypeChallenge && TypeChallengeCaptureBlocked) //pkmn not of the TYPE CHALLENGE type
+    {
+        return 6;
+    }
+    else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsSpeciesClauseActive)
+    {
+        return 7;
+    }
+
+    return 0;   // usable
 }
 
 static const u8 sText_CantThrowPokeBall_TwoMons[] = _("Cannot throw a ball!\nThere are two Pokémon out there!\p");
@@ -1003,6 +1024,18 @@ void ItemUseInBattle_PokeBall(u8 taskId)
             DisplayItemMessageInBattlePyramid(taskId, sText_CantThrowPokeBall_SemiInvulnerable, Task_CloseBattlePyramidBagMessage);
         break;
     #endif
+    case 4:
+        DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallRoute);
+        break;
+    case 5:
+        DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallAlreadyCaught);
+        break;
+    case 6:
+        DisplayCannotUseItemMessage(taskId, FALSE, gText_TypeChallengeCantThrowPokeBall);
+        break;
+    case 7:
+        DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallSpeciesClause);
+        break;
     }
 }
 

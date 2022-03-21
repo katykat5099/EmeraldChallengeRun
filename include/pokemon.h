@@ -3,11 +3,13 @@
 
 #include "constants/pokemon.h"
 #include "sprite.h"
+#include "constants/species.h" //tx_difficulty_challenges
 #include "constants/region_map_sections.h"
 #include "constants/pokemon_config.h"
 #include "constants/map_groups.h"
 
 #define GET_BASE_SPECIES_ID(speciesId) (GetFormSpeciesId(speciesId, 0))
+#define FORM_SPECIES_END (0xffff)
 
 struct PokemonSubstruct0
 {
@@ -264,6 +266,7 @@ struct LevelUpMove
 struct Evolution
 {
     u16 method;
+    //u16 param2;
     u16 param;
     u16 targetSpecies;
 };
@@ -306,6 +309,8 @@ extern const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2];
 extern const u16 gLinkPlayerFacilityClasses[];
 extern const struct SpriteTemplate gBattlerSpriteTemplates[];
 extern const s8 gNatureStatTable[][5];
+extern const u16 gEvolutionLines[NUM_SPECIES][EVOS_PER_LINE]; //tx_difficulty_challenges
+extern const u16 *const gFormSpeciesIdTables[NUM_SPECIES];
 
 void ZeroBoxMonData(struct BoxPokemon *boxMon);
 void ZeroMonData(struct Pokemon *mon);
@@ -363,6 +368,7 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg);
 void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg);
 void CopyMon(void *dest, void *src, size_t size);
 u8 GiveMonToPlayer(struct Pokemon *mon);
+u8 SendMonToPC(struct Pokemon* mon);
 u8 CalculatePlayerPartyCount(void);
 u8 CalculateEnemyPartyCount(void);
 u8 GetMonsStateToDoubles(void);
@@ -457,5 +463,23 @@ u8 *MonSpritesGfxManager_GetSpritePtr(u8 managerId, u8 spriteNum);
 u16 GetFormSpeciesId(u16 speciesId, u8 formId);
 u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId);
 u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg);
+u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *mon, u16 method, u32 arg);
+u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
+
+//tx_difficulty_challenges
+void RandomizeSpeciesListEWRAM(u16 seed);
+void RandomizeSpeciesListEWRAMNormal(u16 seed);
+void RandomizeSpeciesListEWRAMLegendary(u16 seed);
+void RandomizeTypeEffectivenessListEWRAM(u16 seed);
+u16 PickRandomizedSpeciesFromEWRAM(u16 species, u16 depth);
+u16 PickRandomEvo0Species(u16 species);
+u8 GetTypeBySpecies(u16 species, u8 type);
+u16 GetSpeciesRandomSeeded(u16 species, u8 offset, u8 random, u8 seeded);
+u16 GetEvolutionTargetSpeciesRandom(u16 species, u8 random, u8 seeded);
+u8 GetPartySize();
+void NuzlockeDeletePartyMon(u8 position);
+void NuzlockeDeleteFaintedPartyPokemon(void) ;
+u8 GetPokemonCenterChallenge();
+void PrintTXSaveData(void);
 
 #endif // GUARD_POKEMON_H

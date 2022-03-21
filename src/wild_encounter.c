@@ -23,6 +23,14 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/weather.h"
+#include "tx_difficulty_challenges.h"
+
+#ifdef GBA_PRINTF //tx_difficulty_challenges
+    //#include "printf.h"
+    //#include "mgba.h"
+    //#include "data.h"                 // for gSpeciesNames, which maps species number to species name.
+    //#include "../gflib/string_util.h" // for ConvertToAscii()
+#endif
 
 extern const u8 EventScript_RepelWoreOff[];
 
@@ -375,8 +383,15 @@ static void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm;
 
+    #ifdef GBA_PRINTF
+        mgba_printf(MGBA_LOG_DEBUG, "******** CreateWildMon ********");
+    #endif
+
     ZeroEnemyPartyMons();
     checkCuteCharm = TRUE;
+
+    if (gSaveBlock1Ptr->txRandEncounter) //tx_difficulty_challenges
+        species = GetSpeciesRandomSeeded(species, TX_RANDOM_OFFSET_ENCOUNTER, TRUE, !gSaveBlock1Ptr->txRandChaos);
 
     switch (gBaseStats[species].genderRatio)
     {

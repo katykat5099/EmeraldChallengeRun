@@ -902,6 +902,11 @@ u8 ItemId_GetHoldEffectParam(u16 itemId)
     return gItems[SanitizeItemId(itemId)].holdEffectParam;
 }
 
+void ItemId_GetHoldEffectParam_Script()
+{
+    VarSet(VAR_RESULT, ItemId_GetHoldEffectParam(VarGet(VAR_0x8004)));
+}
+
 const u8 *ItemId_GetDescription(u16 itemId)
 {
     return gItems[SanitizeItemId(itemId)].description;
@@ -948,6 +953,11 @@ u8 ItemId_GetSecondaryId(u16 itemId)
     return gItems[SanitizeItemId(itemId)].secondaryId;
 }
 
+u8 ItemId_GetFlingPower(u16 itemId)
+{
+    return gItems[SanitizeItemId(itemId)].flingPower;
+}
+
 bool32 IsPinchBerryItemEffect(u16 holdEffect)
 {
     switch (holdEffect)
@@ -959,12 +969,8 @@ bool32 IsPinchBerryItemEffect(u16 holdEffect)
     case HOLD_EFFECT_SP_DEFENSE_UP:
     case HOLD_EFFECT_CRITICAL_UP:
     case HOLD_EFFECT_RANDOM_STAT_UP:
-    #ifdef HOLD_EFFECT_CUSTAP_BERRY
     case HOLD_EFFECT_CUSTAP_BERRY:
-    #endif
-    #ifdef HOLD_EFFECT_MICLE_BERRY
     case HOLD_EFFECT_MICLE_BERRY:
-    #endif
         return TRUE;
     }
 

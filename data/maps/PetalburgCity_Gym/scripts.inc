@@ -394,6 +394,11 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	delay 30
 	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
 	closemessage
+	delay 30
+	msgbox PetalburgCity_Gym_Text_LastlyBeforeYouGo, MSGBOX_DEFAULT
+	giveitem ITEM_MEGA_RING
+	msgbox PetalburgCity_Gym_Text_BecomeTheChampion, MSGBOX_DEFAULT
+	closemessage
 	delay 40
 	playse SE_DOOR
 	delay 10
@@ -1303,6 +1308,16 @@ PetalburgCity_Gym_Text_DadHappyAndSad:
 	.string "express how upset I am…\p"
 	.string "But as a father, it makes me both\n"
 	.string "happy and a little sad. It's odd…$"
+
+PetalburgCity_Gym_Text_LastlyBeforeYouGo:
+    .string "DAD: Before you go, I want you\n"
+    .string "to have this…$"
+
+PetalburgCity_Gym_Text_BecomeTheChampion:
+    .string "DAD: I want you to climb the\n"
+    .string "ranks and become the CHAMPION.\p"
+    .string "I hope this gift will help\n"
+    .string "you greatly.$"
 
 PetalburgCity_Gym_Text_PleaseComeWithMe:
 	.string "Ah, there you are, {PLAYER}{KUN}!\p"

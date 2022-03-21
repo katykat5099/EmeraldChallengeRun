@@ -90,7 +90,7 @@
 #define MAX_STAT_STAGE    12
 
 // Shiny odds
-#define SHINY_ODDS 8 // Actual probability is SHINY_ODDS/65536
+#define SHINY_ODDS 728 // Actual probability is SHINY_ODDS/65536
 
 // Flags for Get(Box)MonData / Set(Box)MonData
 #define MON_DATA_PERSONALITY        0
@@ -379,8 +379,18 @@
 #define EVO_LEVEL_DARK_TYPE_MON_IN_PARTY  30     // Pokémon reaches the specified level with a Dark Type Pokémon in party
 #define EVO_TRADE_SPECIFIC_MON            31     // Pokémon is traded for a specified Pokémon
 #define EVO_SPECIFIC_MAP                  32     // Pokémon levels up on specified map
+#define EVO_LEVEL_NATURE_AMPED            33     // Pokémon reaches the specified level, it has a Hardy, Brave, Adamant, Naughty, Docile, Impish, Lax, Hasty, Jolly, Naive, Rash, Sassy, or Quirky nature.
+#define EVO_LEVEL_NATURE_LOW_KEY          34     // Pokémon reaches the specified level, it has a Lonely, Bold, Relaxed, Timid, Serious, Modest, Mild, Quiet, Bashful, Calm, Gentle, or Careful nature.
+#define EVO_ITEM_HOLD_ITEM                35
 
+//tx_difficulty_challenges
+#ifndef POKEMON_EXPANSION 
+#define EVOS_PER_MON 5
+#define EVOS_PER_LINE 6
+#else
 #define EVOS_PER_MON 10
+#define EVOS_PER_LINE 22
+#endif
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL     0
@@ -410,6 +420,8 @@
 
 #define SKIP_FRONT_ANIM (1 << 7)
 
-#define NUM_ABILITY_SLOTS 3
+#define NUM_ABILITY_SLOTS (NUM_NORMAL_ABILITY_SLOTS + NUM_HIDDEN_ABILITY_SLOTS)
+#define NUM_NORMAL_ABILITY_SLOTS 2
+#define NUM_HIDDEN_ABILITY_SLOTS 1
 
 #endif // GUARD_CONSTANTS_POKEMON_H

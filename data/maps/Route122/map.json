@@ -24,7 +24,9 @@
       "map": "MAP_ROUTE123"
     }
   ],
-  "object_events": [],
+  "object_events": [
+
+  ],
   "warp_events": [
     {
       "x": 22,
@@ -32,8 +34,26 @@
       "elevation": 0,
       "dest_map": "MAP_MT_PYRE_1F",
       "dest_warp_id": 0
+    },
+    {
+      "x": 32,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE122_OL_POTTERY",
+      "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route122_EventScript_ShopSign"
+    }
+  ]
 }

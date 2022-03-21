@@ -1004,15 +1004,41 @@ struct SaveBlock1
     /*0x322C*/ struct MysteryGiftSave mysteryGift;
     /*0x3???*/ u8 dexSeen[DEX_FLAGS_NO];
     /*0x3???*/ u8 dexCaught[DEX_FLAGS_NO];
-    /*0x3???*/ u32 trainerHillTimes[4];
-    /*0x3???*/ struct RamScript ramScript;
-    /*0x3???*/ struct RecordMixingGift recordMixingGift;
-    /*0x3???*/ LilycoveLady lilycoveLady;
-    /*0x3???*/ struct TrainerNameRecord trainerNameRecords[20];
-    /*0x3???*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
-    /*0x3???*/ struct SaveTrainerHill trainerHill;
-    /*0x3???*/ struct WaldaPhrase waldaPhrase;
-    // sizeof: 0x3???
+    /*0x3718*/ u32 trainerHillTimes[4];
+    /*0x3728*/ struct RamScript ramScript;
+    /*0x3B14*/ struct RecordMixingGift recordMixingGift;
+    /*0x3B24*/ u8 seen2[DEX_FLAGS_NO];
+    /*0x3B58*/ LilycoveLady lilycoveLady;
+    /*0x3B98*/ struct TrainerNameRecord trainerNameRecords[20];
+    /*0x3C88*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
+    /*0x3D5A*/ u8 unused_3D5A[10];
+    /*0x3D64*/ struct SaveTrainerHill trainerHill;
+    /*0x3D70*/ struct WaldaPhrase waldaPhrase;
+    /*0x3D88*/ u8 NuzlockeEncounterFlags[9]; //tx_difficulty_challenges
+        u8 txRandChaos:1;
+        u8 txRandEncounter:1;
+        u8 txRandEncounterSimilar:1;
+        u8 txRandEncounterMapBased:1;
+        u8 txRandEncounterLegendary:1;
+        u8 txRandType:1;
+        u8 txRandTypeEffectiveness:1;
+        u8 txRandAbilities:1;
+        //
+        u8 txRandMoves:1;
+        u8 txRandTrainer:1;
+        u8 txRandEvolutions:1;
+        u8 txRandEvolutionMethodes:1;
+        u8 txRandEvoLimit:2;
+        u8 txRandNuzlocke:1;
+        u8 txRandNuzlockeHardcore:1;
+        //
+        u8 txRandTypeChallenge:5;
+        u8 txRandPartyLimit:3;
+        //
+        u8 txRandNoItemPlayer:1;
+        u8 txRandNoItemTrainer:1;
+        u8 txRandPkmnCenter:2;
+    // sizeof: 0x3D94  // sizeof: 0x3D88
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;
@@ -1023,5 +1049,7 @@ struct MapPosition
     s16 y;
     s8 height;
 };
+
+#define TX_DIFFICULTY_CHALLENGES_USED
 
 #endif // GUARD_GLOBAL_H

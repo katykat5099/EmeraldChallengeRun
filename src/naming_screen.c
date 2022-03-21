@@ -1490,6 +1490,9 @@ static bool8 KeyboardKeyHandler_Character(u8 input)
     {
         bool8 textFull = AddTextCharacter();
 
+        if (sNamingScreen ->currentPage == KBPAGE_LETTERS_UPPER && GetTextEntryPosition() == 1)
+             MainState_StartPageSwap();
+
         SquishCursor();
         if (textFull)
         {
@@ -1520,6 +1523,9 @@ static bool8 KeyboardKeyHandler_Backspace(u8 input)
 static bool8 KeyboardKeyHandler_OK(u8 input)
 {
     TryStartButtonFlash(BUTTON_OK, TRUE, FALSE);
+    if (gSaveBlock1Ptr->txRandNuzlocke && GetTextEntryPosition() == 0)
+        return FALSE;
+
     if (input == INPUT_A_BUTTON)
     {
         PlaySE(SE_SELECT);

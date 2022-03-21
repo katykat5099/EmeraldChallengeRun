@@ -17,6 +17,31 @@ MossdeepCity_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 
+MossdeepCity_EventScript_GyaradosSailor::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, MossdeepCity_EventScript_GyaradosSailorCheck
+	msgbox MossdeepCity_Text_GyaradosSailor, MSGBOX_NPC
+	end
+
+MossdeepCity_EventScript_GyaradosSailorCheck::
+    goto_if_set FLAG_RECEIVED_GYARADOSITE, MossdeepCity_EventScript_GyaradosSailorGot
+    specialvar VAR_RESULT, CheckPartyGyarados
+    goto_if_eq VAR_RESULT, TRUE, MossdeepCity_EventScript_GyaradosSailorGet
+    msgbox MossdeepCity_Text_GyaradosSailor, MSGBOX_NPC
+    end
+
+MossdeepCity_EventScript_GyaradosSailorGet::
+    lock
+    faceplayer
+    msgbox MossdeepCity_Text_GyaradosSailorGet, MSGBOX_DEFAULT
+    giveitem ITEM_GYARADOSITE
+    setflag FLAG_RECEIVED_GYARADOSITE
+    release
+    end
+
+MossdeepCity_EventScript_GyaradosSailorGot::
+    msgbox MossdeepCity_Text_GyaradosSailorGot, MSGBOX_NPC
+    end
+
 MossdeepCity_EventScript_PokefanF::
 	lock
 	faceplayer
@@ -432,4 +457,16 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "LEADER come in.\p"
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"
+
+MossdeepCity_Text_GyaradosSailor:
+    .string "GYARADOS is such a majestic\n"
+    .string "POKéMON to watch fly over the sea.$"
+
+MossdeepCity_Text_GyaradosSailorGet:
+    .string "GYARADOS is a tough POKéMON to train\n"
+    .string "and you seemed to train yours so\l"
+    .string "easily. I should reward you.$"
+
+MossdeepCity_Text_GyaradosSailorGot:
+    .string "I really love WATER POKéMON$"
 

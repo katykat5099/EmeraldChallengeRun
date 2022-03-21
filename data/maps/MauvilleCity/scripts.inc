@@ -38,6 +38,10 @@ MauvilleCity_EventScript_RichBoy::
 	msgbox MauvilleCity_Text_PokemonCanJumpYouOnBike, MSGBOX_NPC
 	end
 
+MauvilleCity_EventScript_MirrorWoman::
+	msgbox MauvilleCity_Text_NewMirrorShop, MSGBOX_NPC
+	end
+
 MauvilleCity_EventScript_CitySign::
 	msgbox MauvilleCity_Text_CitySign, MSGBOX_SIGN
 	end
@@ -52,6 +56,10 @@ MauvilleCity_EventScript_BikeShopSign::
 
 MauvilleCity_EventScript_GameCornerSign::
 	msgbox MauvilleCity_Text_GameCornerSign, MSGBOX_SIGN
+	end
+
+MauvilleCity_EventScript_MirrorShopSign::
+	msgbox MauvilleCity_Text_MirrorShopSign, MSGBOX_SIGN
 	end
 
 MauvilleCity_EventScript_SchoolKidM::
@@ -665,3 +673,12 @@ MauvilleCity_Text_ExplainTV:
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"
+
+MauvilleCity_Text_NewMirrorShop:
+    .string "You should go check out the new\p"
+    .string "store that sells all kinds of\n"
+    .string "mirrors!$"
+
+MauvilleCity_Text_MirrorShopSign:
+    .string "“We See Eye to Eye”\n"
+	.string "NARCISSUS MIRROR SHOP$"

@@ -124,6 +124,7 @@
 #define MAP_PACIFIDLOG_TOWN_HOUSE3            (4 | (7 << 8))
 #define MAP_PACIFIDLOG_TOWN_HOUSE4            (5 | (7 << 8))
 #define MAP_PACIFIDLOG_TOWN_HOUSE5            (6 | (7 << 8))
+#define MAP_PACIFIDLOG_TOWN_CAVE              (7 | (7 << 8))
 
 // gMapGroup_IndoorPetalburg
 #define MAP_PETALBURG_CITY_WALLYS_HOUSE      (0 | (8 << 8))
@@ -159,6 +160,7 @@
 #define MAP_MAUVILLE_CITY_POKEMON_CENTER_1F (5 | (10 << 8))
 #define MAP_MAUVILLE_CITY_POKEMON_CENTER_2F (6 | (10 << 8))
 #define MAP_MAUVILLE_CITY_MART              (7 | (10 << 8))
+#define MAP_MAUVILLE_CITY_MIRROR_SHOP       (8 | (10 << 8))
 
 // gMapGroup_IndoorRustboro
 #define MAP_RUSTBORO_CITY_DEVON_CORP_1F     (0 | (11 << 8))
@@ -178,6 +180,7 @@
 #define MAP_RUSTBORO_CITY_FLAT2_2F          (14 | (11 << 8))
 #define MAP_RUSTBORO_CITY_FLAT2_3F          (15 | (11 << 8))
 #define MAP_RUSTBORO_CITY_HOUSE3            (16 | (11 << 8))
+#define MAP_RUSTBORO_CITY_RUSTY_RELIC_SHOP  (17 | (11 << 8))
 
 // gMapGroup_IndoorFortree
 #define MAP_FORTREE_CITY_HOUSE1            (0 | (12 << 8))
@@ -247,6 +250,7 @@
 #define MAP_SOOTOPOLIS_CITY_LOTAD_AND_SEEDOT_HOUSE   (12 | (15 << 8))
 #define MAP_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F  (13 | (15 << 8))
 #define MAP_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_B1F (14 | (15 << 8))
+#define MAP_SOOTOPOLIS_CITY_AUDINITE_HOUSE           (15 | (15 << 8))
 
 // gMapGroup_IndoorEverGrande
 #define MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM      (0 | (16 << 8))
@@ -266,12 +270,14 @@
 #define MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_2F (14 | (16 << 8))
 
 // gMapGroup_IndoorRoute104
-#define MAP_ROUTE104_MR_BRINEYS_HOUSE         (0 | (17 << 8))
-#define MAP_ROUTE104_PRETTY_PETAL_FLOWER_SHOP (1 | (17 << 8))
+#define MAP_ROUTE104_MR_BRINEYS_HOUSE          (0 | (17 << 8))
+#define MAP_ROUTE104_PRETTY_PETAL_FLOWER_SHOP  (1 | (17 << 8))
+#define MAP_ROUTE104_HOOPA_PRISON_BOTTLE_HOUSE (2 | (17 << 8))
 
 // gMapGroup_IndoorRoute111
 #define MAP_ROUTE111_WINSTRATE_FAMILYS_HOUSE (0 | (18 << 8))
 #define MAP_ROUTE111_OLD_LADYS_REST_STOP     (1 | (18 << 8))
+#define MAP_ROUTE111_GIRATINA_CAVE           (2 | (18 << 8))
 
 // gMapGroup_IndoorRoute112
 #define MAP_ROUTE112_CABLE_CAR_STATION   (0 | (19 << 8))
@@ -281,6 +287,7 @@
 #define MAP_ROUTE114_FOSSIL_MANIACS_HOUSE  (0 | (20 << 8))
 #define MAP_ROUTE114_FOSSIL_MANIACS_TUNNEL (1 | (20 << 8))
 #define MAP_ROUTE114_LANETTES_HOUSE        (2 | (20 << 8))
+#define MAP_ROUTE114_STEELIXITE_HOUSE      (3 | (20 << 8))
 
 // gMapGroup_IndoorRoute116
 #define MAP_ROUTE116_TUNNELERS_REST_HOUSE (0 | (21 << 8))
@@ -290,6 +297,7 @@
 
 // gMapGroup_IndoorRoute121
 #define MAP_ROUTE121_SAFARI_ZONE_ENTRANCE (0 | (23 << 8))
+#define MAP_ROUTE121_HERACRONITE_HOUSE    (1 | (23 << 8))
 
 // gMapGroup_Dungeons
 #define MAP_METEOR_FALLS_1F_1R                       (0 | (24 << 8))
@@ -582,6 +590,7 @@
 
 // gMapGroup_IndoorRoute123
 #define MAP_ROUTE123_BERRY_MASTERS_HOUSE (0 | (31 << 8))
+#define MAP_ROUTE123_FORBIDDEN_REGION    (1 | (31 << 8))
 
 // gMapGroup_IndoorRoute119
 #define MAP_ROUTE119_WEATHER_INSTITUTE_1F (0 | (32 << 8))
@@ -591,6 +600,23 @@
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
-#define MAP_GROUPS_COUNT 34
+// gMapGroup_IndoorRoute118
+#define MAP_ROUTE118_MANECTITE_HOUSE (0 | (34 << 8))
+
+// gMapGroup_IndoorRoute122
+#define MAP_ROUTE122_OL_POTTERY (0 | (35 << 8))
+
+// gMapGroup_IndoorRoute107
+#define MAP_ROUTE107_ALAKAZITE_HOUSE (0 | (36 << 8))
+#define MAP_ROUTE107_AGGRONITE_HOUSE (1 | (36 << 8))
+
+// gMapGroup_IndoorRoute126
+#define MAP_ROUTE126_MELOETTA_CAVE (0 | (37 << 8))
+
+// gMapGroup_IndoorRoute102
+#define MAP_ROUTE102_GARDEVOIRITE_HOUSE (0 | (38 << 8))
+#define MAP_ROUTE102_VENUSAURITE_HOUSE  (1 | (38 << 8))
+
+#define MAP_GROUPS_COUNT 39
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

@@ -47,6 +47,21 @@ VerdanturfTown_EventScript_BoyTunnelOpen::
 	release
 	end
 
+VerdanturfTown_EventScript_Girl::
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_GRACIDEA, VerdanturfTown_EventScript_GiveGracidea
+	msgbox VerdanturfTown_Text_FlowersArePretty, MSGBOX_DEFAULT
+	release
+	end
+
+VerdanturfTown_EventScript_GiveGracidea::
+	msgbox VerdanturfTown_Text_GiveGracidea, MSGBOX_DEFAULT
+	giveitem ITEM_GRACIDEA
+	setflag FLAG_RECEIVED_GRACIDEA
+	release
+	end
+
 VerdanturfTown_EventScript_TownSign::
 	msgbox VerdanturfTown_Text_TownSign, MSGBOX_SIGN
 	end
@@ -62,6 +77,46 @@ VerdanturfTown_EventScript_BattleTentSign::
 VerdanturfTown_EventScript_RusturfTunnelSign::
 	msgbox VerdanturfTown_Text_RusturfTunnelSign, MSGBOX_SIGN
 	end
+
+VerdanturfTown_EventScript_LopunnyBeauty::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, VerdanturfTown_EventScript_LopunnyBeautyCheck
+	msgbox VerdanturfTown_Text_LopunnyBeauty, MSGBOX_NPC
+	end
+
+VerdanturfTown_EventScript_LopunnyBeautyCheck::
+    goto_if_set FLAG_RECEIVED_LOPUNNITE, VerdanturfTown_EventScript_LopunnyBeautyGot
+    specialvar VAR_RESULT, CheckPartyLopunny
+    goto_if_eq VAR_RESULT, TRUE, VerdanturfTown_EventScript_LopunnyBeautyGet
+    msgbox VerdanturfTown_Text_LopunnyBeauty, MSGBOX_NPC
+    end
+
+VerdanturfTown_EventScript_LopunnyBeautyGet::
+    lock
+    faceplayer
+    msgbox VerdanturfTown_Text_LopunnyBeautyGet, MSGBOX_DEFAULT
+    giveitem ITEM_LOPUNNITE
+    setflag FLAG_RECEIVED_LOPUNNITE
+    release
+    end
+
+VerdanturfTown_EventScript_LopunnyBeautyGot::
+    msgbox VerdanturfTown_Text_LopunnyBeautyGot, MSGBOX_NPC
+    end
+
+VerdanturfTown_Text_LopunnyBeauty:
+    .string "I love POKéMON that are beautiful.\p"
+    .string "I wanna meet all the beautiful\n"
+    .string "POKéMON.$"
+
+VerdanturfTown_Text_LopunnyBeautyGet:
+    .string "Wow! Your LOPUNNY is so beautiful.\p"
+    .string "I've been holding on to the LOPUNNY\n"
+    .string "MEGA STONE for some time now, I bet\l"
+    .string "it makes LOPUNNY even more pretty.\p"
+    .string "You deserve it. Take it.$"
+
+VerdanturfTown_Text_LopunnyBeautyGot:
+    .string "Thank you.$"
 
 VerdanturfTown_Text_ManTryingToDigTunnel:
 	.string "My papa told me.\p"
@@ -106,6 +161,17 @@ VerdanturfTown_Text_EasyToGetToRustboroNow:
 	.string "is now a tunnel to the other side.\p"
 	.string "It's great--it's easy to go shop for\n"
 	.string "new DEVON products in RUSTBORO now.$"
+
+VerdanturfTown_Text_FlowersArePretty:
+    .string "Flowers are so pretty.\n"
+    .string "Do you not agree?$"
+
+VerdanturfTown_Text_GiveGracidea:
+    .string "Do you like flowers too?\p"
+    .string "I recently visited the Sinnoh\n"
+    .string "region and I found this very\p"
+    .string "pretty flower. But, I am feeling\n"
+    .string "nice today, so you can have it!$"
 
 VerdanturfTown_Text_TownSign:
 	.string "VERDANTURF TOWN\p"

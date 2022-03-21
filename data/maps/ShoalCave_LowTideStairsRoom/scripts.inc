@@ -30,3 +30,36 @@ ShoalCave_LowTideStairsRoom_EventScript_ReceivedShoalSalt::
 	releaseall
 	end
 
+ShoalCave_LowTideStairsRoom_EventScript_Hiker::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, ShoalCave_LowTideStairsRoom_EventScript_HikerCheck
+	msgbox ShoalCave_LowTideStairsRoom_Text_Hiker, MSGBOX_NPC
+	end
+
+ShoalCave_LowTideStairsRoom_EventScript_HikerCheck::
+    goto_if_set FLAG_RECEIVED_GLALITITE, ShoalCave_LowTideStairsRoom_EventScript_HikerGot
+    specialvar VAR_RESULT, CheckPartyGlalie
+    goto_if_eq VAR_RESULT, TRUE, ShoalCave_LowTideStairsRoom_EventScript_HikerGive
+    msgbox ShoalCave_LowTideStairsRoom_Text_Hiker, MSGBOX_NPC
+    end
+
+ShoalCave_LowTideStairsRoom_EventScript_HikerGive::
+    lock
+    faceplayer
+    msgbox ShoalCave_LowTideStairsRoom_Text_HikerGive, MSGBOX_DEFAULT
+    giveitem ITEM_GLALITITE
+    setflag FLAG_RECEIVED_GLALITITE
+    release
+    end
+
+ShoalCave_LowTideStairsRoom_EventScript_HikerGot::
+    msgbox ShoalCave_LowTideStairsRoom_Text_Hiker, MSGBOX_NPC
+    end
+
+ShoalCave_LowTideStairsRoom_Text_Hiker:
+    .string "Hey, do you know where to\n"
+    .string "find a SNORUNT?\p"
+
+ShoalCave_LowTideStairsRoom_Text_HikerGive:
+    .string "Oh, you have a GLALIE.\n"
+    .string "I have an extra MEGA STONE,\l"
+    .string "you can have it.$"

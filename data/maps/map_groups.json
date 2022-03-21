@@ -1,4 +1,5 @@
 {
+  "layouts_table_label": "gMapLayouts",
   "group_order": [
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
@@ -33,7 +34,12 @@
     "gMapGroup_IndoorRoute113",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
-    "gMapGroup_IndoorRoute124"
+    "gMapGroup_IndoorRoute124",
+    "gMapGroup_IndoorRoute118",
+    "gMapGroup_IndoorRoute122",
+    "gMapGroup_IndoorRoute107",
+    "gMapGroup_IndoorRoute126",
+    "gMapGroup_IndoorRoute102"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -153,7 +159,8 @@
     "PacifidlogTown_House2",
     "PacifidlogTown_House3",
     "PacifidlogTown_House4",
-    "PacifidlogTown_House5"
+    "PacifidlogTown_House5",
+    "PacifidlogTown_Cave"
   ],
   "gMapGroup_IndoorPetalburg": [
     "PetalburgCity_WallysHouse",
@@ -188,7 +195,8 @@
     "MauvilleCity_House2",
     "MauvilleCity_PokemonCenter_1F",
     "MauvilleCity_PokemonCenter_2F",
-    "MauvilleCity_Mart"
+    "MauvilleCity_Mart",
+    "MauvilleCity_MirrorShop"
   ],
   "gMapGroup_IndoorRustboro": [
     "RustboroCity_DevonCorp_1F",
@@ -207,7 +215,8 @@
     "RustboroCity_Flat2_1F",
     "RustboroCity_Flat2_2F",
     "RustboroCity_Flat2_3F",
-    "RustboroCity_House3"
+    "RustboroCity_House3",
+    "RustboroCity_RustyRelicShop"
   ],
   "gMapGroup_IndoorFortree": [
     "FortreeCity_House1",
@@ -276,7 +285,8 @@
     "SootopolisCity_House7",
     "SootopolisCity_LotadAndSeedotHouse",
     "SootopolisCity_MysteryEventsHouse_1F",
-    "SootopolisCity_MysteryEventsHouse_B1F"
+    "SootopolisCity_MysteryEventsHouse_B1F",
+    "SootopolisCity_AudiniteHouse"
   ],
   "gMapGroup_IndoorEverGrande": [
     "EverGrandeCity_SidneysRoom",
@@ -297,11 +307,13 @@
   ],
   "gMapGroup_IndoorRoute104": [
     "Route104_MrBrineysHouse",
-    "Route104_PrettyPetalFlowerShop"
+    "Route104_PrettyPetalFlowerShop",
+    "Route104_HoopaPrisonBottleHouse"
   ],
   "gMapGroup_IndoorRoute111": [
     "Route111_WinstrateFamilysHouse",
-    "Route111_OldLadysRestStop"
+    "Route111_OldLadysRestStop",
+    "Route111_GiratinaCave"
   ],
   "gMapGroup_IndoorRoute112": [
     "Route112_CableCarStation",
@@ -310,7 +322,8 @@
   "gMapGroup_IndoorRoute114": [
     "Route114_FossilManiacsHouse",
     "Route114_FossilManiacsTunnel",
-    "Route114_LanettesHouse"
+    "Route114_LanettesHouse",
+    "Route114_SteelixiteHouse"
   ],
   "gMapGroup_IndoorRoute116": [
     "Route116_TunnelersRestHouse"
@@ -319,7 +332,8 @@
     "Route117_PokemonDayCare"
   ],
   "gMapGroup_IndoorRoute121": [
-    "Route121_SafariZoneEntrance"
+    "Route121_SafariZoneEntrance",
+    "Route121_HeracroniteHouse"
   ],
   "gMapGroup_Dungeons": [
     "MeteorFalls_1F_1R",
@@ -611,7 +625,8 @@
     "Route113_GlassWorkshop"
   ],
   "gMapGroup_IndoorRoute123": [
-    "Route123_BerryMastersHouse"
+    "Route123_BerryMastersHouse",
+    "Route123_ForbiddenRegion"
   ],
   "gMapGroup_IndoorRoute119": [
     "Route119_WeatherInstitute_1F",
@@ -621,71 +636,21 @@
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
   ],
-  "connections_include_order": [
-    "LittlerootTown",
-    "OldaleTown",
-    "DewfordTown",
-    "LavaridgeTown",
-    "FallarborTown",
-    "VerdanturfTown",
-    "PacifidlogTown",
-    "PetalburgCity",
-    "SlateportCity",
-    "MauvilleCity",
-    "RustboroCity",
-    "FortreeCity",
-    "LilycoveCity",
-    "MossdeepCity",
-    "SootopolisCity",
-    "EverGrandeCity",
-    "Route101",
-    "Route102",
-    "Route103",
-    "Route104",
-    "Route105",
-    "Route106",
-    "Route107",
-    "Route108",
-    "Route109",
-    "Route110",
-    "Route111",
-    "Route112",
-    "Route113",
-    "Route114",
-    "Route115",
-    "Route116",
-    "Route117",
-    "Route118",
-    "Route119",
-    "Route120",
-    "Route121",
-    "Route122",
-    "Route123",
-    "Route124",
-    "Route125",
-    "Route126",
-    "Route127",
-    "Route128",
-    "Route129",
-    "Route130",
-    "Route131",
-    "Route132",
-    "Route133",
-    "Route134",
-    "Underwater_Route105",
-    "Underwater_Route124",
-    "Underwater_Route125",
-    "Underwater_Route126",
-    "Underwater_Route127",
-    "Underwater_Route128",
-    "Underwater_Route129",
-    "SafariZone_Northwest",
-    "SafariZone_North",
-    "SafariZone_Southwest",
-    "SafariZone_South",
-    "SafariZone_Northeast",
-    "SafariZone_Southeast",
-    "BattleFrontier_OutsideWest",
-    "BattleFrontier_OutsideEast"
+  "gMapGroup_IndoorRoute118": [
+    "Route118_ManectiteHouse"
+  ],
+  "gMapGroup_IndoorRoute122": [
+    "Route122_OlPottery"
+  ],
+  "gMapGroup_IndoorRoute107": [
+    "Route107_AlakaziteHouse",
+    "Route107_AggroniteHouse"
+  ],
+  "gMapGroup_IndoorRoute126": [
+    "Route126_MeloettaCave"
+  ],
+  "gMapGroup_IndoorRoute102": [
+    "Route102_GardevoiriteHouse",
+    "Route102_VenusauriteHouse"
   ]
 }

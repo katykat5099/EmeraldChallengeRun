@@ -240,6 +240,49 @@ PetalburgWoods_Movement_AquaApproachPlayer:
 	walk_down
 	step_end
 
+PetalburgWoods_EventScript_BeedrillBugCatcher::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, PetalburgWoods_EventScript_BeedrillBugCatcherCheck
+	msgbox PetalburgWoods_Text_BeedrillBugCatcher, MSGBOX_NPC
+	end
+
+PetalburgWoods_EventScript_BeedrillBugCatcherCheck::
+    goto_if_set FLAG_RECEIVED_BEEDRILLITE, PetalburgWoods_EventScript_BeedrillBugCatcherGot
+    specialvar VAR_RESULT, CheckPartyBeedrill
+    goto_if_eq VAR_RESULT, TRUE, PetalburgWoods_EventScript_BeedrillBugCatcherGive
+    msgbox Route121_HeracroniteHouse_Text_BugCatcher, MSGBOX_NPC
+    end
+
+PetalburgWoods_EventScript_BeedrillBugCatcherGive::
+    lock
+    faceplayer
+    msgbox Route121_HeracroniteHouse_Text_BugCatcherGive, MSGBOX_DEFAULT
+    giveitem ITEM_BEEDRILLITE
+    setflag FLAG_RECEIVED_BEEDRILLITE
+    msgbox Route121_HeracroniteHouse_Text_BugCatcherGive2, MSGBOX_DEFAULT
+    release
+    end
+
+PetalburgWoods_EventScript_BeedrillBugCatcherGot::
+    msgbox Route121_HeracroniteHouse_Text_BugCatcherGot, MSGBOX_NPC
+    end
+
+PetalburgWoods_Text_BeedrillBugCatcher:
+    .string "Quick! Do you have a BEEDRILL?\n"
+    .string "You dont? Get out of here then!$"
+
+Route121_HeracroniteHouse_Text_BugCatcherGive:
+    .string "Quick! Do you have a BEEDRILL?\n"
+    .string "You do? OKAY, take this stone$"
+
+Route121_HeracroniteHouse_Text_BugCatcherGive2:
+    .string "If you ever meet a BUG CATCHER\n"
+    .string "that collects BUG stuff, DO NOT\l"
+    .string "let him know you have it.$"
+
+Route121_HeracroniteHouse_Text_BugCatcherGot:
+    .string "What are you doing around me\n"
+    .string "still? Get going!$"
+
 PetalburgWoods_EventScript_Boy1::
 	msgbox PetalburgWoods_Text_StayOutOfTallGrass, MSGBOX_NPC
 	end

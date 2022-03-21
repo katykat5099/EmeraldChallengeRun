@@ -1,5 +1,6 @@
 .set LOCALID_BIRCH, 2
 .set LOCALID_ZIGZAGOON, 4
+.set LOCALID_KATY, 7
 
 Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
@@ -205,6 +206,86 @@ Route101_Movement_Unused2:
 	walk_left
 	walk_up
 	step_end
+
+Route101_EventScript_KatyApproachTrigger1::
+    goto_if_set FLAG_MET_KATY, Route101_EventScript_KatyMet
+    lockall
+    addobject LOCALID_KATY
+    playse SE_LEDGE
+    applymovement LOCALID_KATY, Route101_Movement_KatyApproachPlayer1
+    waitmovement 0
+    msgbox Route101_Text_KatyApproach, MSGBOX_DEFAULT
+    giveitem ITEM_POKE_BALL, 5
+    applymovement LOCALID_KATY, Route101_Movement_KatyLeavePlayer
+    waitmovement 0
+    removeobject LOCALID_KATY
+    setflag FLAG_HIDE_KATY
+    setflag FLAG_MET_KATY
+    release
+    end
+
+Route101_EventScript_KatyApproachTrigger2::
+    goto_if_set FLAG_MET_KATY, Route101_EventScript_KatyMet
+    lockall
+    addobject LOCALID_KATY
+    playse SE_LEDGE
+    applymovement LOCALID_KATY, Route101_Movement_KatyApproachPlayer2
+    waitmovement 0
+    msgbox Route101_Text_KatyApproach, MSGBOX_DEFAULT
+    giveitem ITEM_POKE_BALL, 5
+    applymovement LOCALID_KATY, Route101_Movement_KatyLeavePlayer
+    waitmovement 0
+    removeobject LOCALID_KATY
+    setflag FLAG_HIDE_KATY
+    setflag FLAG_MET_KATY
+    release
+    end
+
+Route101_Movement_KatyLeavePlayer:
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    step_end
+
+Route101_Movement_KatyApproachPlayer1:
+    walk_fast_down
+    jump_down
+    walk_down
+    walk_down
+    step_end
+
+Route101_Movement_KatyApproachPlayer2:
+    walk_fast_down
+    walk_in_place_faster_down
+    jump_down
+    walk_right
+    walk_down
+    walk_down
+    step_end
+
+Route101_EventScript_KatyMet::
+    end
+
+Route101_Text_KatyApproach:
+    .string "…\p"
+    .string "This may be a bit of a surprise to see a\n"
+    .string "talking MEW here…\p"
+    .string "I have some important but maybe bad\l"
+    .string "news.\p"
+    .string "Lots of the Nuzlocke is programmed into\n"
+    .string "the game and because of that you are\l"
+    .string "not able to catch a POKéMON even if \l"
+    .string "you have encountered it before getting\l"
+    .string "any POKéBALLs.\p"
+    .string "So, you should communicate with your\n"
+    .string "CHAIN member and see if you want to\l"
+    .string "catch before or after the rival battle.\p"
+    .string "GL HF!$"
 
 Route101_EventScript_Youngster::
 	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC

@@ -143,6 +143,8 @@ gSpecials::
 	def_special GetDewfordHallPaintingNameIndex
 	def_special SwapRegisteredBike
 	def_special CalculatePlayerPartyCount
+	def_special GetPartySize @ tx_difficulty_challenges
+	def_special GetPokemonCenterChallenge @ tx_difficulty_challenges
 	def_special CountPartyNonEggMons
 	def_special CountPartyAliveNonEggMons_IgnoreVar0x8004Slot
 	def_special ShouldReadyContestArtist
@@ -536,3 +538,48 @@ gSpecials::
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
 	def_special SetTotemBoost
+	def_special CheckPartyManectric
+	def_special CheckPartySteelix
+	def_special CheckPartyAggron
+	def_special CheckPartyAlakazam
+	def_special CheckPartyAltaria
+    def_special CheckPartyCamerupt
+    def_special CheckPartyAerodactyl
+    def_special CheckPartyKangaskhan
+    def_special CheckPartyPinsir
+    def_special CheckPartyAmpharos
+    def_special CheckPartyGenesect
+    def_special CheckPartyHeracross
+    def_special CheckPartyAudino
+    def_special CheckPartyMeloetta
+    def_special CheckPartyGardevoir
+    def_special CheckPartyVenusaur
+    def_special CheckPartyTyranitar
+    def_special CheckPartyGarchomp
+    def_special CheckPartyHoundoom
+    def_special CheckPartySalamence
+    def_special CheckPartyBeedrill
+    def_special CheckPartyBlastoise
+    def_special CheckPartySceptile
+    def_special CheckPartyBlaziken
+    def_special CheckPartySwampert
+    def_special CheckPartySharpedo
+    def_special CheckPartyAbsol
+    def_special CheckPartyAbomasnow
+    def_special CheckPartyCharizard
+    def_special CheckPartyBanette
+    def_special CheckPartyGengar
+    def_special CheckPartyGlalie
+    def_special CheckPartyGyarados
+    def_special CheckPartySlowbro
+    def_special CheckPartyLucario
+    def_special CheckPartyMedicham
+    def_special CheckPartyMawile
+    def_special CheckPartySableye
+    def_special CheckPartyLopunny
+    def_special CheckPartyPidgeot
+    def_special CheckPartyScizor
+    def_special CheckPartySilvally
+    def_special CheckPartyLatios
+    def_special CheckPartyLatias
+    def_special CheckPartyMewtwo

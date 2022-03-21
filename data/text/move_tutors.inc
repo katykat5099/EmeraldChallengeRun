@@ -235,3 +235,57 @@ MoveTutor_Text_ExplosionTaught:
 	.string "to ignite my own EXPLOSION…\p"
 	.string "Maybe it's because deep down,\n"
 	.string "I would rather stay here…$"
+
+MoveTutor_Text_RelicSongTeach:
+    .string "Ah, the mythical POKeMON, MELOETTA.\n"
+    .string "Known widely for it's beautiful\l"
+    .string "song. But, what's this? You say\p"
+    .string "your MELOETTA does not know this\n"
+    .string "song I speak of? Well, lucky for\l"
+    .string "you and your MELOETTA, I just so\p"
+    .string "happen to know it. Would you like\n"
+    .string "me to teach the RELIC SONG?$"
+
+MoveTutor_Text_RelicSongDeclined:
+    .string "You do not wish to hear the song?\n"
+    .string "now THAT is unheard of.$"
+
+MoveTutor_Text_RelicSongWhichMon:
+    .string "Show me your MELOETTA and I will\n"
+    .string "quickly teach it.$"
+
+MoveTutor_Text_RelicSongTaught:
+    .string "The RELIC SONG is both a move so\n"
+    .string "powerful in battle, and to the ears.$"
+
+MoveTutor_Text_SecretSwordTeach:
+    .string "Hello, I am a MOVE TUTOR. What do\n"
+    .string "I teach? Well, that's a SECRET. why\l"
+    .string "not check which POKéMON might be\p"
+    .string "compatible, hmm? What do you say?$"
+
+MoveTutor_Text_SecretSwordDeclined:
+    .string "Will you find the SECRET POKéMON?$"
+
+MoveTutor_Text_SecretSwordWhichMon:
+    .string "Which POKéMON will it be?$"
+
+MoveTutor_Text_SecretSwordTaught:
+    .string "So you figured out which POKéMON\p"
+    .string "I can teach. SECRET SWORD is a\l"
+    .string "great move for KELDEO. Use it well.$"
+
+MoveTutor_Text_DragonAscentTeach:
+    .string "Welcome to the SKY PILLAR.\n"
+    .string "I have the right stuff here, if\l"
+    .string "you know what I mean?\n"
+    .string "Are you ready to get teaching?$"
+
+MoveTutor_Text_DragonAscentDeclined:
+    .string "Hrmm…$"
+
+MoveTutor_Text_DragonAscentWhichMon:
+    .string "Show me the POKéMON.$"
+
+MoveTutor_Text_DragonAscentTaught:
+    .string "I hope it tasted good. Heheheh.$"

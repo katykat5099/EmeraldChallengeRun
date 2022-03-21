@@ -118,9 +118,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	waitmessage
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_DEFAULT
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
+	clearflag FLAG_HIDE_KATY
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter::
@@ -551,6 +551,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex::
 	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
+	special EnableNationalPokedex
 	special SetUnlockedPokedexFlags
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
@@ -662,6 +663,78 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ScottAboardSSTidalCall::
 	clearflag FLAG_SCOTT_CALL_BATTLE_FRONTIER
 	releaseall
 	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStones::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesCheck
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStones, MSGBOX_NPC
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesCheck::
+    goto_if_set FLAG_RECEIVED_SCEPTILITE, LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGot
+    goto_if_set FLAG_RECEIVED_BLAZIKENITE, LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGot
+    goto_if_set FLAG_RECEIVED_SWAMPERTITE, LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGot
+    specialvar VAR_RESULT, CheckPartySceptile
+    goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGetTreecko
+    specialvar VAR_RESULT, CheckPartyBlaziken
+    goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGetTorchic
+    specialvar VAR_RESULT, CheckPartySwampert
+    goto_if_eq VAR_RESULT, TRUE, LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGetMudkip
+    msgbox LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStones, MSGBOX_NPC
+    end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGetTreecko::
+    lock
+    faceplayer
+    msgbox LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStonesGetTreecko, MSGBOX_DEFAULT
+    giveitem ITEM_SCEPTILITE
+    setflag FLAG_RECEIVED_SCEPTILITE
+    release
+    end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGetTorchic::
+    lock
+    faceplayer
+    msgbox LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStonesGetTorchic, MSGBOX_DEFAULT
+    giveitem ITEM_BLAZIKENITE
+    setflag FLAG_RECEIVED_BLAZIKENITE
+    release
+    end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGetMudkip::
+    lock
+    faceplayer
+    msgbox LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStonesGetMudkip, MSGBOX_DEFAULT
+    giveitem ITEM_SWAMPERTITE
+    setflag FLAG_RECEIVED_SWAMPERTITE
+    release
+    end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ScientistMegaStonesGot:
+    msgbox LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStonesGot, MSGBOX_NPC
+    end
+
+LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStones:
+    .string "The three starters, TREECKO, TORCHIC\p"
+    .string "and MUDKIP. All three can undergo\l"
+    .string "MEGA EVOLUTION. It's a wonderful thing$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStonesGetTreecko:
+    .string "Ah! Your TREECKO has grown so\p"
+    .string "strong. With MEGA EVOLUTION it can\l"
+    .string "be even stronger now! Here you go!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStonesGetTorchic:
+    .string "Ah! Your TORCHIC has grown so\p"
+    .string "strong. With MEGA EVOLUTION it can\l"
+    .string "be even stronger now! Here you go!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStonesGetMudkip:
+    .string "Ah! Your MUDKIP has grown so\p"
+    .string "strong. With MEGA EVOLUTION it can\l"
+    .string "be even stronger now! Here you go!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ScientistMegaStonesGot:
+    .string "MEGA EVOLUTION is fantastic!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
 	.string "Hunh? PROF. BIRCH?\p"

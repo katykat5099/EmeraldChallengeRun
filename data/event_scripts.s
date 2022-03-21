@@ -578,6 +578,8 @@ gStdScripts_End::
 	.include "data/scripts/new_game.inc"
 	.include "data/scripts/hall_of_fame.inc"
 
+	.include "data/scripts/debug.inc"
+
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
 	goto EventScript_ResetMrBriney
@@ -1057,3 +1059,35 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/RustboroCity_RustyRelicShop/scripts.inc"
+
+	.include "data/maps/Route118_ManectiteHouse/scripts.inc"
+
+	.include "data/maps/Route122_OlPottery/scripts.inc"
+
+	.include "data/maps/MauvilleCity_MirrorShop/scripts.inc"
+
+	.include "data/maps/Route114_SteelixiteHouse/scripts.inc"
+
+	.include "data/maps/Route107_AlakaziteHouse/scripts.inc"
+
+	.include "data/maps/Route107_AggroniteHouse/scripts.inc"
+
+	.include "data/maps/Route123_ForbiddenRegion/scripts.inc"
+
+	.include "data/maps/Route121_HeracroniteHouse/scripts.inc"
+
+	.include "data/maps/SootopolisCity_AudiniteHouse/scripts.inc"
+
+	.include "data/maps/Route126_MeloettaCave/scripts.inc"
+
+	.include "data/maps/Route102_GardevoiriteHouse/scripts.inc"
+
+	.include "data/maps/Route102_VenusauriteHouse/scripts.inc"
+
+	.include "data/maps/Route104_HoopaPrisonBottleHouse/scripts.inc"
+
+	.include "data/maps/Route111_GiratinaCave/scripts.inc"
+
+	.include "data/maps/PacifidlogTown_Cave/scripts.inc"

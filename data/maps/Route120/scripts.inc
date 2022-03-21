@@ -86,6 +86,31 @@ Route120_EventScript_SetRainyWeather::
 	setweather WEATHER_RAIN
 	return
 
+Route120_EventScript_AbsolMega::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Route120_EventScript_AbsolCheck
+	msgbox Route120_Text_AbsolMega, MSGBOX_NPC
+	end
+
+Route120_EventScript_AbsolCheck::
+    goto_if_set FLAG_RECEIVED_ABSOLITE, Route120_EventScript_AbsolMegaGot
+    specialvar VAR_RESULT, CheckPartyAbsol
+    goto_if_eq VAR_RESULT, TRUE, Route120_EventScript_AbsolMegaGet
+    msgbox Route120_Text_AbsolMega, MSGBOX_NPC
+    end
+
+Route120_EventScript_AbsolMegaGet::
+    lock
+    faceplayer
+    msgbox Route120_Text_AbsolMegaGet, MSGBOX_DEFAULT
+    giveitem ITEM_ABSOLITE
+    setflag FLAG_RECEIVED_ABSOLITE
+    release
+    end
+
+Route120_EventScript_AbsolMegaGot::
+    msgbox Route120_Text_AbsolMega, MSGBOX_NPC
+    end
+
 Route120_EventScript_BerryBeauty::
 	lock
 	faceplayer
@@ -362,6 +387,45 @@ Route120_EventScript_Callie::
 	msgbox Route120_Text_CalliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route120_EventScript_AppleArtist::
+	lock
+	faceplayer
+	dotimebasedevents
+	goto_if_set FLAG_DAILY_RECEIVED_APPLE, Route120_EventScript_AlreadyGotApple
+	msgbox Route120_Text_PaintingAnApple, MSGBOX_DEFAULT
+	random 2
+	goto_if_eq VAR_RESULT, 0, Route120_EventScript_TheSweetApple
+	goto_if_eq VAR_RESULT, 1, Route120_EventScript_TheTartApple
+	release
+	end
+
+Route120_EventScript_AlreadyGotApple::
+    msgbox Route120_Text_AlreadyGotApple, MSGBOX_DEFAULT
+    release
+    end
+
+Route120_EventScript_TheSweetApple::
+    giveitem ITEM_SWEET_APPLE
+    setflag FLAG_DAILY_RECEIVED_APPLE
+    release
+    end
+
+Route120_EventScript_TheTartApple::
+    giveitem ITEM_TART_APPLE
+    setflag FLAG_DAILY_RECEIVED_APPLE
+    release
+    end
+
+Route120_Text_AlreadyGotApple:
+	.string "Apples are so tasty!$"
+
+Route120_Text_PaintingAnApple:
+    .string "I found this apple on the ground near\n"
+    .string "that tree over there and started to\p"
+    .string "paint it. I finished just a little\n"
+    .string "while ago. I don't need this apple\p"
+    .string "anymore. I know! You should have it.$"
+
 Route120_Text_StevenGreeting:
 	.string "STEVEN: Hm? {PLAYER}{KUN}, hi.\n"
 	.string "It's been a while.\p"
@@ -430,3 +494,13 @@ Route120_Text_RouteSignFortree:
 Route120_Text_RouteSign121:
 	.string "{RIGHT_ARROW} ROUTE 121\n"
 	.string "{LEFT_ARROW} ROUTE 120$"
+
+Route120_Text_AbsolMega:
+    .string "ABSOL only shows up when there\p"
+    .string "may be a disaster. Are you here\l"
+    .string "as a result of a disaster?$"
+
+Route120_Text_AbsolMegaGet:
+    .string "You have an ABSOL.\p"
+    .string "Do you face disaster every day?\l"
+    .string "Does this count as a disaster?$"

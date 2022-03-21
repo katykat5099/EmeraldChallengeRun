@@ -16,6 +16,7 @@
 #include "berry.h"
 #include "bg.h"
 #include "data.h"
+#include "debug.h"
 #include "decompress.h"
 #include "dma3.h"
 #include "event_data.h"
@@ -63,6 +64,8 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "cable_club.h"
+#include "tx_difficulty_challenges.h"
+#include "overworld.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -1825,6 +1828,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 fixedIV;
     s32 i, j;
     u8 monsCount;
+    u16 species, move; //tx_difficulty_challenges
 
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
@@ -1872,7 +1876,13 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                if (gSaveBlock1Ptr->txRandTrainer) //tx_difficulty_challenges
+                {
+                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->txRandChaos);
+                    CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                }
+                else
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 break;
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
@@ -1884,12 +1894,27 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                if (gSaveBlock1Ptr->txRandTrainer) //tx_difficulty_challenges
+                {
+                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->txRandChaos);
+                    CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                }
+                else
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
-                    SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
-                    SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                    if (gSaveBlock1Ptr->txRandMoves) //tx_difficulty_challenges
+                    {
+                        move = (RandomSeeded(partyData[i].moves[j], FALSE) % MOVES_COUNT) + 1;
+                        SetMonData(&party[i], MON_DATA_MOVE1 + j, &move);
+                        SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[move].pp);
+                    }
+                    else
+                    {
+                        SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
+                        SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                    }
                 }
                 break;
             }
@@ -1902,7 +1927,13 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                if (gSaveBlock1Ptr->txRandTrainer) //tx_difficulty_challenges
+                {
+                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->txRandChaos);
+                    CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                }
+                else
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 break;
@@ -1916,14 +1947,29 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                if (gSaveBlock1Ptr->txRandTrainer) //tx_difficulty_challenges
+                {
+                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->txRandChaos);
+                    CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                }
+                else
+                    CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
-                    SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
-                    SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                    if (gSaveBlock1Ptr->txRandMoves) //tx_difficulty_challenges
+                    {
+                        move = (RandomSeeded(partyData[i].moves[j], FALSE) % MOVES_COUNT) + 1;
+                        SetMonData(&party[i], MON_DATA_MOVE1 + j, &move);
+                        SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[move].pp);
+                    }
+                    else
+                    {
+                        SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
+                        SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
+                    }
                 }
                 break;
             }
@@ -2917,6 +2963,7 @@ static void BattleStartClearSetData(void)
         gBattleStruct->lastTakenMoveFrom[i][2] = 0;
         gBattleStruct->lastTakenMoveFrom[i][3] = 0;
         gBattleStruct->AI_monToSwitchIntoId[i] = PARTY_SIZE;
+        gBattleStruct->skyDropTargets[i] = 0xFF;
     }
 
     gLastUsedMove = 0;
@@ -2982,6 +3029,7 @@ static void BattleStartClearSetData(void)
     gBattleStruct->mega.triggerSpriteId = 0xFF;
     
     gBattleStruct->stickyWebUser = 0xFF;
+    gBattleStruct->appearedInBattle = 0;
     
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -3020,7 +3068,7 @@ void SwitchInClearSetData(void)
         gStatuses3[gActiveBattler] &= (STATUS3_LEECHSEED_BATTLER | STATUS3_LEECHSEED | STATUS3_ALWAYS_HITS | STATUS3_PERISH_SONG | STATUS3_ROOTED
                                        | STATUS3_GASTRO_ACID | STATUS3_EMBARGO | STATUS3_TELEKINESIS | STATUS3_MAGNET_RISE | STATUS3_HEAL_BLOCK
                                        | STATUS3_AQUA_RING | STATUS3_POWER_TRICK);
-
+        gStatuses4[gActiveBattler] &= (STATUS4_MUD_SPORT | STATUS4_WATER_SPORT);
         for (i = 0; i < gBattlersCount; i++)
         {
             if (GetBattlerSide(gActiveBattler) != GetBattlerSide(i)
@@ -3038,9 +3086,8 @@ void SwitchInClearSetData(void)
     {
         gBattleMons[gActiveBattler].status2 = 0;
         gStatuses3[gActiveBattler] = 0;
+        gStatuses4[gActiveBattler] = 0;
     }
-    
-    gStatuses4[gActiveBattler] = 0;
 
     for (i = 0; i < gBattlersCount; i++)
     {
@@ -3196,8 +3243,8 @@ void FaintClearSetData(void)
 
     gBattleResources->flags->flags[gActiveBattler] = 0;
 
-    gBattleMons[gActiveBattler].type1 = gBaseStats[gBattleMons[gActiveBattler].species].type1;
-    gBattleMons[gActiveBattler].type2 = gBaseStats[gBattleMons[gActiveBattler].species].type2;
+    gBattleMons[gActiveBattler].type1 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 1); //tx_difficulty_challenges
+    gBattleMons[gActiveBattler].type2 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 2); //tx_difficulty_challenges
     gBattleMons[gActiveBattler].type3 = TYPE_MYSTERY;
 
     ClearBattlerMoveHistory(gActiveBattler);
@@ -3206,6 +3253,45 @@ void FaintClearSetData(void)
     UndoFormChange(gBattlerPartyIndexes[gActiveBattler], GET_BATTLER_SIDE(gActiveBattler), FALSE);
     if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
         UndoMegaEvolution(gBattlerPartyIndexes[gActiveBattler]);
+
+    // If the fainted mon was involved in a Sky Drop
+    if (gBattleStruct->skyDropTargets[gActiveBattler] != 0xFF)
+    {
+        // Get battler id of the other Pokemon involved in this Sky Drop
+        u8 otherSkyDropper = gBattleStruct->skyDropTargets[gActiveBattler];
+
+        // Clear Sky Drop data
+        gBattleStruct->skyDropTargets[gActiveBattler] = 0xFF;
+        gBattleStruct->skyDropTargets[otherSkyDropper] = 0xFF;
+
+        // If the other Pokemon involved in this Sky Drop was the target, not the attacker
+        if (gStatuses3[otherSkyDropper] & STATUS3_SKY_DROPPED)
+        {
+            // Release the target and take them out of the semi-invulnerable state
+            gStatuses3[otherSkyDropper] &= ~(STATUS3_SKY_DROPPED | STATUS3_ON_AIR);
+
+            // Make the target's sprite visible
+            gSprites[gBattlerSpriteIds[otherSkyDropper]].invisible = FALSE;
+
+            // If the target was sky dropped in the middle of using Outrage/Petal Dance/Thrash,
+            // confuse them upon release and print "confused via fatigue" message and animation.
+            if (gBattleMons[otherSkyDropper].status2 & STATUS2_LOCK_CONFUSE)
+            {
+                gBattleMons[otherSkyDropper].status2 &= ~(STATUS2_LOCK_CONFUSE);
+
+                // If the released mon can be confused, do so.
+                // Don't use CanBeConfused here, since it can cause issues in edge cases.
+                if (!(GetBattlerAbility(otherSkyDropper) == ABILITY_OWN_TEMPO
+                    || gBattleMons[otherSkyDropper].status2 & STATUS2_CONFUSION
+                    || IsBattlerTerrainAffected(otherSkyDropper, STATUS_FIELD_MISTY_TERRAIN)))
+                {
+                    gBattleMons[otherSkyDropper].status2 |= STATUS2_CONFUSION_TURN(((Random()) % 4) + 2);
+                    gBattlerAttacker = otherSkyDropper;
+                    gBattlescriptCurrInstr = BattleScript_ThrashConfuses - 2;
+                }
+            }
+        }
+    }
 }
 
 static void DoBattleIntro(void)
@@ -3255,8 +3341,8 @@ static void DoBattleIntro(void)
             else
             {
                 memcpy(&gBattleMons[gActiveBattler], &gBattleResources->bufferB[gActiveBattler][4], sizeof(struct BattlePokemon));
-                gBattleMons[gActiveBattler].type1 = gBaseStats[gBattleMons[gActiveBattler].species].type1;
-                gBattleMons[gActiveBattler].type2 = gBaseStats[gBattleMons[gActiveBattler].species].type2;
+                gBattleMons[gActiveBattler].type1 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 1);
+                gBattleMons[gActiveBattler].type2 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 2);
                 gBattleMons[gActiveBattler].type3 = TYPE_MYSTERY;
                 gBattleMons[gActiveBattler].ability = GetAbilityBySpecies(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].abilityNum);
                 gBattleStruct->hpOnSwitchout[GetBattlerSide(gActiveBattler)] = gBattleMons[gActiveBattler].hp;
@@ -3622,6 +3708,9 @@ static void TryDoEventsBeforeFirstTurn(void)
         *(gBattleStruct->monToSwitchIntoId + i) = PARTY_SIZE;
         gChosenActionByBattler[i] = B_ACTION_NONE;
         gChosenMoveByBattler[i] = MOVE_NONE;
+        // Record party slots of player's mons that appeared in battle
+        if (!IsBattlerAIControlled(i))
+            gBattleStruct->appearedInBattle |= gBitTable[gBattlerPartyIndexes[i]];
     }
     TurnValuesCleanUp(FALSE);
     SpecialStatusesClear();
@@ -3941,11 +4030,21 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if (gBattleTypeFlags & (BATTLE_TYPE_LINK
+                    #ifdef TX_DEBUGGING
+                    if (FlagGet(FLAG_SYS_NO_BAG_USE) || gBattleTypeFlags & (BATTLE_TYPE_LINK //DEBUG
                                             | BATTLE_TYPE_FRONTIER_NO_PYRAMID
                                             | BATTLE_TYPE_EREADER_TRAINER
                                             | BATTLE_TYPE_RECORDED_LINK))
                     {
+                    #else
+                    if (gBattleTypeFlags & (BATTLE_TYPE_LINK //DEBUG
+                                            | BATTLE_TYPE_FRONTIER_NO_PYRAMID
+                                            | BATTLE_TYPE_EREADER_TRAINER
+                                            | BATTLE_TYPE_RECORDED_LINK))
+                                            // Or if currently held by Sky Drop
+                                            || gStatuses3[gActiveBattler] & STATUS3_SKY_DROPPED)
+                    {
+                    #endif
                         RecordedBattle_ClearBattlerAction(gActiveBattler, 1);
                         gSelectionBattleScripts[gActiveBattler] = BattleScript_ActionSelectionItemsCantBeUsed;
                         gBattleCommunication[gActiveBattler] = STATE_SELECTION_SCRIPT;
@@ -4414,15 +4513,16 @@ s8 GetChosenMovePriority(u32 battlerId)
 s8 GetMovePriority(u32 battlerId, u16 move)
 {
     s8 priority;
+    u16 ability = GetBattlerAbility(battlerId);
 
     priority = gBattleMoves[move].priority;
-    if (GetBattlerAbility(battlerId) == ABILITY_GALE_WINGS
+    if (ability == ABILITY_GALE_WINGS
         && gBattleMoves[move].type == TYPE_FLYING
         && (B_GALE_WINGS <= GEN_6 || BATTLER_MAX_HP(battlerId)))
     {
         priority++;
     }
-    else if (GetBattlerAbility(battlerId) == ABILITY_PRANKSTER && IS_MOVE_STATUS(move))
+    else if (ability == ABILITY_PRANKSTER && IS_MOVE_STATUS(move))
     {
         gProtectStructs[battlerId].pranksterElevated = 1;
         priority++;
@@ -4431,7 +4531,7 @@ s8 GetMovePriority(u32 battlerId, u16 move)
     {
         priority++;
     }
-    else if (GetBattlerAbility(battlerId) == ABILITY_TRIAGE)
+    else if (ability == ABILITY_TRIAGE)
     {
         switch (gBattleMoves[move].effect)
         {
@@ -4461,33 +4561,30 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     u32 speedBattler1 = 0, speedBattler2 = 0;
     u32 holdEffectBattler1 = 0, holdEffectBattler2 = 0;
     s8 priority1 = 0, priority2 = 0;
+    u16 ability1 = GetBattlerAbility(battler1), ability2 = GetBattlerAbility(battler2);
 
     // Battler 1
     speedBattler1 = GetBattlerTotalSpeedStat(battler1);
     holdEffectBattler1 = GetBattlerHoldEffect(battler1, TRUE);
     // Quick Draw
-    if (!ignoreChosenMoves && GetBattlerAbility(battler1) == ABILITY_QUICK_DRAW && !IS_MOVE_STATUS(gChosenMoveByBattler[battler1]) && Random() % 100 < 30)
+    if (!ignoreChosenMoves && ability1 == ABILITY_QUICK_DRAW && !IS_MOVE_STATUS(gChosenMoveByBattler[battler1]) && Random() % 100 < 30)
         gProtectStructs[battler1].quickDraw = TRUE;
     // Quick Claw and Custap Berry
     if (!gProtectStructs[battler1].quickDraw
      && ((holdEffectBattler1 == HOLD_EFFECT_QUICK_CLAW && gRandomTurnNumber < (0xFFFF * GetBattlerHoldEffectParam(battler1)) / 100)
-     || (!IsAbilityOnOpposingSide(battler1, ABILITY_UNNERVE)
-      && holdEffectBattler1 == HOLD_EFFECT_CUSTAP_BERRY
-      && HasEnoughHpToEatBerry(battler1, 4, gBattleMons[battler1].item))))
+     || (holdEffectBattler1 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler1, 4, gBattleMons[battler1].item))))
         gProtectStructs[battler1].usedCustapBerry = TRUE;
 
     // Battler 2
     speedBattler2 = GetBattlerTotalSpeedStat(battler2);
     holdEffectBattler2 = GetBattlerHoldEffect(battler2, TRUE);
     // Quick Draw
-    if (!ignoreChosenMoves && GetBattlerAbility(battler2) == ABILITY_QUICK_DRAW && !IS_MOVE_STATUS(gChosenMoveByBattler[battler2]) && Random() % 100 < 30)
+    if (!ignoreChosenMoves && ability2 == ABILITY_QUICK_DRAW && !IS_MOVE_STATUS(gChosenMoveByBattler[battler2]) && Random() % 100 < 30)
         gProtectStructs[battler2].quickDraw = TRUE;
     // Quick Claw and Custap Berry
     if (!gProtectStructs[battler2].quickDraw
      && ((holdEffectBattler2 == HOLD_EFFECT_QUICK_CLAW && gRandomTurnNumber < (0xFFFF * GetBattlerHoldEffectParam(battler2)) / 100)
-     || (!IsAbilityOnOpposingSide(battler2, ABILITY_UNNERVE)
-      && holdEffectBattler2 == HOLD_EFFECT_CUSTAP_BERRY
-      && HasEnoughHpToEatBerry(battler2, 4, gBattleMons[battler2].item))))
+     || (holdEffectBattler2 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler2, 4, gBattleMons[battler2].item))))
         gProtectStructs[battler2].usedCustapBerry = TRUE;
 
     if (!ignoreChosenMoves)
@@ -4516,9 +4613,9 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
             strikesFirst = 1;
         else if (holdEffectBattler2 == HOLD_EFFECT_LAGGING_TAIL && holdEffectBattler1 != HOLD_EFFECT_LAGGING_TAIL)
             strikesFirst = 0;
-        else if (GetBattlerAbility(battler1) == ABILITY_STALL && GetBattlerAbility(battler2) != ABILITY_STALL)
+        else if (ability1 == ABILITY_STALL && ability2 != ABILITY_STALL)
             strikesFirst = 1;
-        else if (GetBattlerAbility(battler2) == ABILITY_STALL && GetBattlerAbility(battler1) != ABILITY_STALL)
+        else if (ability2 == ABILITY_STALL && ability1 != ABILITY_STALL)
             strikesFirst = 0;
         else
         {
@@ -4818,6 +4915,7 @@ static void CheckQuickClaw_CustapBerryActivation(void)
                 }
                 else if (gProtectStructs[gActiveBattler].quickDraw)
                 {
+                    gBattlerAbility = gActiveBattler;
                     gProtectStructs[gActiveBattler].quickDraw = FALSE;
                     gLastUsedAbility = gBattleMons[gActiveBattler].ability;
                     PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
@@ -5054,6 +5152,33 @@ static void HandleEndTurn_FinishBattle(void)
             TryPutBreakingNewsOnAir();
         }
 
+        //ty_difficulty_challenges
+        if (gSaveBlock1Ptr->txRandNuzlocke)
+        {
+            NuzlockeDeleteFaintedPartyPokemon();
+            if (!(gBattleTypeFlags & (BATTLE_TYPE_DOUBLE
+                                        | BATTLE_TYPE_LINK
+                                        | BATTLE_TYPE_TRAINER
+                                        | BATTLE_TYPE_FIRST_BATTLE
+                                        | BATTLE_TYPE_LINK_IN_BATTLE
+                                        | BATTLE_TYPE_MULTI
+                                        | BATTLE_TYPE_BATTLE_TOWER
+                                        | BATTLE_TYPE_WALLY_TUTORIAL
+                                        | BATTLE_TYPE_LEGENDARY
+                                        | BATTLE_TYPE_REGI
+                                        | BATTLE_TYPE_TWO_OPPONENTS
+                                        | BATTLE_TYPE_INGAME_PARTNER
+                                        | BATTLE_TYPE_TOWER_LINK_MULTI
+                                        | BATTLE_TYPE_RECORDED_LINK)))
+            {
+                if (!NuzlockeIsSpeciesClauseActive || !TypeChallengeCaptureBlocked)
+                    NuzlockeFlagSet(NuzlockeGetCurrentRegionMapSectionId());
+            }
+            NuzlockeIsCaptureBlocked = FALSE;
+            NuzlockeIsSpeciesClauseActive = FALSE;
+            TypeChallengeCaptureBlocked = FALSE;
+        }
+
         RecordedBattle_SetPlaybackFinished();
         BeginFastPaletteFade(3);
         FadeOutMapMusic(5);
@@ -5119,7 +5244,7 @@ static void TryEvolvePokemon(void)
 {
     s32 i;
 
-    while (gLeveledUpInBattle != 0)
+    while (gLeveledUpInBattle != 0 && gSaveBlock1Ptr->txRandEvoLimit != 2) //tx_difficulty_challenges
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
@@ -5356,4 +5481,9 @@ void SetTotemBoost(void)
             gTotemBoosts[battlerId].stats |= 0x80;  // used as a flag for the "totem flared to life" script
         }
     }
+}
+
+bool32 IsWildMonSmart(void)
+{
+    return (B_SMART_WILD_AI_FLAG != 0 && FlagGet(B_SMART_WILD_AI_FLAG));
 }

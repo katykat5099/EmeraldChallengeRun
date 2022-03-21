@@ -225,7 +225,7 @@
       "id": "LAYOUT_ROUTE107",
       "name": "Route107_Layout",
       "width": 60,
-      "height": 20,
+      "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route107/border.bin",
@@ -325,7 +325,7 @@
       "id": "LAYOUT_ROUTE117",
       "name": "Route117_Layout",
       "width": 60,
-      "height": 20,
+      "height": 25,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route117/border.bin",
@@ -4410,6 +4410,166 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTBORO_CITY_RUSTY_RELIC_SHOP",
+      "name": "RustboroCity_RustyRelicShop_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/RustboroCity_RustyRelicShop/border.bin",
+      "blockdata_filepath": "data/layouts/RustboroCity_RustyRelicShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE118_MANECTITE_HOUSE",
+      "name": "Route118_ManectiteHouse_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route118_ManectiteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route118_ManectiteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE122_OL_POTTERY",
+      "name": "Route122_OlPottery_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route122_OlPottery/border.bin",
+      "blockdata_filepath": "data/layouts/Route122_OlPottery/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_MIRROR_SHOP",
+      "name": "MauvilleCity_MirrorShop_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/MauvilleCity_MirrorShop/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_MirrorShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE114_STEELIXITE_HOUSE",
+      "name": "Route114_SteelixiteHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route114_SteelixiteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route114_SteelixiteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE107_ALAKAZITE_HOUSE",
+      "name": "Route107_AlakaziteHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route107_AlakaziteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route107_AlakaziteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE107_AGGRONITE_HOUSE",
+      "name": "Route107_AggroniteHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route107_AggroniteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route107_AggroniteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE123_FORBIDDEN_REGION",
+      "name": "Route123_ForbiddenRegion_Layout",
+      "width": 20,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route123_ForbiddenRegion/border.bin",
+      "blockdata_filepath": "data/layouts/Route123_ForbiddenRegion/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE121_HERACRONITE_HOUSE",
+      "name": "Route121_HeracroniteHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route121_HeracroniteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route121_HeracroniteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOOTOPOLIS_CITY_AUDINITE_HOUSE",
+      "name": "SootopolisCity_AudiniteHouse_Layout",
+      "width": 8,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SootopolisCity_AudiniteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/SootopolisCity_AudiniteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE126_MELOETTA_CAVE",
+      "name": "Route126_MeloettaCave_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route126_MeloettaCave/border.bin",
+      "blockdata_filepath": "data/layouts/Route126_MeloettaCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE102_GARDEVOIRITE_HOUSE",
+      "name": "Route102_GardevoiriteHouse_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route102_GardevoiriteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route102_GardevoiriteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE102_VENUSAURITE_HOUSE",
+      "name": "Route102_VenusauriteHouse_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route102_VenusauriteHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route102_VenusauriteHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE104_HOOPA_PRISON_BOTTLE_HOUSE",
+      "name": "Route104_HoopaPrisonBottleHouse_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route104_HoopaPrisonBottleHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route104_HoopaPrisonBottleHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE111_GIRATINA_CAVE",
+      "name": "Route111_GiratinaCave_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route111_GiratinaCave/border.bin",
+      "blockdata_filepath": "data/layouts/Route111_GiratinaCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_PACIFIDLOG_TOWN_CAVE",
+      "name": "PacifidlogTown_Cave_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/PacifidlogTown_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/PacifidlogTown_Cave/map.bin"
     }
   ]
 }

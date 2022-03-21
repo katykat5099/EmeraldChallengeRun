@@ -40,7 +40,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_EventScript_Woman",
+      "script": "RustboroCity_EventScript_ReturnGoodsTrigger5",
       "flag": "0"
     },
     {
@@ -144,7 +144,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_EventScript_DevonEmployee1",
+      "script": "RustboroCity_EventScript_ReturnGoodsTrigger5",
       "flag": "FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1"
     },
     {
@@ -323,6 +323,13 @@
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_HOUSE3",
       "dest_warp_id": 0
+    },
+    {
+      "x": 30,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTBORO_CITY_RUSTY_RELIC_SHOP",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
@@ -414,7 +421,7 @@
       "elevation": 3,
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "4",
-      "script": "RustboroCity_EventScript_ReturnGoodsTrigger0"
+      "script": "RustboroCity_EventScript_ReturnGoodsTrigger4"
     },
     {
       "type": "trigger",
@@ -514,6 +521,42 @@
       "var": "VAR_RUSTBORO_CITY_STATE",
       "var_value": "7",
       "script": "RustboroCity_EventScript_RivalTrigger7"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "4",
+      "script": "RustboroCity_EventScript_ReturnGoodsTrigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "4",
+      "script": "RustboroCity_EventScript_ReturnGoodsTrigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "2",
+      "script": "RustboroCity_EventScript_HelpGetGoodsTrigger4"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "2",
+      "script": "RustboroCity_EventScript_HelpGetGoodsTrigger5"
     }
   ],
   "bg_events": [
@@ -523,7 +566,7 @@
       "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "RustboroCity_EventScript_GymSign"
+      "script": "RustboroCity_EventScript_ReturnGoodsTrigger5"
     },
     {
       "type": "sign",
@@ -583,7 +626,7 @@
     },
     {
       "type": "sign",
-      "x": 30,
+      "x": 33,
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -596,6 +639,14 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_EventScript_CuttersHouseSign"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "RustboroCity_EventScript_RustyRelicShopSign"
     }
   ]
 }

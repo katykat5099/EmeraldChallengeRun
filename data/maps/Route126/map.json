@@ -148,7 +148,19 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "warp_events": [
+    {
+      "x": 77,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE126_MELOETTA_CAVE",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

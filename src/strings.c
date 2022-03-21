@@ -356,6 +356,7 @@ const u8 gText_SpaceForVar1Full[] = _("The space for {STR_VAR_1} is full.{PAUSE_
 const u8 gText_AnythingElseICanHelp[] = _("Is there anything else I can help\nyou with?");
 const u8 gText_CanIHelpWithAnythingElse[] = _("Can I help you with anything else?");
 const u8 gText_ThrowInPremierBall[] = _("I'll throw in a PREMIER BALL, too.{PAUSE_UNTIL_PRESS}");
+const u8 gText_Only4Pots[] = _("You're only getting 4?\nHave 1 more on us.{PAUSE_UNTIL_PRESS}");
 const u8 gText_CantBuyKeyItem[] = _("{STR_VAR_2}? Oh, no.\nI can't buy that.{PAUSE_UNTIL_PRESS}");
 const u8 gText_HowManyToSell[] = _("{STR_VAR_2}?\nHow many would you like to sell?");
 const u8 gText_ICanPayVar1[] = _("I can pay ¥{STR_VAR_1}.\nWould that be okay?");
@@ -1820,3 +1821,10 @@ const u8 gText_Answer[] = _("ANSWER");
 const u8 gText_PokeBalls[] = _("POKé BALLS");
 const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
+
+//tx_difficulty_challenges
+const u8 gText_NuzlockeCantThrowPokeBallRoute[]             = _("You have already used your encounter\nfor this area!{PAUSE_UNTIL_PRESS}");
+const u8 gText_NuzlockeCantThrowPokeBallSpeciesClause[]     = _("You have already caught a POKéMON\nin this evolution line!{PAUSE_UNTIL_PRESS}");
+const u8 gText_NuzlockeCantThrowPokeBallAlreadyCaught[]     = _("You have already caught this POKéMON!{PAUSE_UNTIL_PRESS}");
+const u8 gText_TypeChallengeCantThrowPokeBall[]             = _("Type Challenge active, capture blocked!{PAUSE_UNTIL_PRESS}");
+const u8 gText_BattleRules_NoItems_Player[]                 = _("Competitive rules!\nNo items in battle!{PAUSE_UNTIL_PRESS}");

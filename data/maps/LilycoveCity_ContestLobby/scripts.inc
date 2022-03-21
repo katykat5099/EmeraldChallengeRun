@@ -3,6 +3,7 @@
 .set LOCALID_LINK_RECEPTIONIST, 2
 .set LOCALID_ARTIST, 4
 .set LOCALID_ARTIST_LINK, 11
+.set LOCALID_ANABEL, 26
 
 LilycoveCity_ContestLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_ContestLobby_OnTransition
@@ -14,6 +15,9 @@ LilycoveCity_ContestLobby_MapScripts::
 LilycoveCity_ContestLobby_OnTransition:
 	call LilycoveCity_ContestLobby_EventScript_TryShowContestReporter
 	call LilycoveCity_ContestLobby_EventScript_TryShowBlendMaster
+	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, LilycoveCity_ContestLobby_EventScript_AddAltariaNPC
+	goto_if_set FLAG_RECEIVED_ALTARIANITE, LilycoveCity_ContestLobby_EventScript_RemoveAltariaNPC
+	goto_if_unset FLAG_DEFEATED_PETALBURG_GYM, LilycoveCity_ContestLobby_EventScript_RemoveAltariaNPC
 	end
 
 LilycoveCity_ContestLobby_EventScript_TryShowBlendMaster::
@@ -27,6 +31,38 @@ LilycoveCity_ContestLobby_EventScript_ShowBlendMaster::
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER_REPLACEMENT
 	clearflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER
 	return
+
+LilycoveCity_ContestLobby_EventScript_AddAltariaNPC::
+    goto_if_set FLAG_RECEIVED_ALTARIANITE, LilycoveCity_ContestLobby_EventScript_RemoveAltariaNPC
+    clearflag FLAG_HIDE_CONTEST_ANABEL
+    addobject LOCALID_ANABEL
+    end
+
+LilycoveCity_ContestLobby_EventScript_RemoveAltariaNPC::
+    removeobject LOCALID_ANABEL
+    setflag FLAG_HIDE_CONTEST_ANABEL
+    end
+
+LilycoveCity_ContestLobby_EventScript_AltariaMegaStone::
+    specialvar VAR_RESULT, CheckPartyAltaria
+    goto_if_eq VAR_RESULT, TRUE, LilycoveCity_ContestLobby_EventScript_AltariaMegaStoneGet
+    msgbox LilycoveCity_ContestLobby_Text_AltariaMegaStone, MSGBOX_NPC
+    end
+
+LilycoveCity_ContestLobby_EventScript_AltariaMegaStoneGet::
+    lock
+    faceplayer
+    msgbox LilycoveCity_ContestLobby_Text_AltariaMegaStoneGet, MSGBOX_DEFAULT
+    giveitem ITEM_ALTARIANITE
+    setflag FLAG_RECEIVED_ALTARIANITE
+    msgbox LilycoveCity_ContestLobby_Text_Goodbye, MSGBOX_DEFAULT
+    closemessage
+    applymovement LOCALID_ANABEL, LilycoveCity_ContestLobby_Movement_AnabelLeave
+    waitmovement 0
+    removeobject LOCALID_ANABEL
+    setflag FLAG_HIDE_CONTEST_ANABEL
+    release
+    end
 
 LilycoveCity_ContestLobby_OnFrame:
 	map_script_2 VAR_LILYCOVE_CONTEST_LOBBY_STATE, 1, LilycoveCity_ContestLobby_EventScript_TryDoContestArtist
@@ -969,6 +1005,15 @@ LilycoveCity_ContestLobby_Movement_LinkReceptionistFacePlayer:
 	walk_in_place_faster_left
 	step_end
 
+LilycoveCity_ContestLobby_Movement_AnabelLeave:
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+
 LilycoveCity_ContestLobby_EventScript_LittleGirl::
 	lock
 	faceplayer
@@ -1084,3 +1129,17 @@ LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily:
 	.string "I bet you can make smoother, better\n"
 	.string "{POKEBLOCK}S if you have more people.$"
 
+LilycoveCity_ContestLobby_Text_AltariaMegaStone:
+    .string "Do you have an ALTARIA?\n"
+    .string "If you do, please put it in the front\p"
+    .string "of your party so I can see it.$"
+
+LilycoveCity_ContestLobby_Text_AltariaMegaStoneGet:
+    .string "Awesome. Please take this stone and\n"
+    .string "practice using it with your ALTARIA.\p"
+    .string "We're thinking about allowing MEGA\n"
+    .string "EVOLUTION into contests some day, so\p"
+    .string "you best be ready for it!$"
+
+LilycoveCity_ContestLobby_Text_Goodbye:
+    .string "Be seein' ye'.$"

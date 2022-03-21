@@ -325,6 +325,14 @@
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_PETALBURG_CITY_RARE_CANDY"
+    },
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_GALLADITE",
+      "flag": "FLAG_RECEIVED_GALLADITE"
     }
   ]
 }

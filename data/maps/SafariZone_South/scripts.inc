@@ -115,6 +115,55 @@ SafariZone_South_Movement_MoveExitAttendantEast:
 	walk_in_place_faster_up
 	step_end
 
+SafariZone_South_EventScript_MegaStoneGiver::
+	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, SafariZone_South_EventScript_MegaStoneGiverGive
+    msgbox SafariZone_South_Text_MegaStoneGiver, MSGBOX_NPC
+    end
+
+SafariZone_South_EventScript_MegaStoneGiverGive::
+    specialvar VAR_RESULT, CheckPartyKangaskhan
+    goto_if_eq VAR_RESULT, TRUE, SafariZone_South_EventScript_MegaStoneGiverGiveKangaskhan
+    specialvar VAR_RESULT, CheckPartyPinsir
+    goto_if_eq VAR_RESULT, TRUE, SafariZone_South_EventScript_MegaStoneGiverGivePinsir
+    specialvar VAR_RESULT, CheckPartyAmpharos
+    goto_if_eq VAR_RESULT, TRUE, SafariZone_South_EventScript_MegaStoneGiverGiveAmpharos
+    msgbox SafariZone_South_Text_MegaStoneGiver, MSGBOX_NPC
+    end
+
+SafariZone_South_EventScript_MegaStoneGiverGiveKangaskhan::
+    goto_if_set FLAG_RECEIVED_KANGASKHANITE, SafariZone_South_EventScript_MegaStoneGot
+    lock
+    faceplayer
+    msgbox SafariZone_South_Text_MegaStoneKangaskhan, MSGBOX_DEFAULT
+    giveitem ITEM_KANGASKHANITE
+    setflag FLAG_RECEIVED_KANGASKHANITE
+    release
+    end
+
+SafariZone_South_EventScript_MegaStoneGiverGivePinsir::
+    goto_if_set FLAG_RECEIVED_PINSIRITE, SafariZone_South_EventScript_MegaStoneGot
+    lock
+    faceplayer
+    msgbox SafariZone_South_Text_MegaStonePinsir, MSGBOX_DEFAULT
+    giveitem ITEM_PINSIRITE
+    setflag FLAG_RECEIVED_PINSIRITE
+    release
+    end
+
+SafariZone_South_EventScript_MegaStoneGiverGiveAmpharos::
+    goto_if_set FLAG_RECEIVED_AMPHAROSITE, SafariZone_South_EventScript_MegaStoneGot
+    lock
+    faceplayer
+    msgbox SafariZone_South_Text_MegaStoneAmpharos, MSGBOX_DEFAULT
+    giveitem ITEM_AMPHAROSITE
+    setflag FLAG_RECEIVED_AMPHAROSITE
+    release
+    end
+
+SafariZone_South_EventScript_MegaStoneGot::
+    msgbox SafariZone_South_Text_MegaStoneGiver, MSGBOX_NPC
+    end
+
 SafariZone_South_EventScript_ConstructionWorker1::
 	msgbox SafariZone_South_Text_AreaOffLimits1, MSGBOX_NPC
 	end
@@ -150,3 +199,22 @@ SafariZone_Northeast_EventScript_Woman::
 SafariZone_Northeast_EventScript_Girl::
 	msgbox SafariZone_Northeast_Text_Girl, MSGBOX_NPC
 	end
+
+SafariZone_South_Text_MegaStoneGiver:
+    .string "Don't you think the SAFARI ZONE\n"
+    .string "is just so much fun?$"
+
+SafariZone_South_Text_MegaStoneKangaskhan:
+    .string "KANGASKHAN is just truly the heart\n"
+    .string "of the safari. Take this.$"
+
+SafariZone_South_Text_MegaStonePinsir:
+    .string "PINSIR is just truly the soul\n"
+    .string "of the safari. Take this.$"
+
+SafariZone_South_Text_MegaStoneAmpharos:
+    .string "AMPHAROS lives in this safari\n"
+    .string "and I still want to find out why.\p"
+    .string "Is your AMPHAROS from this safari?\n"
+    .string "Take this stone and give it some\p"
+    .string "love!$"

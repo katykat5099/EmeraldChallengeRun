@@ -199,6 +199,43 @@ LavaridgeTown_Movement_RivalExitHerbShop:
 	walk_down
 	step_end
 
+LavaridgeTown_EventScript_HoundoomGentleman::
+    goto_if_set FLAG_DEFEATED_PETALBURG_GYM, LavaridgeTown_EventScript_HoundoomGentlemanCheck
+    msgbox LavaridgeTown_Text_HoundoomGentleman, MSGBOX_NPC
+    end
+
+LavaridgeTown_EventScript_HoundoomGentlemanCheck::
+    goto_if_set FLAG_RECEIVED_HOUNDOOMINITE, LavaridgeTown_EventScript_HoundoomGentlemanGot
+    specialvar VAR_RESULT, CheckPartyHoundoom
+    goto_if_eq VAR_RESULT, TRUE, LavaridgeTown_EventScript_HoundoomGentlemanGive
+    msgbox LavaridgeTown_Text_HoundoomGentleman, MSGBOX_NPC
+    end
+
+LavaridgeTown_EventScript_HoundoomGentlemanGive::
+    lock
+    faceplayer
+    msgbox LavaridgeTown_Text_HoundoomGentlemanGive, MSGBOX_DEFAULT
+    giveitem ITEM_HOUNDOOMINITE
+    setflag FLAG_RECEIVED_HOUNDOOMINITE
+    release
+    end
+
+LavaridgeTown_EventScript_HoundoomGentlemanGot::
+    msgbox LavaridgeTown_Text_HoundoomGentlemanGot, MSGBOX_NPC
+    end
+
+LavaridgeTown_Text_HoundoomGentleman:
+    .string "Hello young fellow.\n"
+    .string "Do you have the POKéMON called\l"
+    .string "HOUNDOOM?$"
+
+LavaridgeTown_Text_HoundoomGentlemanGive:
+    .string "HOUNDOOM! One of my favorite POKéMON\n"
+    .string "Thanks for showing me. Have this.$"
+
+LavaridgeTown_Text_HoundoomGentlemanGot:
+    .string "How is your HOUNDOOM doing?$"
+
 LavaridgeTown_EventScript_HotSpringsTrigger::
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 	goto_if_eq VAR_RESULT, DIR_SOUTH, LavaridgeTown_EventScript_EnteredHotSprings

@@ -20,6 +20,28 @@ RustboroCity_DevonCorp_2F_EventScript_TalkToPokemonScientist::
 	release
 	end
 
+RustboroCity_DevonCorp_2F_EventScript_GenesectDrivesScientist::
+    goto_if_set FLAG_RECEIVED_DRIVES, RustboroCity_DevonCorp_2F_EventScript_GenesectDrivesScientistRecieved
+    specialvar VAR_RESULT, CheckPartyGenesect
+    goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_GenesectDrivesScientistGiveDrives
+    msgbox RustboroCity_DevonCorp_2F_Text_GenesectDrivesScientistLookingForGenesect, MSGBOX_NPC
+    end
+
+RustboroCity_DevonCorp_2F_EventScript_GenesectDrivesScientistGiveDrives::
+    lock
+    faceplayer
+    msgbox RustboroCity_DevonCorp_2F_Text_GenesectDrivesScientist, MSGBOX_DEFAULT
+    giveitem ITEM_DOUSE_DRIVE
+    giveitem ITEM_SHOCK_DRIVE
+    giveitem ITEM_BURN_DRIVE
+    giveitem ITEM_CHILL_DRIVE
+    release
+    end
+
+RustboroCity_DevonCorp_2F_EventScript_GenesectDrivesScientistRecieved::
+    msgbox RustboroCity_DevonCorp_2F_Text_GenesectDrivesScientistRecieved, MSGBOX_NPC
+    end
+
 RustboroCity_DevonCorp_2F_EventScript_BallScientist::
 	lock
 	faceplayer
@@ -382,3 +404,22 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 	.string "One couldn't ask for a better\n"
 	.string "environment as an engineer.$"
 
+RustboroCity_DevonCorp_2F_Text_GenesectDrivesScientist:
+    .string "What's this!?\n"
+    .string "You have a GENESECT!? Wow! This is\p"
+    .string "incredible!\n"
+    .string "I have been searching for GENESECT\p"
+    .string "for years! I have these items, they\n"
+    .string "appear to be linked to GENESECT.\p"
+    .string "Take them, I think you may now use\n"
+    .string "them better than I could.$"
+
+RustboroCity_DevonCorp_2F_Text_GenesectDrivesScientistLookingForGenesect:
+    .string "Hello there. Have you heard of a\n"
+    .string "POKéMON called GENESECT?\p"
+    .string "I've been searching for one for\n"
+    .string "so many years!$"
+
+RustboroCity_DevonCorp_2F_Text_GenesectDrivesScientistRecieved:
+    .string "Do the DRIVES make GENESECT any\n"
+    .string "stronger?$"

@@ -258,6 +258,84 @@ MoveTutor_EventScript_ExplosionTaught::
 	release
 	end
 
+Route126_MeloettaCave_EventScript_RelicSongTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_RELIC_SONG, MoveTutor_EventScript_RelicSongTaught
+	msgbox MoveTutor_Text_RelicSongTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RelicSongDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_RelicSongDeclined
+	msgbox MoveTutor_Text_RelicSongWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, TUTOR_MOVE_RELIC_SONG
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_RelicSongDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_RELIC_SONG
+	goto MoveTutor_EventScript_RelicSongTaught
+	end
+
+MoveTutor_EventScript_RelicSongDeclined::
+	msgbox MoveTutor_Text_RelicSongDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_RelicSongTaught::
+	msgbox MoveTutor_Text_RelicSongTaught, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_EventScript_SecretSwordTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SECRET_SWORD, MoveTutor_EventScript_SecretSwordTaught
+	msgbox MoveTutor_Text_SecretSwordTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SecretSwordDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SecretSwordDeclined
+	msgbox MoveTutor_Text_SecretSwordWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, TUTOR_MOVE_SECRET_SWORD
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SecretSwordDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_SECRET_SWORD
+	goto MoveTutor_EventScript_SecretSwordTaught
+	end
+
+MoveTutor_EventScript_SecretSwordDeclined::
+	msgbox MoveTutor_Text_SecretSwordDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_SecretSwordTaught::
+	msgbox MoveTutor_Text_SecretSwordTaught, MSGBOX_DEFAULT
+	release
+	end
+
+SkyPillar_Top_EventScript_DragonAscentTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_DRAGON_ASCENT, MoveTutor_EventScript_DragonAscentTaught
+	msgbox MoveTutor_Text_DragonAscentTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DragonAscentDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DragonAscentDeclined
+	msgbox MoveTutor_Text_DragonAscentWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, TUTOR_MOVE_DRAGON_ASCENT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_DragonAscentDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_DRAGON_ASCENT
+	goto MoveTutor_EventScript_DragonAscentTaught
+	end
+
+MoveTutor_EventScript_DragonAscentDeclined::
+	msgbox MoveTutor_Text_DragonAscentDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_DragonAscentTaught::
+	msgbox MoveTutor_Text_DragonAscentTaught, MSGBOX_DEFAULT
+	release
+	end
+
 MoveTutor_EventScript_OpenPartyMenu::
 	special ChooseMonForMoveTutor
 	waitstate

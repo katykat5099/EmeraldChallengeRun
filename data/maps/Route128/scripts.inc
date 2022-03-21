@@ -15,6 +15,36 @@ Route128_OnFrame:
 	map_script_2 VAR_ROUTE128_STATE, 1, Route128_EventScript_KyogreAwakenedScene
 	.2byte 0
 
+Route128_EventScript_PlatesExpert::
+    goto_if_set FLAG_GOT_PLATES, Route128_EventScript_PlatesExpert2
+    lock
+    faceplayer
+    msgbox Route128_Text_PlatesExpert, MSGBOX_DEFAULT
+    giveitem ITEM_FLAME_PLATE
+    giveitem ITEM_SPLASH_PLATE
+    giveitem ITEM_ZAP_PLATE
+    giveitem ITEM_MEADOW_PLATE
+    giveitem ITEM_ICICLE_PLATE
+    giveitem ITEM_FIST_PLATE
+    giveitem ITEM_TOXIC_PLATE
+    giveitem ITEM_EARTH_PLATE
+    giveitem ITEM_SKY_PLATE
+    giveitem ITEM_MIND_PLATE
+    giveitem ITEM_INSECT_PLATE
+    giveitem ITEM_STONE_PLATE
+    giveitem ITEM_SPOOKY_PLATE
+    giveitem ITEM_DRACO_PLATE
+    giveitem ITEM_DREAD_PLATE
+    giveitem ITEM_IRON_PLATE
+    giveitem ITEM_PIXIE_PLATE
+    setflag FLAG_GOT_PLATES
+    release
+    end
+
+Route128_EventScript_PlatesExpert2::
+    msgbox Route128_Text_PlatesExpert2, MSGBOX_NPC
+    end
+
 Route128_EventScript_KyogreAwakenedScene::
 	lockall
 	delay 20
@@ -303,4 +333,12 @@ Route128_Text_StevenImGoingToSootopolis:
 	.string "but don't do anything reckless.\p"
 	.string "Okay.\n"
 	.string "I'm going to SOOTOPOLIS.$"
+
+Route128_Text_PlatesExpert:
+    .string "Are you on your way to the League?\n"
+    .string "Whether you are or not, take these\p"
+    .string "plates. They could be helpful.$"
+
+Route128_Text_PlatesExpert2:
+    .string "Good luck.$"
 
