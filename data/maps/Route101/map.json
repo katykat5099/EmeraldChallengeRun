@@ -205,20 +205,20 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 19,
+      "y": 17,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_KATY_VARIABLE",
       "var_value": "0",
-      "script": "Route101_EventScript_KatyApproachTrigger1"
+      "script": "Route101_EventScript_TalkingMewTrigger1"
     },
     {
       "type": "trigger",
       "x": 11,
-      "y": 19,
+      "y": 17,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_KATY_VARIABLE",
       "var_value": "0",
-      "script": "Route101_EventScript_KatyApproachTrigger2"
+      "script": "Route101_EventScript_TalkingMewTrigger2"
     }
   ],
   "bg_events": [
