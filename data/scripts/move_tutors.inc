@@ -310,6 +310,32 @@ MoveTutor_EventScript_SecretSwordTaught::
 	release
 	end
 
+SkyPillar_Top_EventScript_DragonAscentTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_DRAGON_ASCENT, MoveTutor_EventScript_DragonAscentTaught
+	msgbox MoveTutor_Text_DragonAscentTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DragonAscentDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_DragonAscentDeclined
+	msgbox MoveTutor_Text_DragonAscentWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, TUTOR_MOVE_DRAGON_ASCENT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_DragonAscentDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_DRAGON_ASCENT
+	goto MoveTutor_EventScript_DragonAscentTaught
+	end
+
+MoveTutor_EventScript_DragonAscentDeclined::
+	msgbox MoveTutor_Text_DragonAscentDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_DragonAscentTaught::
+	msgbox MoveTutor_Text_DragonAscentTaught, MSGBOX_DEFAULT
+	release
+	end
+
 MoveTutor_EventScript_OpenPartyMenu::
 	special ChooseMonForMoveTutor
 	waitstate

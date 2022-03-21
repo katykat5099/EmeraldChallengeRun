@@ -32,6 +32,7 @@ const u16 gTutorMoves[] =
     [TUTOR_MOVE_FURY_CUTTER] = MOVE_FURY_CUTTER,
     [TUTOR_MOVE_RELIC_SONG] = MOVE_RELIC_SONG,
     [TUTOR_MOVE_SECRET_SWORD] = MOVE_SECRET_SWORD,
+    [TUTOR_MOVE_DRAGON_ASCENT] = MOVE_DRAGON_ASCENT,
 };
 
 #define TUTOR_LEARNSET(moves) ((u32)(moves))
@@ -5853,7 +5854,8 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SWAGGER)
                                             | TUTOR(MOVE_SWIFT)
                                             | TUTOR(MOVE_SWORDS_DANCE)
-                                            | TUTOR(MOVE_THUNDER_WAVE)),
+                                            | TUTOR(MOVE_THUNDER_WAVE)
+                                            | TUTOR(MOVE_DRAGON_ASCENT)),
 
     [SPECIES_JIRACHI]       = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
                                             | TUTOR(MOVE_DEFENSE_CURL)

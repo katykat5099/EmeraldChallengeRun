@@ -271,6 +271,21 @@ MoveTutor_Text_SecretSwordWhichMon:
     .string "Which POKéMON will it be?$"
 
 MoveTutor_Text_SecretSwordTaught:
-    .string "So you figured out which POKéMON\n"
+    .string "So you figured out which POKéMON\p"
     .string "I can teach. SECRET SWORD is a\l"
     .string "great move for KELDEO. Use it well.$"
+
+MoveTutor_Text_DragonAscentTeach:
+    .string "Welcome to the SKY PILLAR.\n"
+    .string "I have the right stuff here, if\l"
+    .string "you know what I mean?\n"
+    .string "Are you ready to get teaching?$"
+
+MoveTutor_Text_DragonAscentDeclined:
+    .string "Hrmm…$"
+
+MoveTutor_Text_DragonAscentWhichMon:
+    .string "Show me the POKéMON$"
+
+MoveTutor_Text_DragonAscentTaught:
+    .string "I hope it tasted good. Heheheh.$"

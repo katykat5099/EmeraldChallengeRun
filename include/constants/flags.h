@@ -722,23 +722,23 @@
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
 #define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
-#define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
-#define FLAG_GOT_MEMORIES                   0x2AC
-#define FLAG_GOT_PLATES                     0x2AD
-#define FLAG_MOVE_TUTOR_TAUGHT_SECRET_SWORD 0x2AE
-#define FLAG_RECEIVED_PURPLE_NECTAR         0x2AF
-#define FLAG_RECEIVED_PINK_NECTAR           0x2B0
-#define FLAG_RECEIVED_YELLOW_NECTAR         0x2B1
-#define FLAG_RECEIVED_RED_NECTAR            0x2B2
-#define FLAG_GRISEOUS_ORB_OBTAINED          0x2B3
-#define FLAG_HIDE_KATY                      0x2B4
-#define FLAG_MET_KATY                       0x2B5
-#define FLAG_ITEM_ROUTE_104_PRISON_BOTTLE   0x2B6
-#define FLAG_MOVE_TUTOR_TAUGHT_RELIC_SONG   0x2B7
-#define FLAG_HIDE_MELOETTA_CAVE_HIKER       0x2B8
-#define FLAG_RECEIVED_DRIVES                0x2B9
-#define FLAG_RECEIVED_GALARICA_ITEMS        0x2BA
-#define FLAG_HIDE_YOUNGSTER                 0x2BB // In Department f4
+#define FLAG_MOVE_TUTOR_TAUGHT_DRAGON_ASCENT 0x2AB
+#define FLAG_GOT_MEMORIES                    0x2AC
+#define FLAG_GOT_PLATES                      0x2AD
+#define FLAG_MOVE_TUTOR_TAUGHT_SECRET_SWORD  0x2AE
+#define FLAG_RECEIVED_PURPLE_NECTAR          0x2AF
+#define FLAG_RECEIVED_PINK_NECTAR            0x2B0
+#define FLAG_RECEIVED_YELLOW_NECTAR          0x2B1
+#define FLAG_RECEIVED_RED_NECTAR             0x2B2
+#define FLAG_GRISEOUS_ORB_OBTAINED           0x2B3
+#define FLAG_HIDE_KATY                       0x2B4
+#define FLAG_MET_KATY                        0x2B5
+#define FLAG_ITEM_ROUTE_104_PRISON_BOTTLE    0x2B6
+#define FLAG_MOVE_TUTOR_TAUGHT_RELIC_SONG    0x2B7
+#define FLAG_HIDE_MELOETTA_CAVE_HIKER        0x2B8
+#define FLAG_RECEIVED_DRIVES                 0x2B9
+#define FLAG_RECEIVED_GALARICA_ITEMS         0x2BA
+#define FLAG_HIDE_YOUNGSTER                  0x2BB // In Department f4
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
