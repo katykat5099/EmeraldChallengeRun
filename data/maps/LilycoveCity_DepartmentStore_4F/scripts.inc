@@ -345,6 +345,16 @@ LilycoveCity_DepartmentStore_4F_Pokemart_EvolutionStones:
 	.2byte ITEM_DUSK_STONE
 	.2byte ITEM_DAWN_STONE
 	.2byte ITEM_ICE_STONE
+	.2byte ITEM_UPGRADE
+	.2byte ITEM_PROTECTOR
+	.2byte ITEM_ELECTIRIZER
+	.2byte ITEM_MAGMARIZER
+	.2byte ITEM_DUBIOUS_DISC
+	.2byte ITEM_REAPER_CLOTH
+	.2byte ITEM_PRISM_SCALE
+	.2byte ITEM_WHIPPED_DREAM
+	.2byte ITEM_SACHET
+	.2byte ITEM_OVAL_STONE
 	.2byte ITEM_NONE
 	release
 	end
