@@ -130,37 +130,6 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         input->dpadDirection = DIR_WEST;
     else if (heldKeys & DPAD_RIGHT)
         input->dpadDirection = DIR_EAST;
-
-    //DEBUG
-    #ifdef TX_DEBUGGING
-        if (!TX_DEBUG_MENU_OPTION)
-        {
-            if (heldKeys & R_BUTTON) 
-            {
-                if(input->pressedSelectButton)
-                {
-                    input->input_field_1_0 = TRUE;
-                    input->pressedSelectButton = FALSE;
-                }else if(input->pressedStartButton) 
-                {
-                    input->input_field_1_2 = TRUE;
-                    input->pressedStartButton = FALSE;
-                }
-            }
-            if (heldKeys & L_BUTTON) 
-            {
-                if(input->pressedSelectButton)
-                {
-                    input->input_field_1_1 = TRUE;
-                    input->pressedSelectButton = FALSE;
-                }else if(input->pressedStartButton) 
-                {
-                    input->input_field_1_3 = TRUE;
-                    input->pressedStartButton = FALSE;
-                }
-            }
-        }
-    #endif
 }
 
 int ProcessPlayerFieldInput(struct FieldInput *input)
