@@ -171,6 +171,7 @@
 #define VAR_WHICH_FOSSIL_REVIVED             0x40C5
 #define VAR_STEVENS_HOUSE_STATE              0x40C6
 #define VAR_OLDALE_STATE                     0x40C7
+#define VAR_KATY_VARIABLE                    0x40F7
 
 // special vars
 // They are commonly used as parameters to commands, or return values from commands.

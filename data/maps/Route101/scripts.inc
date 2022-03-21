@@ -207,8 +207,17 @@ Route101_Movement_Unused2:
 	walk_up
 	step_end
 
+Route101_EventScript_TalkingMewTrigger1::
+    goto_if_unset FLAG_MET_KATY, Route101_EventScript_KatyApproachTrigger1
+    release
+    end
+
+Route101_EventScript_TalkingMewTrigger2::
+    goto_if_unset FLAG_MET_KATY, Route101_EventScript_KatyApproachTrigger2
+    release
+    end
+
 Route101_EventScript_KatyApproachTrigger1::
-    goto_if_set FLAG_MET_KATY, Route101_EventScript_KatyMet
     lockall
     addobject LOCALID_KATY
     playse SE_LEDGE
@@ -221,11 +230,11 @@ Route101_EventScript_KatyApproachTrigger1::
     removeobject LOCALID_KATY
     setflag FLAG_HIDE_KATY
     setflag FLAG_MET_KATY
+    setvar VAR_KATY_VARIABLE, 1
     release
     end
 
 Route101_EventScript_KatyApproachTrigger2::
-    goto_if_set FLAG_MET_KATY, Route101_EventScript_KatyMet
     lockall
     addobject LOCALID_KATY
     playse SE_LEDGE
@@ -238,6 +247,7 @@ Route101_EventScript_KatyApproachTrigger2::
     removeobject LOCALID_KATY
     setflag FLAG_HIDE_KATY
     setflag FLAG_MET_KATY
+    setvar VAR_KATY_VARIABLE, 1
     release
     end
 
@@ -259,7 +269,6 @@ Route101_Movement_KatyApproachPlayer1:
     walk_down
     walk_down
     walk_down
-    walk_down
     step_end
 
 Route101_Movement_KatyApproachPlayer2:
@@ -267,7 +276,6 @@ Route101_Movement_KatyApproachPlayer2:
     walk_in_place_faster_down
     jump_down
     walk_right
-    walk_down
     walk_down
     walk_down
     walk_down
