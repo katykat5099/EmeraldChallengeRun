@@ -1407,13 +1407,13 @@ SlateportCity_Text_TakingBattleTentChallenge:
 	.string "Give it your best effort!$"
 
 SlateportCity_Text_DidYouDropThese:
-    .string "Hey! I just saw you drop these when\p"
+    .string "Hey! I just saw you drop these when\n"
     .string "passing by. Don't lose them again!$"
 
 SlateportCity_Text_ThoseLookedReallyInteresting:
-    .string "Those things you dropped looked\p"
+    .string "Those things you dropped looked\n"
     .string "really interesting…$"
 
 SlateportCity_Text_HelpingOthers:
-    .string "Helping others might bring you\p"
+    .string "Helping others might bring you\n"
     .string "good luck in return!$"
