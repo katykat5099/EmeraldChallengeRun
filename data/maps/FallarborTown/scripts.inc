@@ -40,12 +40,17 @@ FallarborTown_EventScript_Azurill::
 	end
 
 FallarborTown_EventScript_RedNectarRichBoy::
+    goto_if_set FLAG_RECEIVED_RED_NECTAR, FallarborTown_EventScript_RedNectarRichBoy1
 	lock
     faceplayer
     msgbox FallarborTown_Text_RedNectarRichBoy, MSGBOX_DEFAULT
     giveitem ITEM_RED_NECTAR, 5
     setflag FLAG_RECEIVED_RED_NECTAR
     release
+    end
+
+FallarborTown_EventScript_RedNectarRichBoy1::
+    msgbox FallarborTown_Text_RedNectarRichBoy, MSGBOX_NPC
     end
 
 FallarborTown_Text_RedNectarRichBoy:

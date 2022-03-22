@@ -28,12 +28,17 @@ PacifidlogTown_EventScript_TownSign::
 	end
 
 PacifidlogTown_EventScript_PinkNectarRichBoy::
+    goto_if_set FLAG_RECEIVED_RED_NECTAR, PacifidlogTown_EventScript_PinkNectarRichBoy1
 	lock
     faceplayer
     msgbox PacifidlogTown_Text_PinkNectarRichBoy, MSGBOX_DEFAULT
     giveitem ITEM_PINK_NECTAR, 5
     setflag FLAG_RECEIVED_PINK_NECTAR
     release
+    end
+
+PacifidlogTown_EventScript_PinkNectarRichBoy1::
+    msgbox PacifidlogTown_Text_PinkNectarRichBoy, MSGBOX_NPC
     end
 
 PacifidlogTown_EventScript_SharpedoMega::

@@ -66,12 +66,17 @@ DewfordTown_EventScript_SailBackToPetalburg::
 	end
 
 DewfordTown_EventScript_YellowNectarRichBoy::
+    goto_if_set FLAG_RECEIVED_RED_NECTAR, DewfordTown_EventScript_YellowNectarRichBoy1
 	lock
     faceplayer
     msgbox DewfordTown_Text_YellowNectarRichBoy, MSGBOX_DEFAULT
     giveitem ITEM_YELLOW_NECTAR, 5
     setflag FLAG_RECEIVED_YELLOW_NECTAR
     release
+    end
+
+DewfordTown_EventScript_YellowNectarRichBoy1::
+    msgbox DewfordTown_Text_YellowNectarRichBoy, MSGBOX_NPC
     end
 
 DewfordTown_Text_YellowNectarRichBoy:

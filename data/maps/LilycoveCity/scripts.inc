@@ -34,12 +34,17 @@ LilycoveCity_EventScript_SetWailmerMetatiles::
 	return
 
 LilycoveCity_EventScript_PurpleNectarRichBoy::
+    goto_if_set FLAG_RECEIVED_PURPLE_NECTAR, LilycoveCity_EventScript_PurpleNectarRichBoy1
 	lock
     faceplayer
     msgbox LilycoveCity_Text_PurpleNectarRichBoy, MSGBOX_DEFAULT
     giveitem ITEM_PURPLE_NECTAR, 5
     setflag FLAG_RECEIVED_PURPLE_NECTAR
     release
+    end
+
+LilycoveCity_EventScript_PurpleNectarRichBoy1::
+    msgbox LilycoveCity_Text_PurpleNectarRichBoy, MSGBOX_NPC
     end
 
 LilycoveCity_Text_PurpleNectarRichBoy:
