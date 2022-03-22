@@ -28,7 +28,7 @@ PacifidlogTown_EventScript_TownSign::
 	end
 
 PacifidlogTown_EventScript_PinkNectarRichBoy::
-    goto_if_set FLAG_RECEIVED_RED_NECTAR, PacifidlogTown_EventScript_PinkNectarRichBoy1
+    goto_if_set FLAG_RECEIVED_PINK_NECTAR, PacifidlogTown_EventScript_PinkNectarRichBoy1
 	lock
     faceplayer
     msgbox PacifidlogTown_Text_PinkNectarRichBoy, MSGBOX_DEFAULT
