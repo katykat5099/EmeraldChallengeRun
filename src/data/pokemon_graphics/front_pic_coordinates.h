@@ -3801,7 +3801,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_STUFFUL] =
     {
-        .size = MON_COORDS_SIZE(48, 48),
+        .size = MON_COORDS_SIZE(39, 39),
         .y_offset = 10,
     },
     [SPECIES_BEWEAR] =
@@ -4206,7 +4206,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_APPLIN] =
     {
-        .size = MON_COORDS_SIZE(32, 40),
+        .size = MON_COORDS_SIZE(23, 33),
         .y_offset = 16,
     },
     [SPECIES_FLAPPLE] =
@@ -4216,7 +4216,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_APPLETUN] =
     {
-        .size = MON_COORDS_SIZE(64, 56),
+        .size = MON_COORDS_SIZE(58, 55),
         .y_offset = 5,
     },
     [SPECIES_SILICOBRA] =
@@ -4416,7 +4416,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_DRACOVISH] =
     {
-        .size = MON_COORDS_SIZE(48, 64),
+        .size = MON_COORDS_SIZE(42, 62),
         .y_offset = 0,
     },
     [SPECIES_ARCTOVISH] =
@@ -4431,17 +4431,17 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_DREEPY] =
     {
-        .size = MON_COORDS_SIZE(48, 40),
+        .size = MON_COORDS_SIZE(41, 36),
         .y_offset = 14,
     },
     [SPECIES_DRAKLOAK] =
     {
-        .size = MON_COORDS_SIZE(64, 56),
+        .size = MON_COORDS_SIZE(57, 47),
         .y_offset = 7,
     },
     [SPECIES_DRAGAPULT] =
     {
-        .size = MON_COORDS_SIZE(64, 64),
+        .size = MON_COORDS_SIZE(63, 61),
         .y_offset = 2,
     },
     [SPECIES_ZACIAN] =

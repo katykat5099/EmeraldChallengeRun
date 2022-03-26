@@ -7815,7 +7815,8 @@ static const union AnimCmd sAnim_SALAZZLE_1[] =
 
 static const union AnimCmd sAnim_STUFFUL_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
@@ -7941,7 +7942,8 @@ static const union AnimCmd sAnim_BRUXISH_1[] =
 
 static const union AnimCmd sAnim_DRAMPA_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
@@ -8325,7 +8327,8 @@ static const union AnimCmd sAnim_COALOSSAL_1[] =
 
 static const union AnimCmd sAnim_APPLIN_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
@@ -8337,7 +8340,10 @@ static const union AnimCmd sAnim_FLAPPLE_1[] =
 
 static const union AnimCmd sAnim_APPLETUN_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 35),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
@@ -8577,7 +8583,8 @@ static const union AnimCmd sAnim_ARCTOZOLT_1[] =
 
 static const union AnimCmd sAnim_DRACOVISH_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
@@ -8595,19 +8602,32 @@ static const union AnimCmd sAnim_DURALUDON_1[] =
 
 static const union AnimCmd sAnim_DREEPY_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_DRAKLOAK_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 20),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_DRAGAPULT_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 50),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 
