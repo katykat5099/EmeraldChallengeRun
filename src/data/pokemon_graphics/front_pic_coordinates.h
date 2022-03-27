@@ -3616,17 +3616,17 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_ROWLET] =
     {
-        .size = MON_COORDS_SIZE(32, 40),
+        .size = MON_COORDS_SIZE(31, 37),
         .y_offset = 12,
     },
     [SPECIES_DARTRIX] =
     {
-        .size = MON_COORDS_SIZE(40, 48),
+        .size = MON_COORDS_SIZE(34, 47),
         .y_offset = 8,
     },
     [SPECIES_DECIDUEYE] =
     {
-        .size = MON_COORDS_SIZE(48, 64),
+        .size = MON_COORDS_SIZE(45, 64),
         .y_offset = 0,
     },
     [SPECIES_LITTEN] =
@@ -3836,7 +3836,7 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_PASSIMIAN] =
     {
-        .size = MON_COORDS_SIZE(64, 64),
+        .size = MON_COORDS_SIZE(57, 60),
         .y_offset = 2,
     },
     [SPECIES_WIMPOD] =
