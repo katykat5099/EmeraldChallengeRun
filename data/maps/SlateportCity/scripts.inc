@@ -1415,5 +1415,5 @@ SlateportCity_Text_ThoseLookedReallyInteresting:
     .string "really interesting…$"
 
 SlateportCity_Text_HelpingOthers:
-    .string "Helping others might bring you\n"
+    .string "Helping others might bring you\p"
     .string "good luck in return!$"
