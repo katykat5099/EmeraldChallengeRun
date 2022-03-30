@@ -3256,8 +3256,8 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_CHESPIN] =
     {
-        .size = MON_COORDS_SIZE(40, 48),
-        .y_offset = 10,
+        .size = MON_COORDS_SIZE(41, 47),
+        .y_offset = 8,
     },
     [SPECIES_QUILLADIN] =
     {
@@ -3271,8 +3271,8 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_FENNEKIN] =
     {
-        .size = MON_COORDS_SIZE(40, 48),
-        .y_offset = 10,
+        .size = MON_COORDS_SIZE(44, 46),
+        .y_offset = 8,
     },
     [SPECIES_BRAIXEN] =
     {
@@ -3286,8 +3286,8 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_FROAKIE] =
     {
-        .size = MON_COORDS_SIZE(40, 40),
-        .y_offset = 12,
+        .size = MON_COORDS_SIZE(42, 37),
+        .y_offset = 7,
     },
     [SPECIES_FROGADIER] =
     {
@@ -4211,8 +4211,8 @@ const struct MonCoords gMonFrontPicCoords[] =
     },
     [SPECIES_FLAPPLE] =
     {
-        .size = MON_COORDS_SIZE(56, 48),
-        .y_offset = 9,
+        .size = MON_COORDS_SIZE(51, 47),
+        .y_offset = 11,
     },
     [SPECIES_APPLETUN] =
     {
