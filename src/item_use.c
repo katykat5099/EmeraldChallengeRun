@@ -44,8 +44,8 @@
 #include "constants/items.h"
 #include "constants/songs.h"
 
-#include "tx_difficulty_challenges.h"
-#include "battle_setup.h" //tx_difficulty_challenges
+#include "tx_randomizer_and_challenges.h"
+#include "battle_setup.h" //tx_randomizer_and_challenges
 
 static void SetUpItemUseCallback(u8 taskId);
 static void FieldCB_UseItemOnField(void);
@@ -142,7 +142,7 @@ static void Task_CallItemUseOnFieldCallback(u8 taskId)
         sItemUseOnFieldCB(taskId);
 }
 
-void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str) //static //tx_difficulty_challenges
+void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str) //static //tx_randomizer_and_challenges
 {
     StringExpandPlaceholders(gStringVar4, str);
     if (!isUsingRegisteredKeyItemOnField)
@@ -970,7 +970,7 @@ u32 CanThrowBall(void)
         return 3;   // in semi-invulnerable state
     }
     #endif
-    else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsCaptureBlocked) //tx_difficulty_challenges
+    else if (gSaveBlock1Ptr->txRandNuzlocke && NuzlockeIsCaptureBlocked) //tx_randomizer_and_challenges
     {
         return 4;
     }
@@ -1024,6 +1024,7 @@ void ItemUseInBattle_PokeBall(u8 taskId)
             DisplayItemMessageInBattlePyramid(taskId, sText_CantThrowPokeBall_SemiInvulnerable, Task_CloseBattlePyramidBagMessage);
         break;
     #endif
+    //tx_difficulty_challenges
     case 4:
         DisplayCannotUseItemMessage(taskId, FALSE, gText_NuzlockeCantThrowPokeBallRoute);
         break;

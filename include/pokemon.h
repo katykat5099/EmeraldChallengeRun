@@ -3,6 +3,7 @@
 
 #include "constants/pokemon.h"
 #include "sprite.h"
+#include "constants/species.h" //tx_randomizer_and_challenges
 #include "constants/species.h" //tx_difficulty_challenges
 #include "constants/region_map_sections.h"
 #include "constants/pokemon_config.h"
@@ -309,8 +310,8 @@ extern const u8 gStatStageRatios[MAX_STAT_STAGE + 1][2];
 extern const u16 gLinkPlayerFacilityClasses[];
 extern const struct SpriteTemplate gBattlerSpriteTemplates[];
 extern const s8 gNatureStatTable[][5];
-extern const u16 gEvolutionLines[NUM_SPECIES][EVOS_PER_LINE]; //tx_difficulty_challenges
-extern const u16 *const gFormSpeciesIdTables[NUM_SPECIES];
+extern const u16 gEvolutionLines[NUM_SPECIES][EVOS_PER_LINE]; //tx_randomizer_and_challenges
+extern const u16 *const gFormSpeciesIdTables[NUM_SPECIES]; //Pokemon Expansion
 
 void ZeroBoxMonData(struct BoxPokemon *boxMon);
 void ZeroMonData(struct Pokemon *mon);
@@ -466,7 +467,7 @@ u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg);
 u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *mon, u16 method, u32 arg);
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
 
-//tx_difficulty_challenges
+//tx_randomizer_and_challenges
 void RandomizeSpeciesListEWRAM(u16 seed);
 void RandomizeSpeciesListEWRAMNormal(u16 seed);
 void RandomizeSpeciesListEWRAMLegendary(u16 seed);

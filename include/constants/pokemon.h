@@ -383,7 +383,7 @@
 #define EVO_LEVEL_NATURE_LOW_KEY          34     // Pokémon reaches the specified level, it has a Lonely, Bold, Relaxed, Timid, Serious, Modest, Mild, Quiet, Bashful, Calm, Gentle, or Careful nature.
 #define EVO_ITEM_HOLD_ITEM                35
 
-//tx_difficulty_challenges
+//tx_randomizer_and_challenges
 #ifndef POKEMON_EXPANSION 
 #define EVOS_PER_MON 5
 #define EVOS_PER_LINE 6

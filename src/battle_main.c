@@ -64,7 +64,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "cable_club.h"
-#include "tx_difficulty_challenges.h"
+#include "tx_randomizer_and_challenges.h"
 #include "overworld.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
@@ -1828,7 +1828,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 fixedIV;
     s32 i, j;
     u8 monsCount;
-    u16 species, move; //tx_difficulty_challenges
+    u16 species, move; //tx_randomizer_and_challenges
 
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
@@ -1876,9 +1876,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                if (gSaveBlock1Ptr->txRandTrainer) //tx_difficulty_challenges
+                if (gSaveBlock1Ptr->tx_Random_Trainer) //tx_randomizer_and_challenges
                 {
-                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->txRandChaos);
+                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->tx_Random_Chaos);
                     CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 }
                 else
@@ -1894,9 +1894,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                if (gSaveBlock1Ptr->txRandTrainer) //tx_difficulty_challenges
+                if (gSaveBlock1Ptr->tx_Random_Trainer) //tx_randomizer_and_challenges
                 {
-                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->txRandChaos);
+                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->tx_Random_Chaos);
                     CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 }
                 else
@@ -1904,7 +1904,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
-                    if (gSaveBlock1Ptr->txRandMoves) //tx_difficulty_challenges
+                    if (gSaveBlock1Ptr->tx_Random_Moves) //tx_randomizer_and_challenges
                     {
                         move = (RandomSeeded(partyData[i].moves[j], FALSE) % MOVES_COUNT) + 1;
                         SetMonData(&party[i], MON_DATA_MOVE1 + j, &move);
@@ -1927,9 +1927,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                if (gSaveBlock1Ptr->txRandTrainer) //tx_difficulty_challenges
+                if (gSaveBlock1Ptr->tx_Random_Trainer) //tx_randomizer_and_challenges
                 {
-                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->txRandChaos);
+                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->tx_Random_Chaos);
                     CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 }
                 else
@@ -1947,9 +1947,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                if (gSaveBlock1Ptr->txRandTrainer) //tx_difficulty_challenges
+                if (gSaveBlock1Ptr->tx_Random_Trainer) //tx_randomizer_and_challenges
                 {
-                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->txRandChaos);
+                    species = GetSpeciesRandomSeeded(partyData[i].species, TX_RANDOM_OFFSET_TRAINER, TRUE, !gSaveBlock1Ptr->tx_Random_Chaos);
                     CreateMon(&party[i], species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 }
                 else
@@ -1959,7 +1959,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
-                    if (gSaveBlock1Ptr->txRandMoves) //tx_difficulty_challenges
+                    if (gSaveBlock1Ptr->tx_Random_Moves) //tx_randomizer_and_challenges
                     {
                         move = (RandomSeeded(partyData[i].moves[j], FALSE) % MOVES_COUNT) + 1;
                         SetMonData(&party[i], MON_DATA_MOVE1 + j, &move);
@@ -3243,8 +3243,8 @@ void FaintClearSetData(void)
 
     gBattleResources->flags->flags[gActiveBattler] = 0;
 
-    gBattleMons[gActiveBattler].type1 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 1); //tx_difficulty_challenges
-    gBattleMons[gActiveBattler].type2 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 2); //tx_difficulty_challenges
+    gBattleMons[gActiveBattler].type1 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 1); //tx_randomizer_and_challenges
+    gBattleMons[gActiveBattler].type2 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 2); //tx_randomizer_and_challenges
     gBattleMons[gActiveBattler].type3 = TYPE_MYSTERY;
 
     ClearBattlerMoveHistory(gActiveBattler);
@@ -3341,8 +3341,8 @@ static void DoBattleIntro(void)
             else
             {
                 memcpy(&gBattleMons[gActiveBattler], &gBattleResources->bufferB[gActiveBattler][4], sizeof(struct BattlePokemon));
-                gBattleMons[gActiveBattler].type1 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 1);
-                gBattleMons[gActiveBattler].type2 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 2);
+                gBattleMons[gActiveBattler].type1 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 1); //tx_randomizer_and_challenges
+                gBattleMons[gActiveBattler].type2 = GetTypeBySpecies(gBattleMons[gActiveBattler].species, 2); //tx_randomizer_and_challenges
                 gBattleMons[gActiveBattler].type3 = TYPE_MYSTERY;
                 gBattleMons[gActiveBattler].ability = GetAbilityBySpecies(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].abilityNum);
                 gBattleStruct->hpOnSwitchout[GetBattlerSide(gActiveBattler)] = gBattleMons[gActiveBattler].hp;
@@ -5244,7 +5244,7 @@ static void TryEvolvePokemon(void)
 {
     s32 i;
 
-    while (gLeveledUpInBattle != 0 && gSaveBlock1Ptr->txRandEvoLimit != 2) //tx_difficulty_challenges
+    while (gLeveledUpInBattle != 0 && gSaveBlock1Ptr->txRandEvoLimit != 2) //tx_randomizer_and_challenges
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
